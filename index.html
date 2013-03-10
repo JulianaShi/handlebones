@@ -1,5 +1,5 @@
 <html>
-  <head>
+<head>
     <script src="lib/jquery.js"></script>
     <script src="lib/underscore.js"></script>
     <script src="lib/handlebars.js"></script>
@@ -7,9 +7,204 @@
     <script src="lib/bootstrap.js"></script>
     <script src="templates.js"></script>
     <script src="application.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
     <link rel="stylesheet" media="screen" href="styles/bootstrap.css"/>
-  </head>
-  <body>
+    <link rel="stylesheet" type="text/css" href="base.css">
+    <link rel="stylesheet" type="text/css" href="televisions.css">
+    <link rel="stylesheet" href="/resources/demos/style.css"/>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"/>
 
-  </body>
+
+    <script>
+        $.fn.stars = function () {
+            return $(this).each(function () {
+                // Get the value
+                var val = parseFloat($(this).html());
+                val = Math.round(val * 2) / 2;
+                /* To round to nearest half */
+                // Make sure that the value is in 0 - 5 range, multiply to get width
+                var size = Math.max(0, (Math.min(5, val))) * 16;
+                // Create stars holder
+                var $span = $('<span />').width(size);
+                // Replace the numerical value with stars
+                $(this).html($span);
+            });
+        };
+        $(function () {
+            $("#slider").slider({
+                range:true,
+                min:0,
+                max:50,
+                values:[ 20, 40 ],
+                slide:function (event, ui) {
+                    $("#amount").val('"' + ui.values[ 0 ] + ' - "' + ui.values[ 1 ]);
+                }
+            });
+            $("#amount").val('"' + $("#slider").slider("values", 0) +
+                    ' - "' + $("#slider").slider("values", 1));
+            $('#tv-brand').change(function (e) {
+                alert('You picked: ');
+            });
+            $('#tv-types').change(function (e) {
+                alert('You picked: ');
+            });
+            $('#tv-sort').change(function (e) {
+                alert('You picked: ');
+            });
+            $('span.stars').stars();
+        });
+
+    </script>
+</head>
+<body>
+<div id="container">
+    <header id="header">
+        <span class="left-float"><img src="img/WMLogo.png" id="logo"/></span>
+     <span id="white" class="left-float">
+        <form id="search" action="/search" method="get">
+            <input type="text" placeholder="Search" size="40" name="q">
+        </form>
+    </span>
+        <ul>
+            <li><span id="create-link" class="left-float"><img src="img/create.png"/><a href="#"> Create</a></span></li>
+            <li><span id="sign-in" class="left-float"><img src="img/pipeSeperator.png" class="pipe"/><img
+                    src="img/signIn.png" id="sign-img"/><a href="#"> Sign In</a></span></li>
+            <li><span id="cart-items" class="left-float"><img src="img/pipeSeperator.png" class="pipe"/><img
+                    src="img/shoppingCart.png"/><a href="#"> Items</a></span></li>
+        </ul>
+    </header>
+
+
+    <div id="main_content">
+        <img src="img/POVTVs.png"/>
+
+        <div id="tv-refinements">
+            <img class=left-float src="img/tVFinder.png" id="tv-finder-img"/>
+            <span id="slider-div" class="left-float">
+                <div style="font-family: Arial,Helvetica,Sans-serif;font-size: 15px;">Size:</div>
+                <input type="text" id="amount" style="border: 0; color: #424242; font-weight: bold;"/>
+                <div id="slider">
+                    <div id="slider-range"></div>
+                </div>
+            </span>
+            <span class="tv-dropdowns left-float">
+                    <div class="dropdown-labels">Type</div>
+                    <div class="left-float" style="padding-right: 20px;">
+                        <select name="tv-type" id="tv-types" class="dropdown-style">
+                            <option value="LCD">LCD</option>
+                            <option value="3D">3D</option>
+                            <option value="LED">LED</option>
+                            <option value="Plasma">Plasma</option>
+                            <option value="Projection">Projection</option>
+                            <option value="Smart">Smart</option>
+                        </select>
+                    </div>
+            </span>
+            <span class="tv-dropdowns left-float">
+                    <div class="dropdown-labels">Brand</div>
+                    <div class="left-float" style="padding-right: 20px;">
+                        <select name="tv-brand" id="tv-brand">
+                            <option value="LG">LG</option>
+                            <option value="Panasonic">Panasonic</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="Sony">Sony</option>
+                            <option value="Visio">Visio</option>
+                        </select>
+                    </div>
+            </span>
+            <span class="tv-dropdowns left-float">
+                    <div class="dropdown-labels">Sort</div>
+                    <div class="left-float" style="padding-right: 20px;">
+                        <select name="tv-sort" id="tv-sort" class="dropdown-style">
+                            <option value="Price">Price</option>
+                            <option value="AZ">A-Z</option>
+                            <option value="ZA">Z-A</option>
+                        </select>
+                    </div>
+            </span>
+        </div>
+        <div id="horzBorder">
+            <img src="img/horzGradientBorder.png"/>
+        </div>
+
+        <div id="filters-text">
+            <div id="filter-matches"> Matches for televisions that fit that criteria.</div>
+            <div id="filter-clear">
+                <button type="button" name="" value="" class="css3button">Clear Filters</button>
+            </div>
+
+
+        </div>
+        <div id="tv-results">
+            <div class="results-4-across">
+                <div class="result-cell left-float">
+                    <img src="http://i.walmartimages.com/i/p/00/71/91/92/58/0071919258446_180X180.jpg" />
+                    <div class="result-title">Samsung 20" LCD HDTV</div>
+                    <div class="description">720p, 2 HDMI inputs, etc etc etc etc etc etc etc</div>
+                    <span class="price">$79<span class="cents">80</span></span>
+                    <span class="stars">2.8618164</span>
+                </div>
+                <div class="result-cell left-float">
+                    <img src="http://i.walmartimages.com/i/p/00/71/91/92/58/0071919258446_180X180.jpg" />
+                    <div class="result-title">Samsung 20" LCD HDTV</div>
+                    <div class="description">720p, 2 HDMI inputs, etc etc etc etc etc etc etc</div>
+                    <span class="price">$79<span class="cents">80</span></span>
+                    <span class="stars">2.8618164</span>
+                </div>
+                <div class="result-cell left-float">
+                    <img src="http://i.walmartimages.com/i/p/00/71/91/92/58/0071919258446_180X180.jpg" />
+                    <div class="result-title">Samsung 20" LCD HDTV</div>
+                    <div class="description">720p, 2 HDMI inputs, etc etc etc etc etc etc etc</div>
+                    <span class="price">$79<span class="cents">80</span></span>
+                    <span class="stars">2.8618164</span>
+                </div>
+                <div class="result-cell left-float">
+                    <img src="http://i.walmartimages.com/i/p/00/71/91/92/58/0071919258446_180X180.jpg" />
+                    <div class="result-title">Samsung 20" LCD HDTV</div>
+                    <div class="description">720p, 2 HDMI inputs, etc etc etc etc etc etc etc</div>
+                    <span class="price">$79<span class="cents">80</span></span>
+                    <span class="stars">2.8618164</span>
+                </div>
+                <div class="result-cell left-float">
+                    <img src="http://i.walmartimages.com/i/p/00/71/91/92/58/0071919258446_180X180.jpg" />
+                    <div class="result-title">Samsung 20" LCD HDTV</div>
+                    <div class="description">720p, 2 HDMI inputs, etc etc etc etc etc etc etc</div>
+                    <span class="price">$79<span class="cents">80</span></span>
+                    <span class="stars">2.8618164</span>
+                </div>
+                <div class="result-cell left-float">
+                    <img src="http://i.walmartimages.com/i/p/00/71/91/92/58/0071919258446_180X180.jpg" />
+                    <div class="result-title">Samsung 20" LCD HDTV</div>
+                    <div class="description">720p, 2 HDMI inputs, etc etc etc etc etc etc etc</div>
+                    <span class="price">$79<span class="cents">80</span></span>
+                    <span class="stars">2.8618164</span>
+                </div>
+                <div class="result-cell left-float">
+                    <img src="http://i.walmartimages.com/i/p/00/71/91/92/58/0071919258446_180X180.jpg"/>
+                    <div class="result-title">Samsung 20" LCD HDTV</div>
+                    <div class="description">720p, 2 HDMI inputs, etc etc etc etc etc etc etc</div>
+                    <span class="price">$79<span class="cents">80</span></span>
+                    <span class="stars">2.8618164</span>
+                </div>
+                <div class="result-cell left-float">
+                    <img src="http://i.walmartimages.com/i/p/00/71/91/92/58/0071919258446_180X180.jpg"/>
+                    <div class="result-title">Samsung 20" LCD HDTV</div>
+                    <div class="description">720p, 2 HDMI inputs, etc etc etc etc etc etc etc</div>
+                    <span class="price">$79<span class="cents">80</span></span>
+                    <span class="stars">2.8618164</span>
+                </div>
+                </span>
+            </div>
+        </div>
+
+        <footer id="footer">
+            FOOTER TEXT
+            <p style="font-size:10px; color:gray;">Created by the <a href="http://www.webtemplategenerator.com">Web Template
+                Generator</a></p>
+        </footer>
+    </div>
+</div>
+</body>
 </html>
