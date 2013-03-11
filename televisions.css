@@ -194,12 +194,9 @@ button.css3button {
     height: 630px;
 }
 
-.results-4-across {
-    height: 300px;
-}
 
 .result-cell {
-    height: 100%;
+    height: 300px;
     width: 20%;
     padding-left: 4%;
 }
@@ -276,9 +273,10 @@ span.stars span {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
     color: #BEBEBE;
     font: bold 12px Arial,Helvetica,Sans-serif;
-    padding: 6px 15px 6px 80px;
+    height: 40px;
+    padding: 6px 15px 6px 35px;
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-    width: 150px;
+    width: 250px;
 }
 
 #search input[type="text"]:focus {

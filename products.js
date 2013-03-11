@@ -1,6 +1,5 @@
-var items = {
+var items = [
 
-    item:[
     {
         "url": "http://www.walmart.com/ip/Sceptre-32-X322BV-HD/15739136",
         "name": "Sceptre 32\" Class LCD 720p 60Hz HDTV, X322BV-HD",
@@ -8,7 +7,7 @@ var items = {
         "listPrice": 349.99,
         "price": 199.98,
         "image": "http://i.walmartimages.com/i/p/00/79/23/43/23/0079234323252_180X180.jpg",
-        "description": "<li>31.5\" screen measured diagonally from corner to corner <LI>HDMI inputs: 3<li>Wall-mountable, detachable base<li>High brightness of 420 cd/m2 with 6.5 ms response time",
+        "description": "31.5\" screen measured diagonally from corner to corner , HDMI inputs: 3, Wall-mountable, detachable base, High brightness of 420 cd/m2 with 6.5 ms response time",
         "rating": 4.162
     },
     {
@@ -18,7 +17,7 @@ var items = {
         "listPrice": 699.99,
         "price": 598,
         "image": "http://i.walmartimages.com/i/p/00/84/52/26/00/0084522600507_180X180.jpg",
-        "description": "<li>42\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable<li>Theater 3D technology",
+        "description": "42\" diagonal screen size, HDMI Inputs: 3, Wall mountable, Theater 3D technology",
         "rating": 4.738
     },
     {
@@ -28,7 +27,7 @@ var items = {
         "listPrice": 798,
         "price": 748,
         "image": "http://i.walmartimages.com/i/p/00/84/52/26/00/0084522600509_180X180.jpg",
-        "description": "<li>46.96\" diagonal screen size<li>HDMI Inputs: 4<li>Wall mountable<li>Theater 3D technology",
+        "description": "46.96\" diagonal screen size, HDMI Inputs: 4, Wall mountable, Theater 3D technology",
         "rating": 4.657
     },
     {
@@ -38,7 +37,7 @@ var items = {
         "listPrice": 998,
         "price": 998,
         "image": "http://i.walmartimages.com/i/p/00/84/52/26/00/0084522600672_180X180.jpg",
-        "description": "<li>54.64\" diagonal screen size<li>HDMI Inputs: 4<li>Wall mountable<li>Built-in WiFi",
+        "description": "54.64\" diagonal screen size, HDMI Inputs: 4, Wall mountable, Built-in WiFi",
         "rating": 4.8
     },
     {
@@ -48,7 +47,7 @@ var items = {
         "listPrice": 399.99,
         "price": 299.98,
         "image": "http://i.walmartimages.com/i/p/00/79/23/43/24/0079234324090_180X180.jpg",
-        "description": "<li>39\" diagonal screen size</li><li>HDMI Inputs: 3</li><li>Wall mountable</li>",
+        "description": "39\" diagonal screen size</li>, HDMI Inputs: 3</li>, Wall mountable</li>",
         "rating": 4.018
     },
     {
@@ -58,7 +57,7 @@ var items = {
         "listPrice": 399.99,
         "price": 219.98,
         "image": "http://i.walmartimages.com/i/p/00/79/23/43/23/0079234323253_180X180.jpg",
-        "description": "<li>31.5\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable",
+        "description": "31.5\" diagonal screen size, HDMI Inputs: 3, Wall mountable",
         "rating": 4.333
     },
     {
@@ -68,7 +67,7 @@ var items = {
         "listPrice": 129.98,
         "price": 89.98,
         "image": "http://i.walmartimages.com/i/p/00/82/73/96/51/0082739651906_180X180.jpg",
-        "description": "<li>18.5\" diagonal screen size<li>HDMI Inputs: 1",
+        "description": "18.5\" diagonal screen size, HDMI Inputs: 1",
         "rating": 5
     },
     {
@@ -78,7 +77,7 @@ var items = {
         "listPrice": 158,
         "price": 158,
         "image": "http://i.walmartimages.com/i/p/00/84/52/26/00/0084522600717_180X180.jpg",
-        "description": "<li>18.5\" diagonal screen size<li>HDMI Inputs: 1<li>Wall mountable<li>SRS StudioSound HD audio",
+        "description": "18.5\" diagonal screen size, HDMI Inputs: 1, Wall mountable, SRS StudioSound HD audio",
         "rating": 5
     },
     {
@@ -88,7 +87,7 @@ var items = {
         "listPrice": 399.99,
         "price": 209.98,
         "image": "http://i.walmartimages.com/i/p/00/79/23/43/33/0079234333205_180X180.jpg",
-        "description": "<li>31.5\" diagonal screen size<li>HDMI Inputs: 3<li> wall mountable<li>Built-in digital tuner<li>20,000:1 Dynamic Contrast Ratio <li>420 cd/m2 Brightness <li>720P/ 1366 x 768",
+        "description": "31.5\" diagonal screen size, HDMI Inputs: 3,  wall mountable, Built-in digital tuner, 20,000:1 Dynamic Contrast Ratio , 420 cd/m2 Brightness , 720P/ 1366 x 768",
         "rating": 4.074
     },
     {
@@ -98,7 +97,7 @@ var items = {
         "listPrice": 298,
         "price": 278,
         "image": "http://i.walmartimages.com/i/p/00/84/52/26/00/0084522600534_180X180.jpg",
-        "description": "<li>31.5\" diagonal screen size<li>HDMI inputs: 2<li>Wall mountable with detachable base stand<li>SRS TruSurrondHD turns your room into a personal theater",
+        "description": "31.5\" diagonal screen size, HDMI inputs: 2, Wall mountable with detachable base stand, SRS TruSurrondHD turns your room into a personal theater",
         "rating": 4.395
     },
     {
@@ -108,7 +107,7 @@ var items = {
         "listPrice": 249.99,
         "price": 188,
         "image": "http://i.walmartimages.com/i/p/00/84/26/51/00/0084265100526_180X180.jpg",
-        "description": "<li>27.5\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable<li>Built-in digital tuner",
+        "description": "27.5\" diagonal screen size, HDMI Inputs: 2, Wall mountable, Built-in digital tuner",
         "rating": 4.783
     },
     {
@@ -118,7 +117,7 @@ var items = {
         "listPrice": 578,
         "price": 528,
         "image": "http://i.walmartimages.com/i/p/00/84/52/26/00/0084522600670_180X180.jpg",
-        "description": "<li>42.02\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable<li>Built-in WiFi",
+        "description": "42.02\" diagonal screen size, HDMI Inputs: 3, Wall mountable, Built-in WiFi",
         "rating": 5
     },
     {
@@ -128,7 +127,7 @@ var items = {
         "listPrice": 209.99,
         "price": 169.98,
         "image": "http://i.walmartimages.com/i/p/00/05/84/65/77/0005846577897_180X180.jpg",
-        "description": "<li>24\" diagonal screen size<li>HDMI Inputs: 1<li>Wall mountable<li>Built-in DVD player",
+        "description": "24\" diagonal screen size, HDMI Inputs: 1, Wall mountable, Built-in DVD player",
         "rating": 4
     },
     {
@@ -138,7 +137,7 @@ var items = {
         "listPrice": 599.99,
         "price": 498,
         "image": "http://i.walmartimages.com/i/p/00/02/72/42/83/0002724283859_180X180.jpg",
-        "description": "<li>40\" diagonal screen size<li>HDMI Inputs: 4<li>Wall mountable<li>USB input",
+        "description": "40\" diagonal screen size, HDMI Inputs: 4, Wall mountable, USB input",
         "rating": 4.2
     },
     {
@@ -148,7 +147,7 @@ var items = {
         "listPrice": 329.99,
         "price": 329.99,
         "image": "http://i.walmartimages.com/i/p/00/02/72/42/83/0002724283860_180X180.jpg",
-        "description": "<li>31.5\" diagonal screen size<li>HDMI Inputs: 4<li>Wall mountable<li>USB input",
+        "description": "31.5\" diagonal screen size, HDMI Inputs: 4, Wall mountable, USB input",
         "rating": 3.5
     },
     {
@@ -158,7 +157,7 @@ var items = {
         "listPrice": 149.98,
         "price": 99.98,
         "image": "http://i.walmartimages.com/i/p/00/84/26/51/00/0084265100437_180X180.jpg",
-        "description": "<li>19\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable<li>USB port",
+        "description": "19\" diagonal screen size, HDMI Inputs: 2, Wall mountable, USB port",
         "rating": 5
     },
     {
@@ -168,7 +167,7 @@ var items = {
         "listPrice": 379.54,
         "price": 398,
         "image": "http://i.walmartimages.com/i/p/00/84/52/26/00/0084522600535_180X180.jpg",
-        "description": "<li>37\" diagonal screen size</li><li>HDMI inputs: 2</li><li>Wall mountable with detachable base stand</li><li>SRS TruVolume and SRS TruSurroundHD</li>",
+        "description": "37\" diagonal screen size</li>, HDMI inputs: 2</li>, Wall mountable with detachable base stand</li>, SRS TruVolume and SRS TruSurroundHD</li>",
         "rating": 4.262
     },
     {
@@ -178,7 +177,7 @@ var items = {
         "listPrice": 699.99,
         "price": 628,
         "image": "http://i.walmartimages.com/i/p/00/84/52/26/00/0084522600678_180X180.jpg",
-        "description": "<li>42.02\" diagonal screen size<li>HDMI Inputs: 4<li>Wall mountable<li>SRS TruSurround HD",
+        "description": "42.02\" diagonal screen size, HDMI Inputs: 4, Wall mountable, SRS TruSurround HD",
         "rating": 4.1
     },
     {
@@ -188,7 +187,7 @@ var items = {
         "listPrice": 479.98,
         "price": 349.98,
         "image": "http://i.walmartimages.com/i/p/00/79/23/43/24/0079234324265_180X180.jpg",
-        "description": "<li>42\" diagonal screen size<li>HDMI Inputs: 4<li> wall mountable<li>Built-in digital tuner<li>50,000:1 Dynamic Contrast Ratio<li>SRS TruSurround HD<li>1920x1080/1080P",
+        "description": "42\" diagonal screen size, HDMI Inputs: 4,  wall mountable, Built-in digital tuner, 50,000:1 Dynamic Contrast Ratio, SRS TruSurround HD, 1920x1080/1080P",
         "rating": 4.258
     },
     {
@@ -198,7 +197,7 @@ var items = {
         "listPrice": 429.99,
         "price": 299,
         "image": "http://i.walmartimages.com/i/p/11/13/00/77/36/1113007736308_180X180.jpg",
-        "description": "This bundle includes: <li>Sceptre 40 class 1080p LCD HDTV<li> Wireless Headphones ",
+        "description": "This bundle includes: , Sceptre 40 class 1080p LCD HDTV,  Wireless Headphones ",
         "rating": 0
     },
     {
@@ -208,7 +207,7 @@ var items = {
         "listPrice": 328,
         "price": 328,
         "image": "http://i.walmartimages.com/i/p/00/05/38/18/24/0005381824563_180X180.jpg",
-        "description": "<li>38.6\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable<li>Built-in digital tuner",
+        "description": "38.6\" diagonal screen size, HDMI Inputs: 3, Wall mountable, Built-in digital tuner",
         "rating": 5
     },
     {
@@ -218,7 +217,7 @@ var items = {
         "listPrice": 448,
         "price": 398,
         "image": "http://i.walmartimages.com/i/p/00/84/52/26/00/0084522600501_180X180.jpg",
-        "description": "<li>31.51\" diagonal screen size<li>HDMI inputs: 3<li>Wall mountable with detachable base stand<li>VIZIO Internet Apps with IR QWERTY Remote",
+        "description": "31.51\" diagonal screen size, HDMI inputs: 3, Wall mountable with detachable base stand, VIZIO Internet Apps with IR QWERTY Remote",
         "rating": 4.56
     },
     {
@@ -228,7 +227,7 @@ var items = {
         "listPrice": 649.99,
         "price": 559.98,
         "image": "http://i.walmartimages.com/i/p/11/13/00/02/63/1113000263057_180X180.jpg",
-        "description": "This Bundle features: <li>RCA 46\" LCD 1080p HDTV 60Hz, 46LA45RQ<li>RCA 250W DVD Home Theater System with 1080p Upconvert DVD Player, RTD317W<li> 6ft HDMI cable. ",
+        "description": "This Bundle features: , RCA 46\" LCD 1080p HDTV 60Hz, 46LA45RQ, RCA 250W DVD Home Theater System with 1080p Upconvert DVD Player, RTD317W,  6ft HDMI cable. ",
         "rating": 0
     },
     {
@@ -238,7 +237,7 @@ var items = {
         "listPrice": 549.99,
         "price": 449,
         "image": "http://i.walmartimages.com/i/p/11/13/00/73/91/1113007391359_180X180.jpg",
-        "description": "This Bundle Includes: <li>RCA 40\" LCD 1080p, 40LA45RQ<li>RCA RTD317W, DVD Home Theater System with 1080p HDMI Upconvert DVD Player<li> 6ft HDMI Cable ",
+        "description": "This Bundle Includes: , RCA 40\" LCD 1080p, 40LA45RQ, RCA RTD317W, DVD Home Theater System with 1080p HDMI Upconvert DVD Player,  6ft HDMI Cable ",
         "rating": 0
     },
     {
@@ -248,7 +247,7 @@ var items = {
         "listPrice": 649.99,
         "price": 649.98,
         "image": "http://i.walmartimages.com/i/p/00/03/67/25/23/0003672523682_180X180.jpg",
-        "description": "<li>50.7\" diagonal screen size<li>HDMI Inputs: 2<li>USB port",
+        "description": "50.7\" diagonal screen size, HDMI Inputs: 2, USB port",
         "rating": 0
     },
     {
@@ -258,7 +257,7 @@ var items = {
         "listPrice": 399.99,
         "price": 319.98,
         "image": "http://i.walmartimages.com/i/p/00/88/33/93/00/0088339300260_180X180.jpg",
-        "description": "<li>39\" diagonal screen size<li>HDMI Inputs: 4<li>Wall mountable<li>Built-in digital tuner",
+        "description": "39\" diagonal screen size, HDMI Inputs: 4, Wall mountable, Built-in digital tuner",
         "rating": 0
     },
     {
@@ -268,7 +267,7 @@ var items = {
         "listPrice": 468,
         "price": 478,
         "image": "http://i.walmartimages.com/i/p/00/84/52/26/00/0084522600538_180X180.jpg",
-        "description": "<li>42.02\" diagonal screen size<li>HDMI inputs: 2<li>Wall mountable with detachable base stand<li>SRS TruVolume and SRS TruSurroundHD",
+        "description": "42.02\" diagonal screen size, HDMI inputs: 2, Wall mountable with detachable base stand, SRS TruVolume and SRS TruSurroundHD",
         "rating": 4.172
     },
     {
@@ -278,7 +277,7 @@ var items = {
         "listPrice": 598,
         "price": 598,
         "image": "http://i.walmartimages.com/i/p/00/84/52/26/00/0084522600707_180X180.jpg",
-        "description": "<li>46.96\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable<li>SRS TruSurround HD",
+        "description": "46.96\" diagonal screen size, HDMI Inputs: 2, Wall mountable, SRS TruSurround HD",
         "rating": 4.6
     },
     {
@@ -288,7 +287,7 @@ var items = {
         "listPrice": 998,
         "price": 1298,
         "image": "http://i.walmartimages.com/i/p/00/02/22/65/05/0002226505321_180X180.jpg",
-        "description": "<li>65\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable",
+        "description": "65\" diagonal screen size, HDMI Inputs: 3, Wall mountable",
         "rating": 3.2
     },
     {
@@ -298,7 +297,7 @@ var items = {
         "listPrice": 399.99,
         "price": 319.98,
         "image": "http://i.walmartimages.com/i/p/00/88/27/77/06/0088277706560_180X180.jpg",
-        "description": "<li>37\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable<li>Built-in digital tuner",
+        "description": "37\" diagonal screen size, HDMI Inputs: 3, Wall mountable, Built-in digital tuner",
         "rating": 4.6
     },
     {
@@ -308,7 +307,7 @@ var items = {
         "listPrice": 699.99,
         "price": 699.99,
         "image": "http://i.walmartimages.com/i/p/00/02/72/42/83/0002724283858_180X180.jpg",
-        "description": "<li>46\" diagonal screen size<li>HDMI Inputs: 4<li>Wall mountable<li>USB input",
+        "description": "46\" diagonal screen size, HDMI Inputs: 4, Wall mountable, USB input",
         "rating": 5
     },
     {
@@ -318,7 +317,7 @@ var items = {
         "listPrice": 999,
         "price": 549.98,
         "image": "http://i.walmartimages.com/i/p/00/88/33/93/00/0088339300349_180X180.jpg",
-        "description": "<li>46\" diagonal screen size<li>HDMI inputs: 4<li>Wall mountable with detachable base stand<li>Component, VGA and AV inputs",
+        "description": "46\" diagonal screen size, HDMI inputs: 4, Wall mountable with detachable base stand, Component, VGA and AV inputs",
         "rating": 4.2
     },
     {
@@ -328,7 +327,7 @@ var items = {
         "listPrice": 499.98,
         "price": 479,
         "image": "http://i.walmartimages.com/i/p/00/03/67/25/23/0003672523681_180X180.jpg",
-        "description": "<li>43\" diagonal screen size<li>HDMI Inputs: 2<li>USB port",
+        "description": "43\" diagonal screen size, HDMI Inputs: 2, USB port",
         "rating": 5
     },
     {
@@ -338,7 +337,7 @@ var items = {
         "listPrice": 899.98,
         "price": 728,
         "image": "http://i.walmartimages.com/i/p/00/08/64/83/07/0008648307976_180X180.jpg",
-        "description": "<li> 54.6\" screen measured diagonally from corner to corner <li>HDMI Inputs: 3<li> Wall-mountable, detachable base",
+        "description": " 54.6\" screen measured diagonally from corner to corner , HDMI Inputs: 3,  Wall-mountable, detachable base",
         "rating": 4.089
     },
     {
@@ -348,7 +347,7 @@ var items = {
         "listPrice": 268,
         "price": 258,
         "image": "http://i.walmartimages.com/i/p/00/84/52/26/00/0084522600686_180X180.jpg",
-        "description": "<li>26\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable<li>SRS TruSurround HD",
+        "description": "26\" diagonal screen size, HDMI Inputs: 2, Wall mountable, SRS TruSurround HD",
         "rating": 4
     },
     {
@@ -358,7 +357,7 @@ var items = {
         "listPrice": 199,
         "price": 139,
         "image": "http://i.walmartimages.com/i/p/00/79/23/43/31/0079234331970_180X180.jpg",
-        "description": "<li>18.5\" diagonal screen size<li>HDMI Inputs: 2<li>Detachable base stand<li>Built-in digital tuner<li>High Brightness of 250cd/m2 with 5ms response time<li>DVD embedded in TV<li>",
+        "description": "18.5\" diagonal screen size, HDMI Inputs: 2, Detachable base stand, Built-in digital tuner, High Brightness of 250cd/m2 with 5ms response time, DVD embedded in TV, ",
         "rating": 4.176
     },
     {
@@ -368,7 +367,7 @@ var items = {
         "listPrice": 149.98,
         "price": 109.98,
         "image": "http://i.walmartimages.com/i/p/00/84/77/42/81/0084774281912_180X180.jpg",
-        "description": "<li>19\" diagonal screen size<li>HDMI Inputs: 1<li>Not wall mountable<li>Built-in digital tuner",
+        "description": "19\" diagonal screen size, HDMI Inputs: 1, Not wall mountable, Built-in digital tuner",
         "rating": 5
     },
     {
@@ -378,7 +377,7 @@ var items = {
         "listPrice": 199.99,
         "price": 149.98,
         "image": "http://i.walmartimages.com/i/p/00/81/72/19/01/0081721901044_180X180.jpg",
-        "description": "<li>24\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable<li>Built-in digital tuner",
+        "description": "24\" diagonal screen size, HDMI Inputs: 2, Wall mountable, Built-in digital tuner",
         "rating": 0
     },
     {
@@ -388,7 +387,7 @@ var items = {
         "listPrice": 299.99,
         "price": 229,
         "image": "http://i.walmartimages.com/i/p/00/73/62/11/79/0073621179296_180X180.jpg",
-        "description": "<li>32\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable<li>Built-in digital tuner",
+        "description": "32\" diagonal screen size, HDMI Inputs: 2, Wall mountable, Built-in digital tuner",
         "rating": 3
     },
     {
@@ -398,7 +397,7 @@ var items = {
         "listPrice": 899.98,
         "price": 879.98,
         "image": "http://i.walmartimages.com/i/p/00/03/67/25/23/0003672523663_180X180.jpg",
-        "description": "<li>45.9\" diagonal screen size<li>HDMI Inputs: 2<li>USB port",
+        "description": "45.9\" diagonal screen size, HDMI Inputs: 2, USB port",
         "rating": 5
     },
     {
@@ -408,7 +407,7 @@ var items = {
         "listPrice": 799.99,
         "price": 669,
         "image": "http://i.walmartimages.com/i/p/11/13/00/73/91/1113007391370_180X180.jpg",
-        "description": "This bundle includes: <li>RCA 46\" LED 1080p 120Hz, LED46A55R120Q<li>RCA RTD317W, DVD Home Theater System with 1080p HDMI Upconvert DVD Player<li>6ft HDMI Cable",
+        "description": "This bundle includes: , RCA 46\" LED 1080p 120Hz, LED46A55R120Q, RCA RTD317W, DVD Home Theater System with 1080p HDMI Upconvert DVD Player, 6ft HDMI Cable",
         "rating": 0
     },
     {
@@ -418,7 +417,7 @@ var items = {
         "listPrice": 2498,
         "price": 2999.99,
         "image": "http://i.walmartimages.com/i/p/00/07/40/00/37/0007400037348_180X180.jpg",
-        "description": "<li>70\" diagonal screen size<li>HDMI Inputs: 4<li>Built-in WiFi",
+        "description": "70\" diagonal screen size, HDMI Inputs: 4, Built-in WiFi",
         "rating": 0
     },
     {
@@ -428,7 +427,7 @@ var items = {
         "listPrice": 489.98,
         "price": 379.98,
         "image": "http://i.walmartimages.com/i/p/00/88/33/93/00/0088339300275_180X180.jpg",
-        "description": "<li>40\" diagonal screen size<li>4 HDMI inputs<li>VESA wall mount compatible<li>VGA port for computer connectivity",
+        "description": "40\" diagonal screen size, 4 HDMI inputs, VESA wall mount compatible, VGA port for computer connectivity",
         "rating": 4.177
     },
     {
@@ -438,7 +437,7 @@ var items = {
         "listPrice": 999,
         "price": 699.98,
         "image": "http://i.walmartimages.com/i/p/00/85/57/88/00/0085578800222_180X180.jpg",
-        "description": "<li>54.6\" screen measured diagonally from corner to corner<LI>3 HDMI inputs<li>Wall-mountable, detachable base <LI>3D comb filter and de-interlace scanning",
+        "description": "54.6\" screen measured diagonally from corner to corner, 3 HDMI inputs, Wall-mountable, detachable base , 3D comb filter and de-interlace scanning",
         "rating": 3.834
     },
     {
@@ -448,7 +447,7 @@ var items = {
         "listPrice": 349.99,
         "price": 348,
         "image": "http://i.walmartimages.com/i/p/00/84/52/26/00/0084522600550_180X180.jpg",
-        "description": "<li>31.5\" diagonal screen size<li>HDMI Inputs: 3<li>Not wall mountable<li>SRS TruSurround HD",
+        "description": "31.5\" diagonal screen size, HDMI Inputs: 3, Not wall mountable, SRS TruSurround HD",
         "rating": 3.6
     },
     {
@@ -458,7 +457,7 @@ var items = {
         "listPrice": 149.98,
         "price": 99.98,
         "image": "http://i.walmartimages.com/i/p/00/84/26/51/00/0084265100440_180X180.jpg",
-        "description": "<li>19\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable<li>Built-in digital tuner",
+        "description": "19\" diagonal screen size, HDMI Inputs: 2, Wall mountable, Built-in digital tuner",
         "rating": 4.714
     },
     {
@@ -468,7 +467,7 @@ var items = {
         "listPrice": 199.99,
         "price": 129.98,
         "image": "http://i.walmartimages.com/i/p/00/05/84/65/77/0005846577896_180X180.jpg",
-        "description": "<li>19\" diagonal screen size<li>HDMI Inputs: 1<li>Wall mountable<li>Built-in DVD player",
+        "description": "19\" diagonal screen size, HDMI Inputs: 1, Wall mountable, Built-in DVD player",
         "rating": 0
     },
     {
@@ -478,7 +477,7 @@ var items = {
         "listPrice": 1299.98,
         "price": 1199,
         "image": "http://i.walmartimages.com/i/p/00/03/67/25/23/0003672523700_180X180.jpg",
-        "description": "<li>45.9\" diagonal screen size<li>HDMI Inputs: 3<li>Built-in WiFi",
+        "description": "45.9\" diagonal screen size, HDMI Inputs: 3, Built-in WiFi",
         "rating": 0
     },
     {
@@ -488,7 +487,7 @@ var items = {
         "listPrice": 798,
         "price": 798,
         "image": "http://i.walmartimages.com/i/p/00/84/52/26/00/0084522600679_180X180.jpg",
-        "description": "<li>46.96\" diagonal screen size<li>HDMI Inputs: 4<li>Wall mountable<li>Built-in WiFi",
+        "description": "46.96\" diagonal screen size, HDMI Inputs: 4, Wall mountable, Built-in WiFi",
         "rating": 3.667
     },
     {
@@ -498,7 +497,7 @@ var items = {
         "listPrice": 499.99,
         "price": 399,
         "image": "http://i.walmartimages.com/i/p/11/13/00/73/91/1113007391358_180X180.jpg",
-        "description": "This bundle includes: <li>RCA 39\" LCD 1080p 60Hz, 39LB45RQ<li>RCA RTD317W, DVD Home Theater System with 1080p HDMI Upconvert DVD Player<li> 6ft HDMI Cable",
+        "description": "This bundle includes: , RCA 39\" LCD 1080p 60Hz, 39LB45RQ, RCA RTD317W, DVD Home Theater System with 1080p HDMI Upconvert DVD Player,  6ft HDMI Cable",
         "rating": 0
     },
     {
@@ -508,7 +507,7 @@ var items = {
         "listPrice": 999.99,
         "price": 898,
         "image": "http://i.walmartimages.com/i/p/00/07/40/00/37/0007400037337_180X180.jpg",
-        "description": "<li>46\" diagonal screen size<li>HDMI Inputs: 4<li>Built-in WiFi",
+        "description": "46\" diagonal screen size, HDMI Inputs: 4, Built-in WiFi",
         "rating": 0
     },
     {
@@ -518,7 +517,7 @@ var items = {
         "listPrice": 1099.99,
         "price": 1099.99,
         "image": "http://i.walmartimages.com/i/p/00/03/67/25/23/0003672523699_180X180.jpg",
-        "description": "<li>40\" diagonal screen size<li>HDMI Inputs: 3<li>Built-in WiFi",
+        "description": "40\" diagonal screen size, HDMI Inputs: 3, Built-in WiFi",
         "rating": 0
     },
     {
@@ -528,7 +527,7 @@ var items = {
         "listPrice": 329.99,
         "price": 298,
         "image": "http://i.walmartimages.com/i/p/00/03/67/25/23/0003672523627_180X180.jpg",
-        "description": "<li>31.5\" diagonal screen size<li>HDMI Inputs: 2<li>Detachable stand<li>Dolby Digital Plus/SRS TruSurround HD",
+        "description": "31.5\" diagonal screen size, HDMI Inputs: 2, Detachable stand, Dolby Digital Plus/SRS TruSurround HD",
         "rating": 4.342
     },
     {
@@ -538,7 +537,7 @@ var items = {
         "listPrice": 149.98,
         "price": 99.98,
         "image": "http://i.walmartimages.com/i/p/00/84/26/51/00/0084265100438_180X180.jpg",
-        "description": "<li>19\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable<li>Built-in digital tuner",
+        "description": "19\" diagonal screen size, HDMI Inputs: 2, Wall mountable, Built-in digital tuner",
         "rating": 4.75
     },
     {
@@ -548,7 +547,7 @@ var items = {
         "listPrice": 1199.99,
         "price": 1199.99,
         "image": "http://i.walmartimages.com/i/p/00/02/72/42/83/0002724283856_180X180.jpg",
-        "description": "<li>46\" diagonal screen size<li>HDMI Inputs: 4<li>Wall mountable<li>Built-in WiFi",
+        "description": "46\" diagonal screen size, HDMI Inputs: 4, Wall mountable, Built-in WiFi",
         "rating": 0
     },
     {
@@ -558,7 +557,7 @@ var items = {
         "listPrice": 2099.99,
         "price": 2099.98,
         "image": "http://i.walmartimages.com/i/p/00/03/67/25/23/0003672523669_180X180.jpg",
-        "description": "<li>60\" diagonal screen size<li>HDMI Inputs: 2<li>USB port",
+        "description": "60\" diagonal screen size, HDMI Inputs: 2, USB port",
         "rating": 0
     },
     {
@@ -568,7 +567,7 @@ var items = {
         "listPrice": 699.98,
         "price": 519.98,
         "image": "http://i.walmartimages.com/i/p/00/68/80/57/32/0068805732729_180X180.jpg",
-        "description": "<li>46\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable<li>Built-in digital tuner",
+        "description": "46\" diagonal screen size, HDMI Inputs: 3, Wall mountable, Built-in digital tuner",
         "rating": 3.625
     },
     {
@@ -578,7 +577,7 @@ var items = {
         "listPrice": 599.99,
         "price": 449,
         "image": "http://i.walmartimages.com/i/p/11/13/00/25/04/1113002504797_180X180.jpg",
-        "description": "This bundle includes: <li>SCEPTRE X425BV-FHD 42\"<li>RCA RTD317W, DVD Home Theater System with 1080p HDMI Upconvert DVD Player<li> 6ft HDMI Cable",
+        "description": "This bundle includes: , SCEPTRE X425BV-FHD 42\"RCA RTD317W, DVD Home Theater System with 1080p HDMI Upconvert DVD Player,  6ft HDMI Cable",
         "rating": 0
     },
     {
@@ -588,7 +587,7 @@ var items = {
         "listPrice": 269.98,
         "price": 259.98,
         "image": "http://i.walmartimages.com/i/p/00/02/22/65/05/0002226505660_180X180.jpg",
-        "description": "<li>23.6\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable<li>Built-in DVD player",
+        "description": "23.6\" diagonal screen size, HDMI Inputs: 2, Wall mountable, Built-in DVD player",
         "rating": 0
     },
     {
@@ -598,7 +597,7 @@ var items = {
         "listPrice": 249.99,
         "price": 199.99,
         "image": "http://i.walmartimages.com/i/p/00/04/68/38/04/0004683804716_180X180.jpg",
-        "description": "<li>21.5\" diagonal screen size<li>HDMI Inputs: 1<li>Built-in DVD player",
+        "description": "21.5\" diagonal screen size, HDMI Inputs: 1, Built-in DVD player",
         "rating": 0
     },
     {
@@ -608,7 +607,7 @@ var items = {
         "listPrice": 199.99,
         "price": 149.98,
         "image": "http://i.walmartimages.com/i/p/00/05/84/65/77/0005846577895_180X180.jpg",
-        "description": "<li>22\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable",
+        "description": "22\" diagonal screen size, HDMI Inputs: 2, Wall mountable",
         "rating": 0
     },
     {
@@ -618,7 +617,7 @@ var items = {
         "listPrice": 999.99,
         "price": 999.98,
         "image": "http://i.walmartimages.com/i/p/00/03/67/25/23/0003672523695_180X180.jpg",
-        "description": "<li>45.9\" diagonal screen size<li>HDMI Inputs: 3<li>Built-in WiFi",
+        "description": "45.9\" diagonal screen size, HDMI Inputs: 3, Built-in WiFi",
         "rating": 0
     },
     {
@@ -628,7 +627,7 @@ var items = {
         "listPrice": 699.98,
         "price": 529.98,
         "image": "http://i.walmartimages.com/i/p/00/88/27/77/06/0088277706450_180X180.jpg",
-        "description": "<li>46\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable<li>Built-in digital tuner",
+        "description": "46\" diagonal screen size, HDMI Inputs: 2, Wall mountable, Built-in digital tuner",
         "rating": 3.667
     },
     {
@@ -638,7 +637,7 @@ var items = {
         "listPrice": 309.98,
         "price": 239.98,
         "image": "http://i.walmartimages.com/i/p/00/79/23/43/33/0079234333290_180X180.jpg",
-        "description": "<li>31.5\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable<li>DVD player",
+        "description": "31.5\" diagonal screen size, HDMI Inputs: 3, Wall mountable, DVD player",
         "rating": 4.348
     },
     {
@@ -648,7 +647,7 @@ var items = {
         "listPrice": 619.99,
         "price": 619.98,
         "image": "http://i.walmartimages.com/i/p/00/03/67/25/23/0003672523743_180X180.jpg",
-        "description": "<li>40\" diagonal screen size<li>HDMI Inputs: 2<li>USB port",
+        "description": "40\" diagonal screen size, HDMI Inputs: 2, USB port",
         "rating": 0
     },
     {
@@ -658,7 +657,7 @@ var items = {
         "listPrice": 1799.99,
         "price": 1799.99,
         "image": "http://i.walmartimages.com/i/p/00/02/72/42/83/0002724283855_180X180.jpg",
-        "description": "<li>54.6\" diagonal screen size<li>HDMI Inputs: 4<li>Wall mountable<li>Built-in WiFi",
+        "description": "54.6\" diagonal screen size, HDMI Inputs: 4, Wall mountable, Built-in WiFi",
         "rating": 0
     },
     {
@@ -668,7 +667,7 @@ var items = {
         "listPrice": 299.99,
         "price": 229.98,
         "image": "http://i.walmartimages.com/i/p/00/88/27/77/06/0088277706500_180X180.jpg",
-        "description": "<li>32\" diagonal screen size<li>HDMI Inputs: 2",
+        "description": "32\" diagonal screen size, HDMI Inputs: 2",
         "rating": 4.25
     },
     {
@@ -678,7 +677,7 @@ var items = {
         "listPrice": 229.99,
         "price": 189.98,
         "image": "http://i.walmartimages.com/i/p/00/02/22/65/00/0002226500423_180X180.jpg",
-        "description": "<li>23.5\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable<li>DynaLight technology",
+        "description": "23.5\" diagonal screen size, HDMI Inputs: 2, Wall mountable, DynaLight technology",
         "rating": 3.286
     },
     {
@@ -688,7 +687,7 @@ var items = {
         "listPrice": 2099.99,
         "price": 2099.99,
         "image": "http://i.walmartimages.com/i/p/00/02/72/42/83/0002724283853_180X180.jpg",
-        "description": "<li>54.6\" diagonal screen size<li>HDMI Inputs: 4<li>Wall mountable<li>Built-in WiFi",
+        "description": "54.6\" diagonal screen size, HDMI Inputs: 4, Wall mountable, Built-in WiFi",
         "rating": 0
     },
     {
@@ -698,7 +697,7 @@ var items = {
         "listPrice": 699.99,
         "price": 699.98,
         "image": "http://i.walmartimages.com/i/p/00/03/67/25/23/0003672523662_180X180.jpg",
-        "description": "<li>40\" diagonal screen size<li>HDMI Inputs: 2<li>USB port",
+        "description": "40\" diagonal screen size, HDMI Inputs: 2, USB port",
         "rating": 4
     },
     {
@@ -708,7 +707,7 @@ var items = {
         "listPrice": 699.98,
         "price": 648,
         "image": "http://i.walmartimages.com/i/p/00/71/91/92/58/0071919258400_180X180.jpg",
-        "description": "<li>42\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable",
+        "description": "42\" diagonal screen size, HDMI Inputs: 3, Wall mountable",
         "rating": 0
     },
     {
@@ -718,7 +717,7 @@ var items = {
         "listPrice": 649,
         "price": 479.98,
         "image": "http://i.walmartimages.com/i/p/00/60/53/42/03/0060534203826_180X180.jpg",
-        "description": "<li>40\" diagonal screen size<li>HDMI Inputs: 4<li>Wall mountable<li>SRS TruSurround HD",
+        "description": "40\" diagonal screen size, HDMI Inputs: 4, Wall mountable, SRS TruSurround HD",
         "rating": 4.875
     },
     {
@@ -728,7 +727,7 @@ var items = {
         "listPrice": 249.98,
         "price": 179.98,
         "image": "http://i.walmartimages.com/i/p/00/05/84/65/77/0005846577902_180X180.jpg",
-        "description": "<li>26\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable<li>Built-in digital tuner",
+        "description": "26\" diagonal screen size, HDMI Inputs: 3, Wall mountable, Built-in digital tuner",
         "rating": 0
     },
     {
@@ -738,7 +737,7 @@ var items = {
         "listPrice": 499,
         "price": 479,
         "image": "http://i.walmartimages.com/i/p/11/13/00/09/51/1113000951766_180X180.jpg",
-        "description": "This bundle includes: <li>Vizio 37\" Class LCD 1080p 60Hz HDTV, E371VL<li> Your choice of Home Theater System <li> 6ft HDMI Cable",
+        "description": "This bundle includes: , Vizio 37\" Class LCD 1080p 60Hz HDTV, E371VL,  Your choice of Home Theater System ,  6ft HDMI Cable",
         "rating": 0
     },
     {
@@ -748,7 +747,7 @@ var items = {
         "listPrice": 349.99,
         "price": 299.98,
         "image": "http://i.walmartimages.com/i/p/00/60/95/85/22/0060958522320_180X180.jpg",
-        "description": "<li>31.5\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable<li>USB port",
+        "description": "31.5\" diagonal screen size, HDMI Inputs: 3, Wall mountable, USB port",
         "rating": 0
     },
     {
@@ -758,7 +757,7 @@ var items = {
         "listPrice": 1499.99,
         "price": 1349.99,
         "image": "http://i.walmartimages.com/i/p/00/02/72/42/83/0002724283037_180X180.jpg",
-        "description": "<li>55\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable<li>Built-in digital tuner",
+        "description": "55\" diagonal screen size, HDMI Inputs: 2, Wall mountable, Built-in digital tuner",
         "rating": 4.3
     },
     {
@@ -768,7 +767,7 @@ var items = {
         "listPrice": 699.99,
         "price": 549,
         "image": "http://i.walmartimages.com/i/p/11/13/00/09/51/1113000951768_180X180.jpg",
-        "description": "This bundle features: <li>Vizio 42\" Class LCD 1080p 60Hz HDTV , E421VO<li> RCA Home Theater System <li> 6ft HDMI Cable",
+        "description": "This bundle features: , Vizio 42\" Class LCD 1080p 60Hz HDTV , E421VO,  RCA Home Theater System ,  6ft HDMI Cable",
         "rating": 0
     },
     {
@@ -778,7 +777,7 @@ var items = {
         "listPrice": 299.99,
         "price": 209.98,
         "image": "http://i.walmartimages.com/i/p/00/85/02/20/00/0085022000407_180X180.jpg",
-        "description": "<li>32\" diagonal screen size<li>HDMI Inputs: 3",
+        "description": "32\" diagonal screen size, HDMI Inputs: 3",
         "rating": 5
     },
     {
@@ -788,7 +787,7 @@ var items = {
         "listPrice": 1298,
         "price": 1499.98,
         "image": "http://i.walmartimages.com/i/p/00/03/67/25/23/0003672523675_180X180.jpg",
-        "description": "<li>60\" diagonal screen size<li>HDMI Inputs: 2<li>USB port",
+        "description": "60\" diagonal screen size, HDMI Inputs: 2, USB port",
         "rating": 0
     },
     {
@@ -798,7 +797,7 @@ var items = {
         "listPrice": 549.98,
         "price": 539,
         "image": "http://i.walmartimages.com/i/p/00/08/64/83/07/0008648307969_180X180.jpg",
-        "description": "<li>46\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable<li>802.11b/g/n wireless capable",
+        "description": "46\" diagonal screen size, HDMI Inputs: 3, Wall mountable, 802.11b/g/n wireless capable",
         "rating": 3.429
     },
     {
@@ -808,7 +807,7 @@ var items = {
         "listPrice": 699.99,
         "price": 799.99,
         "image": "http://i.walmartimages.com/i/p/00/71/91/92/58/0071919258401_180X180.jpg",
-        "description": "<li>46.9\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable",
+        "description": "46.9\" diagonal screen size, HDMI Inputs: 3, Wall mountable",
         "rating": 0
     },
     {
@@ -818,7 +817,7 @@ var items = {
         "listPrice": 629.99,
         "price": 579.99,
         "image": "http://i.walmartimages.com/i/p/00/71/91/92/58/0071919258402_180X180.jpg",
-        "description": "<li>42\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable",
+        "description": "42\" diagonal screen size, HDMI Inputs: 2, Wall mountable",
         "rating": 3.5
     },
     {
@@ -828,7 +827,7 @@ var items = {
         "listPrice": 829.98,
         "price": 799,
         "image": "http://i.walmartimages.com/i/p/00/03/67/25/23/0003672523744_180X180.jpg",
-        "description": "<li>46\" diagonal screen size<li>HDMI Inputs: 2<li>USB port",
+        "description": "46\" diagonal screen size, HDMI Inputs: 2, USB port",
         "rating": 0
     },
     {
@@ -838,7 +837,7 @@ var items = {
         "listPrice": 499.98,
         "price": 369.98,
         "image": "http://i.walmartimages.com/i/p/00/60/53/42/04/0060534204512_180X180.jpg",
-        "description": "<li>40\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable<li>Built-in digital tuner",
+        "description": "40\" diagonal screen size, HDMI Inputs: 3, Wall mountable, Built-in digital tuner",
         "rating": 4.909
     },
     {
@@ -848,7 +847,7 @@ var items = {
         "listPrice": 599.99,
         "price": 499,
         "image": "http://i.walmartimages.com/i/p/11/13/00/73/91/1113007391368_180X180.jpg",
-        "description": "The bundle includes: <li>RCA 42\" LED 1080p 60Hz, LED42A45RQ<li>RCA RTD317W, DVD Home Theater System with 1080p HDMI Upconvert DVD Player<li>6ft HDMI Cable",
+        "description": "The bundle includes: , RCA 42\" LED 1080p 60Hz, LED42A45RQ, RCA RTD317W, DVD Home Theater System with 1080p HDMI Upconvert DVD Player, 6ft HDMI Cable",
         "rating": 0
     },
     {
@@ -858,7 +857,7 @@ var items = {
         "listPrice": 179.99,
         "price": 149.99,
         "image": "http://i.walmartimages.com/i/p/00/05/84/65/77/0005846577959_180X180.jpg",
-        "description": "<li>24\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable<li>Built-in digital tuner",
+        "description": "24\" diagonal screen size, HDMI Inputs: 2, Wall mountable, Built-in digital tuner",
         "rating": 0
     },
     {
@@ -868,7 +867,7 @@ var items = {
         "listPrice": 999.98,
         "price": 999.98,
         "image": "http://i.walmartimages.com/i/p/00/71/91/92/58/0071919258524_180X180.jpg",
-        "description": "<li>46.9\" diagonal screen size<li>HDMI Inputs: 3<li>Wall mountable",
+        "description": "46.9\" diagonal screen size, HDMI Inputs: 3, Wall mountable",
         "rating": 5
     },
     {
@@ -878,7 +877,7 @@ var items = {
         "listPrice": 478.98,
         "price": 388,
         "image": "http://i.walmartimages.com/i/p/00/08/64/83/07/0008648307964_180X180.jpg",
-        "description": "<li> 42\" screen measured diagonally from corner to corner<li> HDMI inputs: 3<li> Wall-mountable, detachable base<li> 4000:1 dynamic contrast ratio",
+        "description": " 42\" screen measured diagonally from corner to corner,  HDMI inputs: 3,  Wall-mountable, detachable base,  4000:1 dynamic contrast ratio",
         "rating": 3.531
     },
     {
@@ -888,7 +887,7 @@ var items = {
         "listPrice": 138,
         "price": 147,
         "image": "http://i.walmartimages.com/i/p/00/05/38/18/24/0005381824556_180X180.jpg",
-        "description": "<li>21.6\" diagonal screen size<li>HDMI Inputs: 1<li>Wall mountable<li>Built-in digital tuner",
+        "description": "21.6\" diagonal screen size, HDMI Inputs: 1, Wall mountable, Built-in digital tuner",
         "rating": 4.4
     },
     {
@@ -898,7 +897,7 @@ var items = {
         "listPrice": 199.99,
         "price": 119.98,
         "image": "http://i.walmartimages.com/i/p/00/05/84/65/77/0005846577898_180X180.jpg",
-        "description": "<li>19\" diagonal screen size<li>HDMI Inputs: 1<li>Wall mountable",
+        "description": "19\" diagonal screen size, HDMI Inputs: 1, Wall mountable",
         "rating": 0
     },
     {
@@ -908,7 +907,7 @@ var items = {
         "listPrice": 329.99,
         "price": 329.98,
         "image": "http://i.walmartimages.com/i/p/00/71/91/92/58/0071919258404_180X180.jpg",
-        "description": "<li>31.5\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable",
+        "description": "31.5\" diagonal screen size, HDMI Inputs: 2, Wall mountable",
         "rating": 3
     },
     {
@@ -918,7 +917,7 @@ var items = {
         "listPrice": 499.98,
         "price": 449,
         "image": "http://i.walmartimages.com/i/p/00/71/91/92/58/0071919258516_180X180.jpg",
-        "description": "<li>36.5\" diagonal screen size<li>HDMI Inputs: 2<li>Wall mountable",
+        "description": "36.5\" diagonal screen size, HDMI Inputs: 2, Wall mountable",
         "rating": 0
     },
     {
@@ -928,7 +927,7 @@ var items = {
         "listPrice": 2599.99,
         "price": 2599.99,
         "image": "http://i.walmartimages.com/i/p/00/02/72/42/83/0002724283850_180X180.jpg",
-        "description": "<li>54.6\" diagonal screen size<li>HDMI Inputs: 4<li>Wall mountable<li>Built-in Wi-Fi",
+        "description": "54.6\" diagonal screen size, HDMI Inputs: 4, Wall mountable, Built-in Wi-Fi",
         "rating": 0
     },
     {
@@ -938,7 +937,7 @@ var items = {
         "listPrice": 1549.99,
         "price": 1549.99,
         "image": "http://i.walmartimages.com/i/p/00/03/67/25/23/0003672523749_180X180.jpg",
-        "description": "<li>40\" diagonal screen size<li>HDMI Inputs: 3<li>Samsung Active 3D",
+        "description": "40\" diagonal screen size, HDMI Inputs: 3, Samsung Active 3D",
         "rating": 0
     },
     {
@@ -948,7 +947,7 @@ var items = {
         "listPrice": 2299.99,
         "price": 2299.99,
         "image": "http://i.walmartimages.com/i/p/00/03/67/25/23/0003672523707_180X180.jpg",
-        "description": "<li>54.6\" diagonal screen size<li>HDMI Inputs: 3<li>Samsung Active 3D",
+        "description": "54.6\" diagonal screen size, HDMI Inputs: 3, Samsung Active 3D",
         "rating": 0
     },
     {
@@ -958,7 +957,7 @@ var items = {
         "listPrice": 488,
         "price": 469.98,
         "image": "http://i.walmartimages.com/i/p/00/08/64/83/08/0008648308026_180X180.jpg",
-        "description": "<BR><UL/><LI>2D-3D convertor is capable of turning ordinary 2D content into 3D display of broadcasts, movies, and games <LI> 802.11n wireless, Connect directly to the Internet <LI> 16:9 LCD panel with 1920 x 1080(1080p)Full HD 60Hz picture<LI> 42\" screen is measured diagonally from corner to corner <LI>Wide 178-degree vertical and 178-degree horizontal viewing angles (See a clear picture from anywhere in the room)<LI>High Brightness 400cd/m\u00c2\u00b2 with 6.5ms response time<LI>4000:1 contrast ratio<LI> Audyssey Dynamic Volume\u00c2\u00ae creates theater like sound <LI> HDMI Inputs: 3 (Enjoy a superior HD experience with HDMI one-cable convenience) <LI> USB Multimedia Input Port<BR><UL/>",
+        "description": "<BR><UL/>, 2D-3D convertor is capable of turning ordinary 2D content into 3D display of broadcasts, movies, and games ,  802.11n wireless, Connect directly to the Internet ,  16:9 LCD panel with 1920 x 1080(1080p)Full HD 60Hz picture,  42\" screen is measured diagonally from corner to corner , Wide 178-degree vertical and 178-degree horizontal viewing angles (See a clear picture from anywhere in the room), High Brightness 400cd/m\u00c2\u00b2 with 6.5ms response time, 4000:1 contrast ratio,  Audyssey Dynamic Volume\u00c2\u00ae creates theater like sound ,  HDMI Inputs: 3 (Enjoy a superior HD experience with HDMI one-cable convenience) ,  USB Multimedia Input Port<BR><UL/>",
         "rating": 3.333
     },
     {
@@ -968,7 +967,7 @@ var items = {
         "listPrice": 329.98,
         "price": 189.98,
         "image": "http://i.walmartimages.com/i/p/00/82/73/96/51/0082739651590_180X180.jpg",
-        "description": "<li>23.6\" diagonal screen size<li>HDMI Inputs: 1<li>Not wall mountable<li>Wi-Fi 802.11n dongle",
+        "description": "23.6\" diagonal screen size, HDMI Inputs: 1, Not wall mountable, Wi-Fi 802.11n dongle",
         "rating": 3.861
     },
     {
@@ -978,7 +977,7 @@ var items = {
         "listPrice": 699.99,
         "price": 479.98,
         "image": "http://i.walmartimages.com/i/p/00/81/72/19/01/0081721901012_180X180.jpg",
-        "description": "<li>45.9\" diagonal screen size<li>HDMI Inputs: 3",
+        "description": "45.9\" diagonal screen size, HDMI Inputs: 3",
         "rating": 2.857
     },
     {
@@ -988,7 +987,7 @@ var items = {
         "listPrice": 359,
         "price": 359.98,
         "image": "http://i.walmartimages.com/i/p/00/85/57/88/00/0085578800221_180X180.jpg",
-        "description": "<li>40\" screen measured diagonally from corner to corner<li>HDMI Inputs: 3<li>Wall-mountable, detachable base<li>5,000:1 dynamic contrast ratio",
+        "description": "40\" screen measured diagonally from corner to corner, HDMI Inputs: 3, Wall-mountable, detachable base, 5,000:1 dynamic contrast ratio",
         "rating": 4.364
     },
     {
@@ -998,7 +997,7 @@ var items = {
         "listPrice": 1799.99,
         "price": 1599,
         "image": "http://i.walmartimages.com/i/p/00/08/24/00/03/0008240003289_180X180.jpg",
-        "description": "<li>73\" diagonal screen size<li>HDMI Inputs: 3<li>Not wall mountable<li>StreamTV Internet Media",
+        "description": "73\" diagonal screen size, HDMI Inputs: 3, Not wall mountable, StreamTV Internet Media",
         "rating": 0
     }
-]};
+];
