@@ -68,6 +68,7 @@
                     <div class="dropdown-labels">Type</div>
                     <div class="left-float" style="padding-right: 20px;">
                         <select name="tv-type" id="tv-types" class="dropdown-style">
+                            <option value="Select">Select</option>
                             <option value="LCD">LCD</option>
                             <option value="3D">3D</option>
                             <option value="LED">LED</option>
@@ -81,6 +82,7 @@
                     <div class="dropdown-labels">Brand</div>
                     <div class="left-float" style="padding-right: 20px;">
                         <select name="tv-brand" id="tv-brand">
+                            <option value="Select">Select</option>
                             <option value="LG">LG</option>
                             <option value="Panasonic">Panasonic</option>
                             <option value="Samsung">Samsung</option>
@@ -108,14 +110,14 @@
         <div id="filters-text">
             <div id="filter-matches"> Matches for televisions that fit that criteria.</div>
             <div id="filter-clear">
-                <button type="button" name="" value="" class="css3button">Clear Filters</button>
+                <button type="button" name="" value="" class="css3button" id="clear-filter">Clear Filters</button>
             </div>
-
 
         </div>
         <div id="tv-results">
             <div id="results">
             </div>
+            <br class="clear" />
         </div>
 
         <footer id="footer">

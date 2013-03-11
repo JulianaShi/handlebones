@@ -191,9 +191,12 @@ button.css3button {
 }
 
 #tv-results {
-    height: 630px;
+    height: auto;
 }
 
+.clear {
+    clear: both;
+}
 
 .result-cell {
     height: 300px;
