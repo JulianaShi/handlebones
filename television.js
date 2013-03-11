@@ -60,6 +60,34 @@ $.fn.stars = function () {
     });
 };
 
+$.fn.sortByNameAZ = function (a, b) {
+    var nameA = a.name.toLowerCase();
+    var nameB = b.name.toLowerCase();
+    if (nameA < nameB) {
+        return -1;
+    }
+    if (nameB > nameA) {
+        return 1
+    }
+    return 0;
+};
+
+$.fn.sortByNameZA = function (a, b) {
+    var nameA = a.name.toLowerCase();
+    var nameB = b.name.toLowerCase();
+    if (nameA < nameB) {
+        return 1;
+    }
+    if (nameB > nameA) {
+        return -1
+    }
+    return 0;
+};
+
+
+$.fn.sortByPrice = function(a,b) { return a.price - b.price };
+
+
 $.fn.filterAndSort = function (items, minSize, maxSize) {
     // if not passed in args then get default vals
     if (arguments.length == 1){
@@ -84,20 +112,16 @@ $.fn.filterAndSort = function (items, minSize, maxSize) {
     }
     // apply sorting by price or alphabetical
     if (sort == "Price"){
-        finalArray.sort(function(a,b) { return a.size - b.size } );
+        finalArray.sort($.fn.sortByPrice);
 
-    } else {
-        finalArray.sort(function(a,b) {
-            var nameA = a.name;
-            var nameB = b.name;
-            if (nameA < nameB){
-                return -1;
-            }
-            if (nameB > nameA){
-                return 1
-            }
-            return 0;
-        });
+    }
+    if (sort == "AZ") {
+        finalArray.sort($.fn.sortByNameAZ);
+
+    }
+    if (sort == "ZA") {
+        finalArray.sort($.fn.sortByNameZA);
+
     }
     // clear html template
     $( "#results").html("")
