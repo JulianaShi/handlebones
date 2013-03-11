@@ -12,24 +12,38 @@ $(function () {
             $.fn.filterAndSort(items, sliderMin, sliderMax);
         }
     });
+
     $("#amount").html('"' + $("#slider").slider("values", 0) +
         ' - "' + $("#slider").slider("values", 1));
+
     $('#tv-brand').change(function (e) {
         $.fn.filterAndSort(items);
     });
+
     $('#tv-types').change(function (e) {
         $.fn.filterAndSort(items);
     });
+
     $('#tv-sort').change(function (e) {
         $.fn.filterAndSort(items);
     });
+
     $.fn.filterAndSort(items);
+
     $('span.stars').stars(items);
+
+    $("#clear-filter").click(function () {
+        $("tv-types").val("Select");
+        $("tv-brand").val("Select");
+        $("#slider").slider("values", [20, 40] );
+        $("#amount").html('"' + $("#slider").slider("values", 0) +
+            ' - "' + $("#slider").slider("values", 1));
+        $.fn.filterAndSort(items);
+    });
 });
 
-$("#clear-filter").click(function () {
-    alert("clicked");
-})
+
+
 
 $.fn.stars = function () {
     return $(this).each(function () {

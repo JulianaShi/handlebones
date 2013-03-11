@@ -10,7 +10,7 @@ Application.View = Backbone.View.extend({
 
 $(function() {
   var model = new Backbone.Model({
-    greeting: 'Hello'
+    greeting: ''
   });
   var indexView = new Application.View({
     template: Handlebars.templates['index'],

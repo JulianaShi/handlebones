@@ -246,6 +246,8 @@ span.stars, span.stars span {
     background: url(img/stars.png) 0 -16px repeat-x;
     width: 80px;
     height: 16px;
+    color: #FFFFFF;
+    font-size: 0;
 }
 
 span.stars span {
@@ -261,6 +263,10 @@ span.stars span {
     background-repeat:no-repeat;
     background-position: bottom right;
     border: 1px solid #000000;
+}
+
+#footer .list {
+    display: block;
 }
 
 #search {
