@@ -90,7 +90,7 @@ body {
 //TODO - diff for tables
 padding: 36px 44px 80px 30px;
     background-color: #FFFFFF;
-    border: 1px solid #000000;
+    border: 0px solid #000000;
 }
 
 #tv-refinements {
@@ -217,7 +217,7 @@ button.css3button {
     padding-bottom: 4%;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 19em;
+    width: 14em;
 }
 
 .description {
