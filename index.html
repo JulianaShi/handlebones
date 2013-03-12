@@ -8,6 +8,7 @@
     <script src="templates.js"></script>
     <script src="application.js"></script>
     <script src="products.js"></script>
+    <script src="lib/jquery.lazyload.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
@@ -113,7 +114,7 @@
         </div>
 
         <div id="filters-text">
-            <div id="filter-matches"> Matches for televisions that fit that criteria.</div>
+            <div id="filter-matches" class="left-float"><div id="match-num" class="left-float"></div>&nbsp;Matches <span style="color:#918888; font-weight:500;">for televisions that fit that criteria.</span></div>
             <div id="filter-clear">
                 <button type="button" name="" value="" class="css3button" id="clear-filter">Clear Filters</button>
             </div>

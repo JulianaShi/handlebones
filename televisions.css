@@ -85,7 +85,7 @@ body {
 #main_content {
     font-size: 12px;
     font-family: Arial,Helvetica,Sans-serif;
-    color: #918888;
+    color: #777777;
     text-align: left;
 //TODO - diff for tables
 padding: 36px 44px 80px 30px;
@@ -163,6 +163,8 @@ padding: 36px 44px 80px 30px;
     float: left;
     font-size: 17px;
     padding-left: 3%;
+    color: #333333;
+    font-weight: 600;
 }
 
 #filter-clear {

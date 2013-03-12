@@ -73,6 +73,7 @@ $.fn.sortByScreenSize = function (a, b) {
 };
 
 $.fn.filterAndSort = function (items, minSize, maxSize) {
+    var matches;
     // if not passed in args then get default vals
     if (arguments.length == 1) {
         minSize = $("#slider").slider("values", 0);
@@ -94,6 +95,10 @@ $.fn.filterAndSort = function (items, minSize, maxSize) {
             finalArray.push(item);
         }
     }
+
+    matches = finalArray.length;
+    $("#match-num").html(matches);
+
     // apply sorting by price or alphabetical
     if (sort == "LowestPrice") {
         finalArray.sort($.fn.sortByPriceLow);
@@ -117,5 +122,7 @@ $.fn.filterAndSort = function (items, minSize, maxSize) {
     $("#resultsTemplate").tmpl(finalArray)
         .appendTo("#results");
     $('span.stars').stars();
+
+
 }
 
