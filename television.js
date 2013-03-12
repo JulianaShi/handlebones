@@ -32,8 +32,9 @@ $(function () {
 
 
     $("#clear-filter").click(function () {
-        $("tv-types").val("Select");
-        $("tv-brand").val("Select");
+        $("#tv-types").prop("selectedIndex",0);
+        $("#tv-brand").prop("selectedIndex",0);
+        $("#tv-sort").val("LowestPrice");
         $("#slider").slider("values", [20, 40]);
         $("#amount").html('"' + $("#slider").slider("values", 0) +
             ' - "' + $("#slider").slider("values", 1));
@@ -78,10 +79,10 @@ $.fn.filterAndSort = function (items, minSize, maxSize) {
         maxSize = $("#slider").slider("values", 1);
     }
     // If dropdown is a selection use it otherwise set to null
-    var type = ($("#tv-types").val() == "Select" ? "" : $("#tv-types").val());
-    var brand = ($("#tv-brand").val() == "Select" ? "" : $("#tv-brand").val());
+    var type = ($("#tv-types").val() == null ? "" : $("#tv-types").val());
+    var brand = ($("#tv-brand").val() == null ? "" : $("#tv-brand").val());
     var sort = $("#tv-sort").val();
-//    console.log("minSize " +minSize +", maxSize " +maxSize + "brand " +brand +"type " +type + "sort " +sort )
+    console.log("minSize " +minSize +", maxSize " +maxSize + "brand " +brand +"type " +type + "sort " +sort )
     var finalArray = [];
     for (var i = 0; i < items.length; i++) {
         var item = items[i];
