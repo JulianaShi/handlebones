@@ -112,10 +112,22 @@ padding: 36px 44px 80px 30px;
     padding: 15px 0 0 25px;
 }
 
-.dropdown-style {
+#tv-types {
     font-size: 18px;
     height: 35px;
-    width: 120px;
+    width: 125px;
+}
+
+#tv-brand {
+    font-size: 18px;
+    height: 35px;
+    width: 125px;
+}
+
+#tv-sort {
+    font-size: 18px;
+    height: 35px;
+    width: 150px;
 }
 
 .dropdown-labels {
@@ -125,11 +137,7 @@ padding: 36px 44px 80px 30px;
     padding-bottom: 5px;
 }
 
-#tv-brand {
-    font-size: 18px;
-    height: 35px;
-    width: 160px;
-}
+
 
 #slider-range
 {
@@ -257,16 +265,45 @@ span.stars span {
 #footer {
     height: 539px;
     text-align: left;
-    padding: 74px 49px 80px 37px;
-    background-color: #2961a3;
+    padding: 0 49px 80px 37px;
+    background-color: #3078b9;
     background-image: url(img/WMMoneyCenter.png);
     background-repeat:no-repeat;
     background-position: bottom right;
-    border: 1px solid #000000;
+    border: 0px solid #000000;
 }
 
 #footer .list {
+    padding: 48px 0px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 50px;
+    z-index: 9999;
+    position: relative;
+}
+
+#footer .list a {
     display: block;
+    font-weight: normal;
+    font-size: 1.1em;
+    line-height: 1.7em;
+    color: rgb(185, 227, 255);
+    font-family: "Custom";
+    font-size: 1em;
+}
+
+#footer .top {
+    padding: 60px 0 30px;
+    text-align: center;
+}
+
+#wmlogo-footer {
+    padding-right: 7px;
+}
+
+#footer #email-signup {
+    width: 250px;
+    height: 50px;
 }
 
 #search {

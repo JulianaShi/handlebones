@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="226a989c-7dec-4ca5-a204-1b8e0c5d7c9f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jquery.templ.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/television.js" afterPath="$PROJECT_DIR$/television.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/televisions.css" afterPath="$PROJECT_DIR$/televisions.css" />
     </list>
     <ignored path="handlebones.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +30,7 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="128" column="43" selection-start="6099" selection-end="6099" vertical-scroll-proportion="0.019255456">
+                <state line="125" column="33" selection-start="5901" selection-end="5901" vertical-scroll-proportion="0.46213093">
                   <folding>
                     <element signature="n#style#0;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -81,19 +82,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="televisions.css" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="televisions.css" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/televisions.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="262" column="30" selection-start="4876" selection-end="4876" vertical-scroll-proportion="0.0">
+                <state line="268" column="30" selection-start="4859" selection-end="4859" vertical-scroll-proportion="0.23680824">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="television.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="television.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/television.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="76" column="36" selection-start="2034" selection-end="2034" vertical-scroll-proportion="0.01867995">
+                <state line="64" column="28" selection-start="1793" selection-end="1793" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -120,13 +121,14 @@
         <option value="$PROJECT_DIR$/application.js" />
         <option value="$PROJECT_DIR$/templates.js" />
         <option value="$PROJECT_DIR$/templates/index.handlebars" />
+        <option value="$PROJECT_DIR$/television.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/televisions.css" />
-        <option value="$PROJECT_DIR$/television.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="5" />
     <option name="y" value="22" />
     <option name="width" value="1680" />
     <option name="height" value="964" />
@@ -283,27 +285,31 @@
       <created>1363035162925</created>
       <updated>1363035162925</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="re-push...">
+      <created>1363037887559</created>
+      <updated>1363037887559</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="964" extended-state="6" />
+    <frame x="5" y="22" width="1680" height="964" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33095238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15328908" sideWeight="0.6702381" order="0" side_tool="true" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15328908" sideWeight="0.6702254" order="0" side_tool="true" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297619" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33095238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -344,7 +350,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="re-push...missing some files?" />
+    <option name="LAST_COMMIT_MESSAGE" value="re-push..." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -361,6 +367,7 @@
     <MESSAGE value="Second draft Assignment 1 not hooked into backbone or handlebars yet...sorting and filtering implemented" />
     <MESSAGE value="Css fixes" />
     <MESSAGE value="re-push...missing some files?" />
+    <MESSAGE value="re-push..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -396,7 +403,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/jquery.templ.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="484" column="0" selection-start="22356" selection-end="22356" vertical-scroll-proportion="0.0" />
+        <state line="484" column="0" selection-start="22356" selection-end="22356" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application.js">
@@ -423,13 +434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/products.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="999" column="95" selection-start="47916" selection-end="47916" vertical-scroll-proportion="0.0">
@@ -437,16 +441,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/televisions.css">
+    <entry file="file://$PROJECT_DIR$/television.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="262" column="30" selection-start="4876" selection-end="4876" vertical-scroll-proportion="0.0">
+        <state line="64" column="28" selection-start="1793" selection-end="1793" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/television.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="36" selection-start="2034" selection-end="2034" vertical-scroll-proportion="0.01867995">
+        <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/televisions.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="268" column="30" selection-start="4859" selection-end="4859" vertical-scroll-proportion="0.23680824">
           <folding />
         </state>
       </provider>

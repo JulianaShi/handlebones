@@ -22,8 +22,8 @@
     <!--Template for each of the result cells-->
     <script id="resultsTemplate" type="text/x-jquery-tmpl">
         <div class="result-cell left-float">
-            <img src="${image}" />
-            <div class="result-title">${name}</div>
+            <a href="${url}"><img src="${image}" /></a>
+            <a href="${url}"><div class="result-title">${name}</div></a>
             <div class="description">${description}</div>
             <span class="price">$${price}<span class="cents"></span></span>
             <span class="stars">${rating}</span>
@@ -67,7 +67,7 @@
             <span class="tv-dropdowns left-float">
                     <div class="dropdown-labels">Type</div>
                     <div class="left-float" style="padding-right: 20px;">
-                        <select id="tv-types" class="dropdown-style">
+                        <select id="tv-types">
                             <option value="1">Select</option>
                             <option value="LCD">LCD</option>
                             <option value="3D">3D</option>
@@ -95,10 +95,11 @@
             <span class="tv-dropdowns left-float">
                     <div class="dropdown-labels">Sort</div>
                     <div class="left-float" style="padding-right: 20px;">
-                        <select name="tv-sort" id="tv-sort" class="dropdown-style">
-                            <option value="Price">Price</option>
-                            <option value="AZ">A-Z</option>
-                            <option value="ZA">Z-A</option>
+                        <select name="tv-sort" id="tv-sort">
+                            <option value="LowestPrice">Lowest Price</option>
+                            <option value="HighestPrice">Highest Price</option>
+                            <option value="TopRated">Top Rated</option>
+                            <option value="ScreenSize">Screen Size</option>
                         </select>
                     </div>
             </span>
@@ -121,6 +122,12 @@
         </div>
 
         <footer id="footer">
+            <div class="top">
+                <img id="wmlogo-footer" src="img/blueWmLogoFooter.png" />
+                <input id="email-signup"  type="text" placeholder="Sign up for our Mailing List" />
+
+
+            </div>
             <div class="list">
                 <a href="http://walmartstores.com/">Corporate</a>
                 <a href="http://walmartstores.com/aboutus">Our Story</a>
