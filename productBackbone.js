@@ -23,17 +23,6 @@ $(function() {
     var ProductView = Backbone.View.extend({
         render:function(){
             var data = this.model.toJSON();
-
-            // decorate the itemdata with styling for the carousel
-
-            var stuff = data[0].alternateImageData;
-
-            for (var i = 0 ; i < stuff.length ; i++){
-                if (i > 0){
-                    data[0].alternateImageData[i].imageStyle="display:none;"
-                }
-            }
-
             this.$el.html(this.options.template({"item":data[0]}));
             console.log(this.options.template({"item":data[0]}));
             return this;

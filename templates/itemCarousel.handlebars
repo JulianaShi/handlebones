@@ -10,7 +10,11 @@
     <!--<img src="img/product/TV.png"/>-->
     <div id="hero-image">
         {{#each item.alternateImageData}}
-        <div class="boxes" style="{{imageStyle}}"><img src="{{lgImageSrc}}"> </img></div>
+            {{#equal @index 0 }}
+                <div class="boxes"><img src="{{lgImageSrc}}" /></div>
+                {{else}}
+                <div class="boxes" style="display: none;"><img src="{{lgImageSrc}}"/></div>
+            {{/equal}}
         {{/each}}
     </div>
     <div id="right-arrow"><div id="next"><img src="img/product/arrow-right.png" /></div></div>
