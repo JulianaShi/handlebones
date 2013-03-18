@@ -9,7 +9,7 @@ $(function () {
             var sliderMax = ui.values[ 1 ]
 
             $("#amount").html('"' + sliderMin + ' - "' + sliderMax);
-            $.fn.filterAndSort(items, sliderMin, sliderMax);
+            filterAndSort(items, sliderMin, sliderMax);
         }
     });
 
@@ -17,18 +17,18 @@ $(function () {
         ' - "' + $("#slider").slider("values", 1));
 
     $('#tv-brand').change(function (e) {
-        $.fn.filterAndSort(items);
+        filterAndSort(items);
     });
 
     $('#tv-types').change(function (e) {
-        $.fn.filterAndSort(items);
+        filterAndSort(items);
     });
 
     $('#tv-sort').change(function (e) {
-        $.fn.filterAndSort(items);
+        filterAndSort(items);
     });
 
-    $.fn.filterAndSort(items);
+    filterAndSort(items);
 
 
     $("#clear-filter").click(function () {
@@ -38,7 +38,7 @@ $(function () {
         $("#slider").slider("values", [20, 40]);
         $("#amount").html('"' + $("#slider").slider("values", 0) +
             ' - "' + $("#slider").slider("values", 1));
-        $.fn.filterAndSort(items);
+        filterAndSort(items);
     });
 });
 
@@ -59,30 +59,34 @@ $.fn.stars = function () {
 };
 
 
-$.fn.sortByPriceLow = function (a, b) {
+sortByPriceLow = function (a, b) {
     return a.price - b.price
 };
-$.fn.sortByPriceHigh = function (a, b) {
+sortByPriceHigh = function (a, b) {
     return b.price - a.price
 };
-$.fn.sortByRating = function (a, b) {
+sortByRating = function (a, b) {
     return b.rating - a.rating
 };
-$.fn.sortByScreenSize = function (a, b) {
+sortByScreenSize = function (a, b) {
     return a.size - b.size
 };
 
-$.fn.filterAndSort = function (items, minSize, maxSize) {
+filterAndSort = function (items, minSize, maxSize) {
     var matches;
     // if not passed in args then get default vals
     if (arguments.length == 1) {
         minSize = $("#slider").slider("values", 0);
         maxSize = $("#slider").slider("values", 1);
     }
+    
+    var el1 = $("#tv-types");
+    var el2 = $("#tv-brand");
+    var el3 = $("#tv-sort");
     // If dropdown is a selection use it otherwise set to null
-    var type = ($("#tv-types").val() == null ? "" : $("#tv-types").val());
-    var brand = ($("#tv-brand").val() == null ? "" : $("#tv-brand").val());
-    var sort = $("#tv-sort").val();
+    var type = (el1.val() == null? "" : el1.val());
+    var brand = (el2.val() == null ? "" : el2.val());
+    var sort = el3.val();
     console.log("minSize " +minSize +", maxSize " +maxSize + "brand " +brand +"type " +type + "sort " +sort )
     var finalArray = [];
     for (var i = 0; i < items.length; i++) {
@@ -101,26 +105,22 @@ $.fn.filterAndSort = function (items, minSize, maxSize) {
 
     // apply sorting by price or alphabetical
     if (sort == "LowestPrice") {
-        finalArray.sort($.fn.sortByPriceLow);
+        finalArray.sort(sortByPriceLow);
 
     }
     if (sort == "HighestPrice") {
-        finalArray.sort($.fn.sortByPriceHigh);
+        finalArray.sort(sortByPriceHigh);
 
     }
     if (sort == "TopRated") {
-        finalArray.sort($.fn.sortByRating);
+        finalArray.sort(sortByRating);
 
     }
     if (sort == "ScreenSize") {
-        finalArray.sort($.fn.sortByScreenSize);
+        finalArray.sort(sortByScreenSize);
 
     }
-    // clear html template
-    $("#results").html("")
-    //apply json to template and append results
-    $("#resultsTemplate").tmpl(finalArray)
-        .appendTo("#results");
+
     $('span.stars').stars();
 
 

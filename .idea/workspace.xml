@@ -2,10 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="226a989c-7dec-4ca5-a204-1b8e0c5d7c9f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/TV.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/arrowleft.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/arrowright.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/backbone2.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/img2.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/POVTVs.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/TV.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/addToCart.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/arrival-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/arrow-left-gray.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/arrow-left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/arrow-right-gray.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/arrow-right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/av-temp1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/av-temp2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/av-temp3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/button-down-arrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/button-right-arrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/carousel-position.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/close-panel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/current-position.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/find-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/greydot.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/qty.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/question.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/reviewBtn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/seeMore.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/share-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product/tv-temp.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/googlefonts.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/product.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/helper.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/itemData.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/jquery-1.9.1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/jquery-ui.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/productPage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/products.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jquery.lazyload.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/modernizr.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/productBackbone.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/productPage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/productPage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ratingsReviews.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/clearFilters.handlebars" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/filters.handlebars" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/footer.handlebars" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/header.handlebars" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/itemCarousel.handlebars" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/tvresults.handlebars" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tvFinderBackbone.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/base.css" afterPath="$PROJECT_DIR$/css/base.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/products.js" afterPath="$PROJECT_DIR$/js/products.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/television.js" afterPath="$PROJECT_DIR$/js/television.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/televisions.css" afterPath="$PROJECT_DIR$/css/televisions.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application.js" afterPath="$PROJECT_DIR$/application.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/television.js" afterPath="$PROJECT_DIR$/television.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/televisions.css" afterPath="$PROJECT_DIR$/televisions.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates.js" afterPath="$PROJECT_DIR$/templates.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.handlebars" afterPath="$PROJECT_DIR$/templates/index.handlebars" />
     </list>
     <ignored path="handlebones.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,29 +80,22 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49322882">
+    <splitter split-orientation="horizontal" split-proportion="0.5111648">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/index.html">
+          <file leaf-file-name="itemCarousel.handlebars" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/itemCarousel.handlebars">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="116" column="159" selection-start="5860" selection-end="5860" vertical-scroll-proportion="0.28479382">
-                  <folding>
-                    <element signature="n#style#0;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#span#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#span#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#span#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                  </folding>
+                <state line="3" column="17" selection-start="181" selection-end="181" vertical-scroll-proportion="0.06656805">
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="jquery.lazyload.min.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/jquery.lazyload.min.js">
+          <file leaf-file-name="helper.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/helper.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="0" selection-start="3205" selection-end="3205" vertical-scroll-proportion="0.0">
+                <state line="9" column="5" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0">
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -54,19 +103,73 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application.js">
+          <file leaf-file-name="index.handlebars" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/index.handlebars">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="12" column="15" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
+                <state line="0" column="0" selection-start="0" selection-end="46" vertical-scroll-proportion="-0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="base.css" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/base.css">
+          <file leaf-file-name="productPage.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/productPage.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="47" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0">
+                <state line="6" column="29" selection-start="193" selection-end="193" vertical-scroll-proportion="12.5">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="jquery-1.9.1.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/jquery-1.9.1.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="9567" column="56" selection-start="371237" selection-end="371237" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="jquery-ui.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/jquery-ui.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="14898" column="42" selection-start="591661" selection-end="591661" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                    <marker date="1363560209000" expanded="false" signature="39860:39877" placeholder="..." />
+                    <marker date="1363560209000" expanded="false" signature="93354:93371" placeholder="..." />
+                    <marker date="1363560209000" expanded="false" signature="112503:112519" placeholder="..." />
+                    <marker date="1363560209000" expanded="false" signature="482868:482921" placeholder="..." />
+                    <marker date="1363560209000" expanded="false" signature="482935:482959" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="productBackbone.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/productBackbone.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="38" column="23" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="footer.handlebars" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/footer.handlebars">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="57" column="0" selection-start="3310" selection-end="3310" vertical-scroll-proportion="-18.958334">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="header.handlebars" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/header.handlebars">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="12" column="5" selection-start="748" selection-end="748" vertical-scroll-proportion="-7.5">
                   <folding />
                 </state>
               </provider>
@@ -79,34 +182,79 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
+                <state line="12" column="48" selection-start="522" selection-end="522" vertical-scroll-proportion="-6.0833335">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="products.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/products.js">
+          <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="999" column="95" selection-start="47916" selection-end="47916" vertical-scroll-proportion="0.0">
+                <state line="33" column="0" selection-start="833" selection-end="918" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="televisions.css" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/televisions.css">
+          <file leaf-file-name="tvFinderBackbone.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tvFinderBackbone.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="87" column="19" selection-start="1908" selection-end="1908" vertical-scroll-proportion="0.15891473">
+                <state line="41" column="28" selection-start="1032" selection-end="1032" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="products.json" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/products.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="1002" column="2" selection-start="47951" selection-end="47951" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
           <file leaf-file-name="television.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/television.js">
+            <entry file="file://$PROJECT_DIR$/js/television.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="96" column="5" selection-start="3017" selection-end="3017" vertical-scroll-proportion="0.0">
+                <state line="92" column="11" selection-start="2700" selection-end="2700" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="itemData.json" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/itemData.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="20" column="22" selection-start="955" selection-end="972" vertical-scroll-proportion="0.3062937">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="productPage.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/productPage.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="61" column="40" selection-start="2045" selection-end="2045" vertical-scroll-proportion="-16.73077">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="product.css" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/product.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="278" column="1" selection-start="4329" selection-end="4329" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="base.css" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/base.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="241" column="1" selection-start="3681" selection-end="3753" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -127,24 +275,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/base.css" />
-        <option value="$PROJECT_DIR$/lib/jquery.templ.js" />
-        <option value="$PROJECT_DIR$/products.js" />
-        <option value="$PROJECT_DIR$/application.js" />
-        <option value="$PROJECT_DIR$/templates.js" />
+        <option value="$PROJECT_DIR$/templates/clearFilters.handlebars" />
+        <option value="$PROJECT_DIR$/templates/filters.handlebars" />
+        <option value="$PROJECT_DIR$/templates/footer.handlebars" />
+        <option value="$PROJECT_DIR$/templates/header.handlebars" />
         <option value="$PROJECT_DIR$/templates/index.handlebars" />
-        <option value="$PROJECT_DIR$/lib/jquery.lazyload.min.js" />
-        <option value="$PROJECT_DIR$/television.js" />
-        <option value="$PROJECT_DIR$/televisions.css" />
+        <option value="$PROJECT_DIR$/templates/tvresults.handlebars" />
+        <option value="$PROJECT_DIR$/js/jquery-ui.js" />
+        <option value="$PROJECT_DIR$/js/jquery-1.9.1.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/tvFinderBackbone.js" />
+        <option value="$PROJECT_DIR$/productPage.html" />
+        <option value="$PROJECT_DIR$/js/helper.js" />
+        <option value="$PROJECT_DIR$/productBackbone.js" />
+        <option value="$PROJECT_DIR$/js/productPage.js" />
+        <option value="$PROJECT_DIR$/js/itemData.json" />
+        <option value="$PROJECT_DIR$/templates/itemCarousel.handlebars" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="5" />
     <option name="y" value="22" />
     <option name="width" value="1680" />
-    <option name="height" value="961" />
+    <option name="height" value="953" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -214,7 +367,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -224,9 +377,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="editing.templates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -238,6 +396,12 @@
         </serverdata>
       </server>
     </servers>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/css" />
+      <recent name="$PROJECT_DIR$/js" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
@@ -314,27 +478,31 @@
       <created>1363110662381</created>
       <updated>1363110662381</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added match number">
+      <created>1363113153403</created>
+      <updated>1363113153403</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="22" width="1680" height="961" extended-state="6" />
+    <frame x="0" y="22" width="1680" height="953" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33095238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15328908" sideWeight="0.6702254" order="0" side_tool="true" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14725408" sideWeight="0.6706731" order="0" side_tool="true" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297619" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33095238" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -375,7 +543,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="more tv options" />
+    <option name="LAST_COMMIT_MESSAGE" value="added match number" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -396,122 +564,127 @@
     <MESSAGE value="changes to sort options and footer formatting" />
     <MESSAGE value="fixed clear filter" />
     <MESSAGE value="more tv options" />
+    <MESSAGE value="added match number" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/jquery-ui.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="43" selection-start="6099" selection-end="6099" vertical-scroll-proportion="0.0">
+        <state line="14898" column="42" selection-start="591661" selection-end="591661" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#style#0;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#span#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#span#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#span#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1363560209000" expanded="false" signature="39860:39877" placeholder="..." />
+            <marker date="1363560209000" expanded="false" signature="93354:93371" placeholder="..." />
+            <marker date="1363560209000" expanded="false" signature="112503:112519" placeholder="..." />
+            <marker date="1363560209000" expanded="false" signature="482868:482921" placeholder="..." />
+            <marker date="1363560209000" expanded="false" signature="482935:482959" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application.js">
+    <entry file="file://$PROJECT_DIR$/js/jquery-1.9.1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="15" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="47" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jquery.templ.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="484" column="0" selection-start="22356" selection-end="22356" vertical-scroll-proportion="0.0">
+        <state line="9567" column="56" selection-start="371237" selection-end="371237" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="15" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
+        <state line="12" column="48" selection-start="522" selection-end="522" vertical-scroll-proportion="-6.0833335">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates.js">
+    <entry file="file://$PROJECT_DIR$/templates/tvresults.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="36" selection-start="629" selection-end="629" vertical-scroll-proportion="0.16020672" />
+        <state line="12" column="0" selection-start="363" selection-end="363" vertical-scroll-proportion="0.24423338">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/header.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="5" selection-start="748" selection-end="748" vertical-scroll-proportion="-7.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tvFinderBackbone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="28" selection-start="1032" selection-end="1032" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="47" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="46" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/products.js">
+    <entry file="file://$PROJECT_DIR$/templates/filters.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="999" column="95" selection-start="47916" selection-end="47916" vertical-scroll-proportion="0.0">
+        <state line="42" column="64" selection-start="2438" selection-end="2443" vertical-scroll-proportion="-12.791667">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jquery.lazyload.min.js">
+    <entry file="file://$PROJECT_DIR$/js/helper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="3205" selection-end="3205" vertical-scroll-proportion="0.0">
+        <state line="9" column="5" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/television.js">
+    <entry file="file://$PROJECT_DIR$/js/television.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="5" selection-start="3017" selection-end="3017" vertical-scroll-proportion="0.0">
+        <state line="92" column="11" selection-start="2700" selection-end="2700" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/televisions.css">
+    <entry file="file://$PROJECT_DIR$/productBackbone.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="19" selection-start="1908" selection-end="1908" vertical-scroll-proportion="0.15891473">
+        <state line="38" column="23" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/productPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="159" selection-start="5860" selection-end="5860" vertical-scroll-proportion="0.28479382">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#span#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#span#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#span#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="6" column="29" selection-start="193" selection-end="193" vertical-scroll-proportion="12.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/productPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="40" selection-start="2045" selection-end="2045" vertical-scroll-proportion="-16.73077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/itemData.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="22" selection-start="955" selection-end="972" vertical-scroll-proportion="0.3062937">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/itemCarousel.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="17" selection-start="181" selection-end="181" vertical-scroll-proportion="0.06656805">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,4 +1,4 @@
-var items = [
+[[
 
     {
         "url": "http://www.walmart.com/ip/Sceptre-32-X322BV-HD/15739136",
@@ -1000,4 +1000,4 @@ var items = [
         "description": "73\" diagonal screen size, HDMI Inputs: 3, Not wall mountable, StreamTV Internet Media",
         "rating": 0
     }
-];
+]]

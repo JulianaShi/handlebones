@@ -1,0 +1,12 @@
+{{#each item}}
+<div class="result-cell left-float">
+    <a href="{{url}}"><img src="{{image}}"/></a>
+    <a href="{{url}}">
+        <div class="result-title">{{name}}</div>
+    </a>
+
+    <div class="description">{{description}}</div>
+    <span class="price">${{price}}<span class="cents"></span></span>
+    <span class="stars">{{rating}}</span>
+</div>
+ {{/each}}

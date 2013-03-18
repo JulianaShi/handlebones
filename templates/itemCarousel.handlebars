@@ -1,0 +1,22 @@
+<div id="product-name">{{item.genericContent.itemName}}<span id="close-x"><img
+        src="img/product/close-panel.png"></span></div>
+<div id="ratings-container">
+    <span class="left-float"><img src="{{item.customerRatingUrl}}" /> </span><span id="review-links" class="left-float">&nbsp;&nbsp;109 Reviews  |  <a
+        href="#">Write a Review</a>  | <a href="#">Ask a Question</a></span>
+</div>
+<div id="product-price">${{item.sellers.0.currentItemPrice}}</div>
+<div id="product-image">
+    <div id="left-arrow"><div id="prev"><img src="img/product/arrow-left-gray.png"/></div></div>
+    <!--<img src="img/product/TV.png"/>-->
+    <div id="hero-image">
+        {{#each item.alternateImageData}}
+        <div class="boxes" style="{{imageStyle}}"><img src="{{lgImageSrc}}"> </img></div>
+        {{/each}}
+    </div>
+    <div id="right-arrow"><div id="next"><img src="img/product/arrow-right.png" /></div></div>
+</div>
+<div id="pager"></div>
+
+
+
+
