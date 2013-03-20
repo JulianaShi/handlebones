@@ -1,4 +1,5 @@
-<script src="../js/television.js"></script>
+<!--<script src="/js/productPage.js"></script>-->
+
 <div id="ratings-rev-title">
     Reviews & Ratings <span style="color: #3078b9;">({{length ratingsReviewsItems}} Total)</span> <img id="review-btn" src="../img/product/reviewBtn.png"/>
 </div>
@@ -53,7 +54,7 @@
         </span>
 </div>
 <div id="reviews-container">
-<div id="left-arrow-container" class="left-float"><div id="prev-rr"><img src="../img/product/arrow-left-gray.png"></div></div>
+<div id="left-arrow-container" class="left-float"><div id="prev-rr"><img src="../img/product/arrow-left-gray.png"/></div></div>
 <div id="selected-review-container" class="left-float">
 
         {{#each ratingsReviewsItems}}
@@ -62,9 +63,11 @@
             <div id="selected-review">
                 <div id="selected-review-title">{{title}}</div>
                 <br/>
-                <div>by {{customer}} on {{date}} {{#if isVerified}} is Verified{{/if}}</div>
+                <div style="font-family: 'Sintony',sans-serif;font-size:15px;color:color: #777777;">by <span style="color: #3078b9;">{{customer}}</span> on {{date}} {{#if isVerified}} is Verified{{/if}}</div>
                 <div><span class="stars">{{rating}}</span></div>
                 <div>{{rawText review 200}}...<span style="color: #3078b9;"> Read more</span></div>
+            </div>
+            <div id="review-attributes-left-col">
                 <ul>
                     <li>Value: {{value}}</li>
                     <li>Meets Expectations: {{meetsexpectations}}</li>
@@ -72,6 +75,8 @@
                     <li>Sound Quality: {{soundquality}}</li>
                     <li>Features: {{features}}</li>
                 </ul>
+            </div>
+            <div id="review-attributes-right-col">
                 <ul>
                     <li>Age: {{age}}</li>
                     <li>Gender: {{gender}}</li>
@@ -111,6 +116,6 @@
         {{/each}}
 
 </div>
-<div id="right-arrow-container" class="left-float"><div id="next-rr"><img src="../img/product/arrow-right.png"></div></div>
+<div id="right-arrow-container" class="left-float"><div id="next-rr"><img src="../img/product/arrow-right.png"/></div></div>
 <div id="reviews-count-container" class="left-float">1 of {{length ratingsReviewsItems}} reviews</div>
 </div>
