@@ -1,0 +1,48 @@
+<script src="../js/tab.js"></script>
+<div class="horizborder"><p class="inset"></p></div>
+<div id="product-details-title">
+Product Details<a href="#"><img id="more-questions" src="../img/product/question.png"/></a>
+</div>
+<div id="details-container">
+<div id="detail-tabs" class="left-float">
+    <section class="product-details-container">
+        <div class="wrapper">
+            <div id="v-nav">
+                <ul>
+                    <li tab="tab1" class="first current"><span class="product-detail-tab-name">Description</span></li>
+                    <li tab="tab2"><span class="product-detail-tab-name">Specifications</span></li>
+                    <li tab="tab3"><span class="product-detail-tab-name">Warranty</span></li>
+                    <li tab="tab4"><span class="product-detail-tab-name">Financing</span></li>
+                    <li tab="tab5" class="last"><span class="product-detail-tab-name">Gifting</span></li>
+                </ul>
+
+                <div class="tab-content details" style="display:block">
+                    {{rawText item.genericContent.shortDescription 1200 }}...
+                </div>
+
+                <div class="tab-content details">
+                    {{#each item.itemAttributes}}
+                    <ul>
+                        <li>{{attributeName}} : {{attributeValue}}</li>
+                    </ul>
+                    {{/each}}
+                </div>
+
+                <div class="tab-content details">
+                    {{item.genericContent.supplierWarranty}}<br/>
+                    {{item.genericContent.warrantyLength}}
+                </div>
+
+                <div class="tab-content details">
+
+                </div>
+                <div class="tab-content details">
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+<br class="clear"/>
+</div>

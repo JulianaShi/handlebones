@@ -1,0 +1,21 @@
+<div class="horizBorder"><p class="inset"></p></div>
+<div id="people-viewed-title">
+People Who Viewed This Item Also Viewed<a href="#"><img id="see-more" src="../img/product/seeMore.png"/></a>
+</div>
+<div id="people-viewed-container">
+{{#each viewedItems}}
+{{#if_lt @index compare=3}}
+<div class="people-viewed-cell left-float">
+    <a href="{{url}}"><img src="{{image}}"/></a>
+    <a href="{{url}}">
+        <div class="result-title">{{name}}</div>
+    </a>
+
+    <div class="description">{{description}}</div>
+    <span class="price">${{price}}<span class="cents"></span></span>
+    <span class="stars">{{rating}}</span>
+</div>
+{{/if_lt}}
+{{/each}}
+<br class="clear" />
+</div>

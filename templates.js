@@ -1,1353 +1,16 @@
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
-  
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
-  });
-templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
-  });
-templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
-  });
-templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
-  });
-templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n    <li>";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { return stack1; }
-  else { return ''; }
-  });
-templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "-->\n        <!--&lt;!&ndash;";
-  stack1 = helpers['if'].call(depth0, data.index, depth0.equal, 0, {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "&ndash;&gt;-->\n        <!--";
-  return buffer;
-  }
-function program2(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "&ndash;&gt;-->\n        <!--<div class=\"boxes\"><img src=\"";
-  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"> </img></div>-->\n        <!--&lt;!&ndash;";
-  return buffer;
-  }
-
-function program4(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "&ndash;&gt;-->\n        <!--&lt;!&ndash;<div class=\"boxes\" style=\"display: none;\"><img src=\"";
-  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"> </img></div>&ndash;&gt;-->\n        <!--&lt;!&ndash;";
-  return buffer;
-  }
-
-  buffer += "<!--<script>-->\n    <!--var myArray = [];-->\n    <!--for (var i = 0; i < "
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData)),stack1 == null || stack1 === false ? stack1 : stack1.length)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "; i++) {-->\n        <!--myArray.push("
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData)),stack1 == null || stack1 === false ? stack1 : stack1.lgImageSrc)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + ");-->\n        <!--console.log(myArray);-->\n    <!--}-->\n<!--</script>-->\n<!--<div id=\"product-name\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.genericContent),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "<span id=\"close-x\"><img-->\n        <!--src=\"img/product/close-panel.png\"></span></div>-->\n<!--<div id=\"ratings-container\">-->\n    <!--<span class=\"stars left-float\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.genericContent),stack1 == null || stack1 === false ? stack1 : stack1.rating)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a-->\n        <!--href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>-->\n<!--</div>-->\n<!--<div id=\"product-price\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.sellers),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</div>-->\n<!--<div id=\"product-image\">-->\n    <!--<div id=\"left-arrow\"><a id=\"prev\" href=\"jquery\"><img src=\"img/product/arrow-left-gray.png\"/></a></div>-->\n    <!--&lt;!&ndash;<img src=\"img/product/TV.png\"/>&ndash;&gt;-->\n    <!--<div id=\"hero-image\">-->\n        <!--";
-  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "-->\n    <!--</div>-->\n    <!--<div id=\"right-arrow\"><a id=\"next\" href=\"jquery\"><img src=\"img/product/arrow-right.png\"></a></div>-->\n<!--</div>-->\n<!--<div id=\"pager\"></div>-->\n\n\n\n\n";
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
   return buffer;
   });
-templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"/></a>\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n        <div class=\"result-title\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    </a>\n\n    <div class=\"description\">";
-  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    <span class=\"price\">$";
-  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
-  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</span>\n</div>\n ";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
-  return buffer;
-  });
-})();
-(function() {
-  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
-  });
-templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
-  });
-templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
-  });
-templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
-  });
-templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n    <li>";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { return stack1; }
-  else { return ''; }
-  });
-templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n        <div class=\"boxes\"><img src=\"";
-  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"> </img></div>\n        <div class=\"boxes\" style=\"display: none;\"><img src=\"";
-  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"> </img></div>\n        ";
-  return buffer;
-  }
-
-  buffer += "<script>\n    var myArray = [];\n    for (var i = 0; i < "
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData)),stack1 == null || stack1 === false ? stack1 : stack1.length)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "; i++) {\n        myArray.push("
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData)),stack1 == null || stack1 === false ? stack1 : stack1.lgImageSrc)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + ");\n        console.log(myArray);\n    }\n</script>\n<div id=\"product-name\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.genericContent),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n    <span class=\"stars left-float\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.genericContent),stack1 == null || stack1 === false ? stack1 : stack1.rating)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.sellers),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</div>\n<div id=\"product-image\">\n    <div id=\"left-arrow\"><a id=\"prev\" href=\"jquery\"><img src=\"img/product/arrow-left-gray.png\"/></a></div>\n    <!--<img src=\"img/product/TV.png\"/>-->\n    <div id=\"hero-image\">\n        ";
-  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n    <div id=\"right-arrow\"><a id=\"next\" href=\"jquery\"><img src=\"img/product/arrow-right.png\"></a></div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
-  return buffer;
-  });
-templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"/></a>\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n        <div class=\"result-title\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    </a>\n\n    <div class=\"description\">";
-  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    <span class=\"price\">$";
-  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
-  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</span>\n</div>\n ";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
-  return buffer;
-  });
-})();
-(function() {
-  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
-  });
-templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
-  });
-templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
-  });
-templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
-  });
-templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n    <li>";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { return stack1; }
-  else { return ''; }
-  });
-templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n        <div class=\"boxes\"><img src=\"";
-  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"> </img></div>\n        <div class=\"boxes\" style=\"";
-  if (stack1 = helpers.imageStyle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.imageStyle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"> </img></div>\n        ";
-  return buffer;
-  }
-
-  buffer += "<div id=\"product-name\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.genericContent),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n    <span class=\"stars left-float\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.genericContent),stack1 == null || stack1 === false ? stack1 : stack1.rating)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.sellers),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</div>\n<div id=\"product-image\">\n    <div id=\"left-arrow\"><a id=\"prev\" href=\"jquery\"><img src=\"img/product/arrow-left-gray.png\"/></a></div>\n    <!--<img src=\"img/product/TV.png\"/>-->\n    <div id=\"hero-image\">\n        ";
-  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n    <div id=\"right-arrow\"><a id=\"next\" href=\"jquery\"><img src=\"img/product/arrow-right.png\"></a></div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
-  return buffer;
-  });
-templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"/></a>\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n        <div class=\"result-title\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    </a>\n\n    <div class=\"description\">";
-  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    <span class=\"price\">$";
-  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
-  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</span>\n</div>\n ";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
-  return buffer;
-  });
-})();
-(function() {
-  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
-  });
-templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
-  });
-templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
-  });
-templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
-  });
-templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n    <li>";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { return stack1; }
-  else { return ''; }
-  });
-templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n        <div class=\"boxes\" style=\"";
-  if (stack1 = helpers.imageStyle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.imageStyle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"> </img></div>\n        ";
-  return buffer;
-  }
-
-  buffer += "<div id=\"product-name\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.genericContent),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n    <span class=\"stars left-float\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.genericContent),stack1 == null || stack1 === false ? stack1 : stack1.rating)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.sellers),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</div>\n<div id=\"product-image\">\n    <div id=\"left-arrow\"><a id=\"prev\" href=\"jquery\"><img src=\"img/product/arrow-left-gray.png\"/></a></div>\n    <!--<img src=\"img/product/TV.png\"/>-->\n    <div id=\"hero-image\">\n        ";
-  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n    <div id=\"right-arrow\"><a id=\"next\" href=\"jquery\"><img src=\"img/product/arrow-right.png\"></a></div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
-  return buffer;
-  });
-templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"/></a>\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n        <div class=\"result-title\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    </a>\n\n    <div class=\"description\">";
-  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    <span class=\"price\">$";
-  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
-  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</span>\n</div>\n ";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
-  return buffer;
-  });
-})();
-(function() {
-  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
-  });
-templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
-  });
-templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
-  });
-templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
-  });
-templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n    <li>";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { return stack1; }
-  else { return ''; }
-  });
-templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n        <div class=\"boxes\" style=\"";
-  if (stack1 = helpers.imageStyle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.imageStyle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"> </img></div>\n        ";
-  return buffer;
-  }
-
-  buffer += "<div id=\"product-name\">"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n    <span class=\"stars left-float\">"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.rating)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</div>\n<div id=\"product-image\">\n    <div id=\"left-arrow\"><a id=\"prev\" href=\"jquery\"><img src=\"img/product/arrow-left-gray.png\"/></a></div>\n    <!--<img src=\"img/product/TV.png\"/>-->\n    <div id=\"hero-image\">\n        ";
-  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n    <div id=\"right-arrow\"><a id=\"next\" href=\"jquery\"><img src=\"img/product/arrow-right.png\"></a></div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
-  return buffer;
-  });
-templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"/></a>\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n        <div class=\"result-title\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    </a>\n\n    <div class=\"description\">";
-  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    <span class=\"price\">$";
-  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
-  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</span>\n</div>\n ";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
-  return buffer;
-  });
-})();
-(function() {
-  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
-  });
-templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
-  });
-templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
-  });
-templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
-  });
-templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n    <li>";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { return stack1; }
-  else { return ''; }
-  });
-templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n        <div class=\"boxes\" style=\"";
-  if (stack1 = helpers.imageStyle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.imageStyle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"> </img></div>\n        ";
-  return buffer;
-  }
-
-  buffer += "<div id=\"product-name\">"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n    <span class=\"stars left-float\">"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.rating)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</div>\n<div id=\"product-image\">\n    <div id=\"left-arrow\"><a id=\"prev\" href=\"jquery\"><img src=\"img/product/arrow-left-gray.png\"/></a></div>\n    <!--<img src=\"img/product/TV.png\"/>-->\n    <div id=\"hero-image\">\n        ";
-  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n    <div id=\"right-arrow\"><a id=\"next\" href=\"jquery\"><img src=\"img/product/arrow-right.png\"></a></div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
-  return buffer;
-  });
-templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"/></a>\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n        <div class=\"result-title\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    </a>\n\n    <div class=\"description\">";
-  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    <span class=\"price\">$";
-  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
-  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</span>\n</div>\n ";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
-  return buffer;
-  });
-})();
-(function() {
-  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
-  });
-templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
-  });
-templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
-  });
-templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
-  });
-templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n    <li>";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { return stack1; }
-  else { return ''; }
-  });
-templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n        <div class=\"boxes\" style=\"";
-  if (stack1 = helpers.imageStyle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.imageStyle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"> </img></div>\n        ";
-  return buffer;
-  }
-
-  buffer += "<div id=\"product-name\">"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n    <span class=\"stars left-float\">"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.rating)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</div>\n<div id=\"product-image\">\n    <div id=\"left-arrow\"><a id=\"prev\" href=\"#\"><img src=\"img/product/arrow-left-gray.png\"/></a></div>\n    <!--<img src=\"img/product/TV.png\"/>-->\n    <div id=\"hero-image\">\n        ";
-  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n    <div id=\"right-arrow\"><a id=\"next\" href=\"#\"><img src=\"img/product/arrow-right.png\"></a></div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
-  return buffer;
-  });
-templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"/></a>\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n        <div class=\"result-title\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    </a>\n\n    <div class=\"description\">";
-  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    <span class=\"price\">$";
-  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
-  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</span>\n</div>\n ";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
-  return buffer;
-  });
-})();
-(function() {
-  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
-  });
-templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
-  });
-templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
-  });
-templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
-  });
-templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n    <li>";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { return stack1; }
-  else { return ''; }
-  });
-templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n        <div class=\"boxes\" style=\"";
-  if (stack1 = helpers.imageStyle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.imageStyle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"> </img></div>\n        ";
-  return buffer;
-  }
-
-  buffer += "<div id=\"product-name\">"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n    <span class=\"stars left-float\">"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.rating)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</div>\n<div id=\"product-image\">\n    <div id=\"left-arrow\"><div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div></div>\n    <!--<img src=\"img/product/TV.png\"/>-->\n    <div id=\"hero-image\">\n        ";
-  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n    <div id=\"right-arrow\"><div id=\"next\"><img src=\"img/product/arrow-right.png\" /></div></div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
-  return buffer;
-  });
-templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"/></a>\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n        <div class=\"result-title\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    </a>\n\n    <div class=\"description\">";
-  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    <span class=\"price\">$";
-  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
-  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</span>\n</div>\n ";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
-  return buffer;
-  });
-})();
-(function() {
-  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
-  });
-templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
-  });
-templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
-  });
-templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
-  });
-templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n    <li>";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { return stack1; }
-  else { return ''; }
-  });
-templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n        <div class=\"boxes\" style=\"";
-  if (stack1 = helpers.imageStyle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.imageStyle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"> </img></div>\n        ";
-  return buffer;
-  }
-
-  buffer += "<div id=\"product-name\">"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n    <span class=\"stars left-float\"><img src=\""
-    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" /> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</div>\n<div id=\"product-image\">\n    <div id=\"left-arrow\"><div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div></div>\n    <!--<img src=\"img/product/TV.png\"/>-->\n    <div id=\"hero-image\">\n        ";
-  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n    <div id=\"right-arrow\"><div id=\"next\"><img src=\"img/product/arrow-right.png\" /></div></div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
-  return buffer;
-  });
-templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"/></a>\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n        <div class=\"result-title\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    </a>\n\n    <div class=\"description\">";
-  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    <span class=\"price\">$";
-  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
-  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</span>\n</div>\n ";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
-  return buffer;
-  });
-})();
-(function() {
-  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
-  });
-templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
-  });
-templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
-  });
-templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  
-
-
-  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
-  });
-templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n    <li>";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { return stack1; }
-  else { return ''; }
-  });
-templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n        <div class=\"boxes\" style=\"";
-  if (stack1 = helpers.imageStyle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.imageStyle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"> </img></div>\n        ";
-  return buffer;
-  }
-
-  buffer += "<div id=\"product-name\">"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n    <span class=\"left-float\"><img src=\""
-    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" /> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</div>\n<div id=\"product-image\">\n    <div id=\"left-arrow\"><div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div></div>\n    <!--<img src=\"img/product/TV.png\"/>-->\n    <div id=\"hero-image\">\n        ";
-  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n    <div id=\"right-arrow\"><div id=\"next\"><img src=\"img/product/arrow-right.png\" /></div></div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
-  return buffer;
-  });
-templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"/></a>\n    <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n        <div class=\"result-title\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    </a>\n\n    <div class=\"description\">";
-  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n    <span class=\"price\">$";
-  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
-  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</span>\n</div>\n ";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
-  return buffer;
-  });
-})();
-(function() {
-  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
 templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
@@ -1408,44 +71,101 @@ helpers = helpers || Handlebars.helpers; data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1, stack2, options;
-  buffer += "\n            ";
+  buffer += "\n    ";
   options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
   stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n        ";
+  buffer += "\n    ";
   return buffer;
   }
 function program2(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n                <div class=\"boxes\" style=\"";
-  if (stack1 = helpers.imageStyle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.imageStyle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
   if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\"> </img></div>\n                ";
+    + "\"/></div>\n    ";
   return buffer;
   }
 
 function program4(depth0,data) {
   
-  
-  return "\n                <div class=\"boxes\">this is the other stuff</div>\n            ";
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
   }
 
-  buffer += "<div id=\"product-name\">"
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
     + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n    <span class=\"left-float\"><img src=\""
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" /> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
     + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</div>\n<div id=\"product-image\">\n    <div id=\"left-arrow\"><div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div></div>\n    <!--<img src=\"img/product/TV.png\"/>-->\n    <div id=\"hero-image\">\n        ";
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
   stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n    <div id=\"right-arrow\"><div id=\"next\"><img src=\"img/product/arrow-right.png\" /></div></div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, 4, options) : helperMissing.call(depth0, "if_lt", data.index, 4, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<img id=\"see-more\" src=\"img/product/seeMore.png\"/>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
   return buffer;
   });
 templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
@@ -1496,6 +216,17 @@ function program1(depth0,data) {
 })();
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
 templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
@@ -1556,45 +287,103 @@ helpers = helpers || Handlebars.helpers; data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1, stack2, options;
-  buffer += "\n            ";
+  buffer += "\n    ";
   options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
   stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n        ";
+  buffer += "\n    ";
   return buffer;
   }
 function program2(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n                <div class=\"boxes\"><img src=\"";
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
   if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\" /></div>\n                ";
+    + "\"/></div>\n    ";
   return buffer;
   }
 
 function program4(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n                <div class=\"boxes\" style=\"display: hidden\"><img src=\"";
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
   if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\"/></div>\n            ";
+    + "\"/></div>\n    ";
   return buffer;
   }
 
-  buffer += "<div id=\"product-name\">"
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
     + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n    <span class=\"left-float\"><img src=\""
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" /> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
     + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</div>\n<div id=\"product-image\">\n    <div id=\"left-arrow\"><div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div></div>\n    <!--<img src=\"img/product/TV.png\"/>-->\n    <div id=\"hero-image\">\n        ";
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
   stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n    <div id=\"right-arrow\"><div id=\"next\"><img src=\"img/product/arrow-right.png\" /></div></div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (4)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<img id=\"see-more\" src=\"img/product/seeMore.png\"/>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
   return buffer;
   });
 templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
@@ -1645,6 +434,17 @@ function program1(depth0,data) {
 })();
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
 templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
@@ -1705,45 +505,103 @@ helpers = helpers || Handlebars.helpers; data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1, stack2, options;
-  buffer += "\n            ";
+  buffer += "\n    ";
   options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
   stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n        ";
+  buffer += "\n    ";
   return buffer;
   }
 function program2(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n                <div class=\"boxes\"><img src=\"";
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
   if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\" /></div>\n                ";
+    + "\"/></div>\n    ";
   return buffer;
   }
 
 function program4(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n                <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
   if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\"/></div>\n            ";
+    + "\"/></div>\n    ";
   return buffer;
   }
 
-  buffer += "<div id=\"product-name\">"
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
     + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n    <span class=\"left-float\"><img src=\""
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" /> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
     + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</div>\n<div id=\"product-image\">\n    <div id=\"left-arrow\"><div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div></div>\n    <!--<img src=\"img/product/TV.png\"/>-->\n    <div id=\"hero-image\">\n        ";
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
   stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n    <div id=\"right-arrow\"><div id=\"next\"><img src=\"img/product/arrow-right.png\" /></div></div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (4)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "TEST\n<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<img id=\"see-more\" src=\"img/product/seeMore.png\"/>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
   return buffer;
   });
 templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
@@ -1786,6 +644,6847 @@ function program1(depth0,data) {
   return buffer;
   }
 
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (4)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "TEST\n<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<img id=\"see-more\" src=\"../img/product/seeMore.png\"/>\n</div>\n<div id=\"people-viewed-container\">";
+  if (stack1 = helpers.item) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.item; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n";
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  if (stack1 = helpers.item) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.item; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n";
+  options = {hash:{
+    'compare': (4)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "TEST\n<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<img id=\"see-more\" src=\"../img/product/seeMore.png\"/>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "hello\n";
+  options = {hash:{
+    'compare': (4)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "there\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "TEST\n<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<img id=\"see-more\" src=\"../img/product/seeMore.png\"/>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += " "
+    + escapeExpression(((stack1 = ((stack1 = depth0.viewedItems),stack1 == null || stack1 === false ? stack1 : stack1.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n";
+  options = {hash:{
+    'compare': (4)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "TEST\n<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<img id=\"see-more\" src=\"../img/product/seeMore.png\"/>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += " "
+    + escapeExpression(((stack1 = ((stack1 = depth0.viewedItems),stack1 == null || stack1 === false ? stack1 : stack1.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n";
+  options = {hash:{
+    'compare': (4)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  if (stack1 = helpers.viewedItems) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.viewedItems; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<img id=\"see-more\" src=\"../img/product/seeMore.png\"/>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<img id=\"see-more\" src=\"../img/product/seeMore.png\"/>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<img id=\"more-questions\" src=\"img/product/question.png\"/>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\" >\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\">Full Description</li>\n                    <li tab=\"tab2\">Specifications</li>\n                    <li tab=\"tab3\">Warranty</li>\n                    <li tab=\"tab4\">Financing</li>\n                    <li tab=\"tab5\" class=\"last\">Gifting</li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.LongDescription), 60, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.LongDescription), 60, options)))
+    + "\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n\n                <div class=\"tab-content details\">\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<img id=\"more-questions\" src=\"img/product/question.png\"/>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\" >\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\">Full Description</li>\n                    <li tab=\"tab2\">Specifications</li>\n                    <li tab=\"tab3\">Warranty</li>\n                    <li tab=\"tab4\">Financing</li>\n                    <li tab=\"tab5\" class=\"last\">Gifting</li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.LongDescription), 60, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.LongDescription), 60, options)))
+    + "\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n\n                <div class=\"tab-content details\">\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<img id=\"more-questions\" src=\"../img/product/question.png\"/>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\" >\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\">Full Description</li>\n                    <li tab=\"tab2\">Specifications</li>\n                    <li tab=\"tab3\">Warranty</li>\n                    <li tab=\"tab4\">Financing</li>\n                    <li tab=\"tab5\" class=\"last\">Gifting</li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    <!--";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.LongDescription), 60, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.LongDescription), 60, options)))
+    + "-->\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n\n                <div class=\"tab-content details\">\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<img id=\"more-questions\" src=\"../img/product/question.png\"/>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\" >\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\">Full Description</li>\n                    <li tab=\"tab2\">Specifications</li>\n                    <li tab=\"tab3\">Warranty</li>\n                    <li tab=\"tab4\">Financing</li>\n                    <li tab=\"tab5\" class=\"last\">Gifting</li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.LongDescription), 60, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.LongDescription), 60, options)))
+    + "\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n\n                <div class=\"tab-content details\">\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<img id=\"more-questions\" src=\"../img/product/question.png\"/>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\" >\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\">Full Description</li>\n                    <li tab=\"tab2\">Specifications</li>\n                    <li tab=\"tab3\">Warranty</li>\n                    <li tab=\"tab4\">Financing</li>\n                    <li tab=\"tab5\" class=\"last\">Gifting</li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.longDescription), 60, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.longDescription), 60, options)))
+    + "\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n\n                <div class=\"tab-content details\">\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<img id=\"more-questions\" src=\"../img/product/question.png\"/>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\" >\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\">Full Description</li>\n                    <li tab=\"tab2\">Specifications</li>\n                    <li tab=\"tab3\">Warranty</li>\n                    <li tab=\"tab4\">Financing</li>\n                    <li tab=\"tab5\" class=\"last\">Gifting</li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 600, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 600, options)))
+    + "...\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n\n                <div class=\"tab-content details\">\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<img id=\"more-questions\" src=\"../img/product/question.png\"/>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\" >\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\">Full Description</li>\n                    <li tab=\"tab2\">Specifications</li>\n                    <li tab=\"tab3\">Warranty</li>\n                    <li tab=\"tab4\">Financing</li>\n                    <li tab=\"tab5\" class=\"last\">Gifting</li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options)))
+    + "...\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n\n                <div class=\"tab-content details\">\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<img id=\"more-questions\" src=\"../img/product/question.png\"/>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\" >\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\">Full Description</li>\n                    <li tab=\"tab2\">Specifications</li>\n                    <li tab=\"tab3\">Warranty</li>\n                    <li tab=\"tab4\">Financing</li>\n                    <li tab=\"tab5\" class=\"last\">Gifting</li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options)))
+    + "...\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n\n                <div class=\"tab-content details\">\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "<script src=\"../js/tab.js\"></script>\n<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<a href=\"#\"><img id=\"more-questions\" src=\"../img/product/question.png\"/></a>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\" >\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\"><span class=\"product-detail-tab-name\">Description</span></li>\n                    <li tab=\"tab2\"><span class=\"product-detail-tab-name\">Specifications</span></li>\n                    <li tab=\"tab3\"><span class=\"product-detail-tab-name\">Warranty</span></li>\n                    <li tab=\"tab4\"><span class=\"product-detail-tab-name\">Financing</span></li>\n                    <li tab=\"tab5\" class=\"last\"><span class=\"product-detail-tab-name\">Gifting</span></li>\n                </ul>\n\n                <div class=\"tab-content\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options)))
+    + "...\n                </div>\n\n                <div class=\"tab-content\">\n\n                </div>\n\n                <div class=\"tab-content\">\n                </div>\n\n                <div class=\"tab-content\">\n\n                </div>\n                <div class=\"tab-content\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                        ";
+  if (stack1 = helpers.attributeName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " : ";
+  if (stack1 = helpers.attributeValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n                    ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/tab.js\"></script>\n<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<a href=\"#\"><img id=\"more-questions\" src=\"../img/product/question.png\"/></a>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\" >\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\"><span class=\"product-detail-tab-name\">Description</span></li>\n                    <li tab=\"tab2\"><span class=\"product-detail-tab-name\">Specifications</span></li>\n                    <li tab=\"tab3\"><span class=\"product-detail-tab-name\">Warranty</span></li>\n                    <li tab=\"tab4\"><span class=\"product-detail-tab-name\">Financing</span></li>\n                    <li tab=\"tab5\" class=\"last\"><span class=\"product-detail-tab-name\">Gifting</span></li>\n                </ul>\n\n                <div class=\"tab-content\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options)))
+    + "...\n                </div>\n\n                <div class=\"tab-content\">\n                    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.itemAttributes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n                </div>\n\n                <div class=\"tab-content\">\n                </div>\n\n                <div class=\"tab-content\">\n\n                </div>\n                <div class=\"tab-content\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                        <ul>\n                            <li>";
+  if (stack1 = helpers.attributeName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " : ";
+  if (stack1 = helpers.attributeValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n                        </ul>\n                    ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/tab.js\"></script>\n<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<a href=\"#\"><img id=\"more-questions\" src=\"../img/product/question.png\"/></a>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\" >\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\"><span class=\"product-detail-tab-name\">Description</span></li>\n                    <li tab=\"tab2\"><span class=\"product-detail-tab-name\">Specifications</span></li>\n                    <li tab=\"tab3\"><span class=\"product-detail-tab-name\">Warranty</span></li>\n                    <li tab=\"tab4\"><span class=\"product-detail-tab-name\">Financing</span></li>\n                    <li tab=\"tab5\" class=\"last\"><span class=\"product-detail-tab-name\">Gifting</span></li>\n                </ul>\n\n                <div class=\"tab-content\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options)))
+    + "...\n                </div>\n\n                <div class=\"tab-content\">\n                    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.itemAttributes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n                </div>\n\n                <div class=\"tab-content\">\n                </div>\n\n                <div class=\"tab-content\">\n\n                </div>\n                <div class=\"tab-content\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                        <ul>\n                            <li>";
+  if (stack1 = helpers.attributeName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " : ";
+  if (stack1 = helpers.attributeValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n                        </ul>\n                    ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/tab.js\"></script>\n<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<a href=\"#\"><img id=\"more-questions\" src=\"../img/product/question.png\"/></a>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\" >\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\"><span class=\"product-detail-tab-name\">Description</span></li>\n                    <li tab=\"tab2\"><span class=\"product-detail-tab-name\">Specifications</span></li>\n                    <li tab=\"tab3\"><span class=\"product-detail-tab-name\">Warranty</span></li>\n                    <li tab=\"tab4\"><span class=\"product-detail-tab-name\">Financing</span></li>\n                    <li tab=\"tab5\" class=\"last\"><span class=\"product-detail-tab-name\">Gifting</span></li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options)))
+    + "...\n                </div>\n\n                <div class=\"tab-content details\">\n                    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.itemAttributes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                        <ul>\n                            <li>";
+  if (stack1 = helpers.attributeName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " : ";
+  if (stack1 = helpers.attributeValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n                        </ul>\n                    ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/tab.js\"></script>\n<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<a href=\"#\"><img id=\"more-questions\" src=\"../img/product/question.png\"/></a>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\" >\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\"><span class=\"product-detail-tab-name\">Description</span></li>\n                    <li tab=\"tab2\"><span class=\"product-detail-tab-name\">Specifications</span></li>\n                    <li tab=\"tab3\"><span class=\"product-detail-tab-name\">Warranty</span></li>\n                    <li tab=\"tab4\"><span class=\"product-detail-tab-name\">Financing</span></li>\n                    <li tab=\"tab5\" class=\"last\"><span class=\"product-detail-tab-name\">Gifting</span></li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options)))
+    + "...\n                </div>\n\n                <div class=\"tab-content details\">\n                    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.itemAttributes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n                </div>\n\n                <div class=\"tab-content details\">\n                    "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.supplierWarranty)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<br/>\n                    "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.warrantyLength)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                    <ul>\n                        <li>";
+  if (stack1 = helpers.attributeName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " : ";
+  if (stack1 = helpers.attributeValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n                    </ul>\n                    ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/tab.js\"></script>\n<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<a href=\"#\"><img id=\"more-questions\" src=\"../img/product/question.png\"/></a>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\">\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\"><span class=\"product-detail-tab-name\">Description</span></li>\n                    <li tab=\"tab2\"><span class=\"product-detail-tab-name\">Specifications</span></li>\n                    <li tab=\"tab3\"><span class=\"product-detail-tab-name\">Warranty</span></li>\n                    <li tab=\"tab4\"><span class=\"product-detail-tab-name\">Financing</span></li>\n                    <li tab=\"tab5\" class=\"last\"><span class=\"product-detail-tab-name\">Gifting</span></li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options)))
+    + "...\n                </div>\n\n                <div class=\"tab-content details\">\n                    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.itemAttributes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n                </div>\n\n                <div class=\"tab-content details\">\n                    "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.supplierWarranty)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<br/>\n                    "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.warrantyLength)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>\n<br class=\"clear\"/>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script>\n    $(function () {\n        $('#hero-image .boxes').each(function (i, elmnt) {\n            var newElmnt = $('<a href=\"#\">').html('<img src=\"img/product/greydot.png\" />').bind('click', function () {\n                var visibleBox = $('#hero-image .boxes:visible');\n                visibleBox.hide();\n                $($('#hero-image .boxes').get(i)).show();\n                return false;\n            });\n            $('#pager').append(newElmnt);\n        });\n\n        $(\"#right-arrow\").click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).next('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n\n        $('#left-arrow').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#prev-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n        $('#next-rr').click(function () {\n            var visibleBox = $('#hero-image .boxes:visible');\n            visibleBox.hide();\n            var nextToShow = $(visibleBox).prev('.boxes:hidden');\n            if (nextToShow.length > 0) {\n                nextToShow.show();\n            } else {\n                $('#hero-image .boxes:hidden:first').show();\n            }\n            return false;\n        });\n    });\n\n</script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                    <ul>\n                        <li>";
+  if (stack1 = helpers.attributeName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " : ";
+  if (stack1 = helpers.attributeValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n                    </ul>\n                    ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/tab.js\"></script>\n<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<a href=\"#\"><img id=\"more-questions\" src=\"../img/product/question.png\"/></a>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\">\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\"><span class=\"product-detail-tab-name\">Description</span></li>\n                    <li tab=\"tab2\"><span class=\"product-detail-tab-name\">Specifications</span></li>\n                    <li tab=\"tab3\"><span class=\"product-detail-tab-name\">Warranty</span></li>\n                    <li tab=\"tab4\"><span class=\"product-detail-tab-name\">Financing</span></li>\n                    <li tab=\"tab5\" class=\"last\"><span class=\"product-detail-tab-name\">Gifting</span></li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options)))
+    + "...\n                </div>\n\n                <div class=\"tab-content details\">\n                    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.itemAttributes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n                </div>\n\n                <div class=\"tab-content details\">\n                    "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.supplierWarranty)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<br/>\n                    "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.warrantyLength)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>\n<br class=\"clear\"/>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/productPage.js\"></script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                    <ul>\n                        <li>";
+  if (stack1 = helpers.attributeName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " : ";
+  if (stack1 = helpers.attributeValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n                    </ul>\n                    ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/tab.js\"></script>\n<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<a href=\"#\"><img id=\"more-questions\" src=\"../img/product/question.png\"/></a>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\">\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\"><span class=\"product-detail-tab-name\">Description</span></li>\n                    <li tab=\"tab2\"><span class=\"product-detail-tab-name\">Specifications</span></li>\n                    <li tab=\"tab3\"><span class=\"product-detail-tab-name\">Warranty</span></li>\n                    <li tab=\"tab4\"><span class=\"product-detail-tab-name\">Financing</span></li>\n                    <li tab=\"tab5\" class=\"last\"><span class=\"product-detail-tab-name\">Gifting</span></li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options)))
+    + "...\n                </div>\n\n                <div class=\"tab-content details\">\n                    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.itemAttributes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n                </div>\n\n                <div class=\"tab-content details\">\n                    "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.supplierWarranty)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<br/>\n                    "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.warrantyLength)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>\n<br class=\"clear\"/>\n</div>";
+  return buffer;
+  });
+templates['ratingsReviews'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n        ";
+  options = {hash:{},inverse:self.program(5, program5, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n        ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n        <div class=\"rr-boxes\">\n            <div id=\"selected-review\">\n                <div id=\"selected-review-title\">";
+  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n                <br/>\n                <div>by ";
+  if (stack1 = helpers.customer) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.customer; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " on ";
+  if (stack1 = helpers.date) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.date; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " ";
+  stack1 = helpers['if'].call(depth0, depth0.isVerified, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</div>\n                <div><span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span></div>\n                <div>";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, depth0.review, 200, options) : helperMissing.call(depth0, "rawText", depth0.review, 200, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span></div>\n                <ul>\n                    <li>Value: ";
+  if (stack2 = helpers.value) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.value; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Meets Expectations: ";
+  if (stack2 = helpers.meetsexpectations) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.meetsexpectations; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Picture Quality: ";
+  if (stack2 = helpers.picturequality) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.picturequality; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Sound Quality: ";
+  if (stack2 = helpers.soundquality) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.soundquality; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Features: ";
+  if (stack2 = helpers.features) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.features; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                </ul>\n                <ul>\n                    <li>Age: ";
+  if (stack2 = helpers.age) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.age; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Gender: ";
+  if (stack2 = helpers.gender) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.gender; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Ownership: ";
+  if (stack2 = helpers.ownership) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.ownership; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Usage: ";
+  if (stack2 = helpers.ownership) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.ownership; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>City: ";
+  if (stack2 = helpers.city) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.city; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Helpful Votes: ";
+  if (stack2 = helpers.helpfulvotes) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.helpfulvotes; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                </ul>\n            </div>\n        </div>\n        ";
+  return buffer;
+  }
+function program3(depth0,data) {
+  
+  
+  return " is Verified";
+  }
+
+function program5(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n        <div class=\"rr-boxes\" style=\"display: none;\">\n            <div id=\"selected-review\">\n                <div id=\"selected-review-title\">";
+  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n                <br/>\n                <div>by ";
+  if (stack1 = helpers.customer) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.customer; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " on ";
+  if (stack1 = helpers.date) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.date; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " ";
+  stack1 = helpers['if'].call(depth0, depth0.isVerified, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</div>\n                <div><span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span></div>\n                <div>";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, depth0.review, 200, options) : helperMissing.call(depth0, "rawText", depth0.review, 200, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span></div>\n                <ul>\n                    <li>Value: ";
+  if (stack2 = helpers.value) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.value; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Meets Expectations: ";
+  if (stack2 = helpers.meetsexpectations) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.meetsexpectations; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Picture Quality: ";
+  if (stack2 = helpers.picturequality) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.picturequality; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Sound Quality: ";
+  if (stack2 = helpers.soundquality) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.soundquality; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Features: ";
+  if (stack2 = helpers.features) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.features; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                </ul>\n                <ul>\n                    <li>Age: ";
+  if (stack2 = helpers.age) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.age; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Gender: ";
+  if (stack2 = helpers.gender) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.gender; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Ownership: ";
+  if (stack2 = helpers.ownership) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.ownership; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Usage: ";
+  if (stack2 = helpers.ownership) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.ownership; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>City: ";
+  if (stack2 = helpers.city) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.city; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Helpful Votes: ";
+  if (stack2 = helpers.helpfulvotes) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.helpfulvotes; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                </ul>\n            </div>\n        </div>\n        ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/television.js\"></script>\n<div id=\"ratings-rev-title\">\n    Reviews & Ratings <span style=\"color: #3078b9;\">(";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.length),stack1 ? stack1.call(depth0, depth0.ratingsReviewsItems, options) : helperMissing.call(depth0, "length", depth0.ratingsReviewsItems, options)))
+    + " Total)</span> <img id=\"review-btn\" src=\"../img/product/reviewBtn.png\"/>\n</div>\n<div id=\"review-dropdowns-container\">\n<span class=\"ratings-dropdowns left-float\">\n                    <div class=\"left-float\">\n                        <select id=\"reveiwers\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"Men\">Men</option>\n                            <option value=\"Women\">Women</option>\n                            <option value=\"Children\">Children</option>\n                            <option value=\"Animals\">Animals</option>\n                            <option value=\"Minerals\">Minerals</option>\n                            <option value=\"Vegetables\">Vegetables</option>\n                        </select>\n                    </div>\n            </span>\n        <span class=\"ratings-dropdowns left-float\">\n                    <div class=\"left-float\">\n                        <select id=\"ages\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"25\">25 - 34</option>\n                            <option value=\"35\">35 - 44</option>\n                            <option value=\"45\">45 - 54</option>\n                            <option value=\"55\">55 - 64</option>\n                            <option value=\"65\">65+</option>\n                        </select>\n                    </div>\n        </span>\n        <span class=\"ratings-dropdowns-border left-float\">\n                    <div class=\"left-float\">\n                        <select id=\"ratings\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"All\">All Ratings</option>\n                            <option value=\"5\">5 star</option>\n                            <option value=\"4\">4 star</option>\n                            <option value=\"3\">3 star</option>\n                            <option value=\"2\">2 star</option>\n                            <option value=\"1\">1 star</option>\n                        </select>\n                    </div>\n        </span>\n        <span class=\"ratings-dropdowns\" style=\"float: right\">\n                    <div>\n                        <select id=\"helpful\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"MostHelpful\">Most Helpful</option>\n                            <option value=\"Oldest\">Oldest to Newest</option>\n                            <option value=\"Newest\">Newest to Oldest</option>\n                        </select>\n                    </div>\n        </span>\n</div>\n<div id=\"reviews-container\">\n<div id=\"left-arrow-container\" class=\"left-float\"><a id=\"prev-rr\" href=\"#\"><img src=\"../img/product/arrow-left-gray.png\"></a></div>\n<div id=\"selected-review-container\" class=\"left-float\">\n\n        ";
+  stack2 = helpers.each.call(depth0, depth0.ratingsReviewsItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n\n</div>\n<div id=\"right-arrow-container\" class=\"left-float\"><a id=\"next-rr\" href=\"#\"><img src=\"../img/product/arrow-right.png\"></a></div>\n<div id=\"reviews-count-container\" class=\"left-float\">1 of ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.length),stack1 ? stack1.call(depth0, depth0.ratingsReviewsItems, options) : helperMissing.call(depth0, "length", depth0.ratingsReviewsItems, options)))
+    + " reviews</div>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/television.js\"></script>\n";
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/productPage.js\"></script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                    <ul>\n                        <li>";
+  if (stack1 = helpers.attributeName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " : ";
+  if (stack1 = helpers.attributeValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n                    </ul>\n                    ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/tab.js\"></script>\n<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<a href=\"#\"><img id=\"more-questions\" src=\"../img/product/question.png\"/></a>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\">\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\"><span class=\"product-detail-tab-name\">Description</span></li>\n                    <li tab=\"tab2\"><span class=\"product-detail-tab-name\">Specifications</span></li>\n                    <li tab=\"tab3\"><span class=\"product-detail-tab-name\">Warranty</span></li>\n                    <li tab=\"tab4\"><span class=\"product-detail-tab-name\">Financing</span></li>\n                    <li tab=\"tab5\" class=\"last\"><span class=\"product-detail-tab-name\">Gifting</span></li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options)))
+    + "...\n                </div>\n\n                <div class=\"tab-content details\">\n                    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.itemAttributes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n                </div>\n\n                <div class=\"tab-content details\">\n                    "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.supplierWarranty)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<br/>\n                    "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.warrantyLength)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>\n<br class=\"clear\"/>\n</div>";
+  return buffer;
+  });
+templates['ratingsReviews'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n        ";
+  options = {hash:{},inverse:self.program(5, program5, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n        ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n        <div class=\"rr-boxes\">\n            <div id=\"selected-review\">\n                <div id=\"selected-review-title\">";
+  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n                <br/>\n                <div>by ";
+  if (stack1 = helpers.customer) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.customer; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " on ";
+  if (stack1 = helpers.date) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.date; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " ";
+  stack1 = helpers['if'].call(depth0, depth0.isVerified, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</div>\n                <div><span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span></div>\n                <div>";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, depth0.review, 200, options) : helperMissing.call(depth0, "rawText", depth0.review, 200, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span></div>\n                <ul>\n                    <li>Value: ";
+  if (stack2 = helpers.value) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.value; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Meets Expectations: ";
+  if (stack2 = helpers.meetsexpectations) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.meetsexpectations; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Picture Quality: ";
+  if (stack2 = helpers.picturequality) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.picturequality; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Sound Quality: ";
+  if (stack2 = helpers.soundquality) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.soundquality; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Features: ";
+  if (stack2 = helpers.features) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.features; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                </ul>\n                <ul>\n                    <li>Age: ";
+  if (stack2 = helpers.age) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.age; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Gender: ";
+  if (stack2 = helpers.gender) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.gender; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Ownership: ";
+  if (stack2 = helpers.ownership) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.ownership; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Usage: ";
+  if (stack2 = helpers.ownership) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.ownership; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>City: ";
+  if (stack2 = helpers.city) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.city; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Helpful Votes: ";
+  if (stack2 = helpers.helpfulvotes) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.helpfulvotes; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                </ul>\n            </div>\n        </div>\n        ";
+  return buffer;
+  }
+function program3(depth0,data) {
+  
+  
+  return " is Verified";
+  }
+
+function program5(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n        <div class=\"rr-boxes\" style=\"display: none;\">\n            <div id=\"selected-review\">\n                <div id=\"selected-review-title\">";
+  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n                <br/>\n                <div>by ";
+  if (stack1 = helpers.customer) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.customer; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " on ";
+  if (stack1 = helpers.date) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.date; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " ";
+  stack1 = helpers['if'].call(depth0, depth0.isVerified, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</div>\n                <div><span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span></div>\n                <div>";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, depth0.review, 500, options) : helperMissing.call(depth0, "rawText", depth0.review, 500, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span></div>\n                <ul>\n                    <li>Value: ";
+  if (stack2 = helpers.value) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.value; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Meets Expectations: ";
+  if (stack2 = helpers.meetsexpectations) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.meetsexpectations; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Picture Quality: ";
+  if (stack2 = helpers.picturequality) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.picturequality; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Sound Quality: ";
+  if (stack2 = helpers.soundquality) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.soundquality; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Features: ";
+  if (stack2 = helpers.features) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.features; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                </ul>\n                <ul>\n                    <li>Age: ";
+  if (stack2 = helpers.age) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.age; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Gender: ";
+  if (stack2 = helpers.gender) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.gender; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Ownership: ";
+  if (stack2 = helpers.ownership) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.ownership; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Usage: ";
+  if (stack2 = helpers.ownership) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.ownership; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>City: ";
+  if (stack2 = helpers.city) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.city; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Helpful Votes: ";
+  if (stack2 = helpers.helpfulvotes) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.helpfulvotes; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                </ul>\n            </div>\n        </div>\n        ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/television.js\"></script>\n<div id=\"ratings-rev-title\">\n    Reviews & Ratings <span style=\"color: #3078b9;\">(";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.length),stack1 ? stack1.call(depth0, depth0.ratingsReviewsItems, options) : helperMissing.call(depth0, "length", depth0.ratingsReviewsItems, options)))
+    + " Total)</span> <img id=\"review-btn\" src=\"../img/product/reviewBtn.png\"/>\n</div>\n<div id=\"review-dropdowns-container\">\n<span class=\"ratings-dropdowns left-float\">\n                    <div class=\"left-float\">\n                        <select id=\"reveiwers\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"Men\">Men</option>\n                            <option value=\"Women\">Women</option>\n                            <option value=\"Children\">Children</option>\n                            <option value=\"Animals\">Animals</option>\n                            <option value=\"Minerals\">Minerals</option>\n                            <option value=\"Vegetables\">Vegetables</option>\n                        </select>\n                    </div>\n            </span>\n        <span class=\"ratings-dropdowns left-float\">\n                    <div class=\"left-float\">\n                        <select id=\"ages\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"25\">25 - 34</option>\n                            <option value=\"35\">35 - 44</option>\n                            <option value=\"45\">45 - 54</option>\n                            <option value=\"55\">55 - 64</option>\n                            <option value=\"65\">65+</option>\n                        </select>\n                    </div>\n        </span>\n        <span class=\"ratings-dropdowns-border left-float\">\n                    <div class=\"left-float\">\n                        <select id=\"ratings\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"All\">All Ratings</option>\n                            <option value=\"5\">5 star</option>\n                            <option value=\"4\">4 star</option>\n                            <option value=\"3\">3 star</option>\n                            <option value=\"2\">2 star</option>\n                            <option value=\"1\">1 star</option>\n                        </select>\n                    </div>\n        </span>\n        <span class=\"ratings-dropdowns\" style=\"float: right\">\n                    <div>\n                        <select id=\"helpful\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"MostHelpful\">Most Helpful</option>\n                            <option value=\"Oldest\">Oldest to Newest</option>\n                            <option value=\"Newest\">Newest to Oldest</option>\n                        </select>\n                    </div>\n        </span>\n</div>\n<div id=\"reviews-container\">\n<div id=\"left-arrow-container\" class=\"left-float\"><a id=\"prev-rr\" href=\"#\"><img src=\"../img/product/arrow-left-gray.png\"></a></div>\n<div id=\"selected-review-container\" class=\"left-float\">\n\n        ";
+  stack2 = helpers.each.call(depth0, depth0.ratingsReviewsItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n\n</div>\n<div id=\"right-arrow-container\" class=\"left-float\"><a id=\"next-rr\" href=\"#\"><img src=\"../img/product/arrow-right.png\"></a></div>\n<div id=\"reviews-count-container\" class=\"left-float\">1 of ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.length),stack1 ? stack1.call(depth0, depth0.ratingsReviewsItems, options) : helperMissing.call(depth0, "length", depth0.ratingsReviewsItems, options)))
+    + " reviews</div>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/television.js\"></script>\n";
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+})();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['addToCart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  buffer += "    <div id=\"about\" class=\"left-float\">\n        <span style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;\">About</span>\n        <p id=\"short-desc\">\n            <section>\n                ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 250, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span>\n            </section>\n        </p>\n    </div>\n    <div id=\"add-to-cart\" class=\"left-float\">\n        <a href=\"#\"><img src=\"img/product/qty.png\"/></a>&nbsp;&nbsp;<a href=\"#\"><img src=\"img/product/addToCart.png\"/></a>\n\n        <p>\n            <section>\n                <p><a href=\"#\"><img src=\"img/product/find-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/arrival-icon.png\"/>&nbsp;&nbsp;Calculate arrival date.</a></p>\n\n                <p><a href=\"#\"><img src=\"img/product/share-icon.png\"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</a></p>\n            </section>\n        </p>\n    </div>\n    <br class=\"clear\" />\n";
+  return buffer;
+  });
+templates['clearFilters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div id=\"filter-matches\" class=\"left-float\">\n    <div id=\"match-num\" class=\"left-float\"></div>\n    &nbsp;Matches <span style=\"color:#918888; font-weight:500;\">for televisions that fit that criteria.</span></div>\n<div id=\"filter-clear\">\n<button type=\"button\" name=\"\" value=\"\" class=\"css3button\" id=\"clear-filter\">Clear Filters</button>\n</div>";
+  });
+templates['filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<img class= left-float src=\"../img/tVFinder.png\" id=\"tv-finder-img\"/>\n<span id=\"slider-div\" class=\"left-float\">\n                <div style=\"font-family: Arial,Helvetica,Sans-serif;font-size: 15px;\">Size:</div>\n                <div id=\"amount\" style=\"border: 0; color: #424242; font-weight: bold;\"></div>\n                <div id=\"slider\">\n                    <div id=\"slider-range\"></div>\n                </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Type</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-types\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LCD\">LCD</option>\n                            <option value=\"3D\">3D</option>\n                            <option value=\"LED\">LED</option>\n                            <option value=\"Plasma\">Plasma</option>\n                            <option value=\"Projection\">Projection</option>\n                            <option value=\"Smart\">Smart</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Brand</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select id=\"tv-brand\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"LG\">LG</option>\n                            <option value=\"Panasonic\">Panasonic</option>\n                            <option value=\"Samsung\">Samsung</option>\n                            <option value=\"Sony\">Sony</option>\n                            <option value=\"Vizio\">Vizio</option>\n                            <option value=\"Sceptre\">Sceptre</option>\n                            <option value=\"Proscan\">Proscan</option>\n                            <option value=\"Emerson\">Emerson</option>\n                            <option value=\"Philips\">Philips</option>\n                            <option value=\"RCA\">RCA</option>\n                        </select>\n                    </div>\n            </span>\n<span class=\"tv-dropdowns left-float\">\n                    <div class=\"dropdown-labels\">Sort</div>\n                    <div class=\"left-float\" style=\"padding-right: 20px;\">\n                        <select name=\"tv-sort\" id=\"tv-sort\">\n                            <option value=\"LowestPrice\">Lowest Price</option>\n                            <option value=\"HighestPrice\">Highest Price</option>\n                            <option value=\"TopRated\">Top Rated</option>\n                            <option value=\"ScreenSize\">Screen Size</option>\n                        </select>\n                    </div>\n            </span>\n";
+  });
+templates['footer'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<div class=\"top\">\n    <img id=\"wmlogo-footer\" src=\"../img/blueWmLogoFooter.png\"/>\n    <input id=\"email-signup\" type=\"text\" placeholder=\"Sign up for our Mailing List\"/>\n\n\n</div>\n<div class=\"list\">\n<a href=\"http://walmartstores.com/\">Corporate</a>\n<a href=\"http://walmartstores.com/aboutus\">Our Story</a>\n<a href=\"http://walmartstores.com/pressroom\">News &amp; Views</a>\n<a href=\"http://walmartstores.com/communitygiving\">Giving Back</a>\n<a href=\"http://walmartstores.com/sustainability\">Global Responsibility</a>\n<a href=\"http://walmartstores.com/investors\">Investors</a>\n<a href=\"http://walmartstores.com/suppliers\">Suppliers</a>\n<a href=\"http://walmartstores.com/careers\">Careers</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=542412\">About Walmart.com</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538449\">Terms of Use</a>\n<a href=\"http://affiliates.walmart.com/aff_home.jsp\">Affiliate Program</a>\n<a href=\"http://public.conxport.com/walmart/sponsorship/home.aspx\">Sponsorship Submission</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538456\">International Customers</a>\n<a href=\"http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=971879\">About Our Ads</a>\n<a href=\"http://www.walmart.com/cservice/ca_storefinder.gsp\">Store Finder</a>\n<a href=\"http://coupons.walmart.com/?povid=cat14503-env172199-module092411-lLinkISNCOUPON\">Printable Coupons</a>\n<a href=\"http://www.walmart.com/wf.gsp/a_d_registration_flow/landing\">Associate Discount</a>\n<a href=\"http://walmartstores.com/PrivacySecurity/?sourceid=walmart.com-footer\">Privacy &amp; Security</a>\n<a href=\"http://walmartstores.com/9243.aspx#California\">California Privacy Rights</a>\n<a href=\"http://www.walmartlabs.com/\">@Walmart Labs</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=121828\">See All Departments</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=5436\">Help Center</a>\n<a href=\"http://www.walmart.com/cservice/li_trackorder.gsp?NavMode=2\">Track Your Order</a>\n<a href=\"http://www.walmart.com/catalog/catalog.gsp?cat=538459\">Returns Policy</a>\n<a href=\"http://www.walmart.com/returns/returns_type.gsp\">Return an Item</a>\n<a href=\"http://walmartstores.com/Recalls/\">Product Recalls</a>\n<a href=\"http://www.walmart.com/cservice/cu_comments_online.gsp?cu_heading=8\">Contact Us</a>\n<a href=\"https://secure.opinionlab.com/ccc01/comment_card_d.asp\">Feedback</a>\n</div>\n\n<div class=\"list\">\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Black Friday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Cyber Monday</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Thanksgiving</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Laptops</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">iPads and Tablets</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">Appliances</a>\n<a href=\"http://www.walmart.com/cp/Electronics/3944\">TVs</a>\n<a href=\"http://www.walmart.com/cp/toys/4171\">Toys</a>\n<a href=\"http://www.walmart.com/cp/Gift-Cards/96894\">eGift Cards</a>\n<a href=\"http://www.walmart.com/cp/Best-Sellers/1095979\">Best Sellers</a>\n<a href=\"http://www.walmart.com/cp/New-Arrivals/1095884\">New Arrivals</a>\n<a href=\"http://www.walmart.com/cp/Top-Rated/1095980\">Top-Rated Items</a>\n</div>\n";
+  });
+templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
+
+
+  return "<span class=\"left-float\"><img src=\"../img/WmLogo.png\" id=\"logo\"/></span>\n<span id=\"white\" class=\"left-float\">\n        <form method=\"get\" action=\"/search\" id=\"search\">\n            <input name=\"q\" type=\"text\" size=\"40\" placeholder=\"Search...\"/>\n        </form>\n    </span>\n<ul>\n<li><span id=\"create-link\" class=\"left-float\"><img src=\"../img/create.png\"/><a href=\"#\"> Create</a></span></li>\n<li><span id=\"sign-in\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/signIn.png\" id=\"sign-img\"/><a href=\"#\"> Sign In</a></span></li>\n<li><span id=\"cart-items\" class=\"left-float\"><img src=\"../img/pipeSeperator.png\" class=\"pipe\"/><img\n        src=\"../img/shoppingCart.png\"/><a href=\"#\"> Items</a></span></li>\n</ul>";
+  });
+templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+templates['itemCarousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"boxes\" style=\"display: none;\"><img src=\"";
+  if (stack1 = helpers.lgImageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lgImageSrc; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></div>\n    ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/productPage.js\"></script>\n\n<div id=\"product-name\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.itemName)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<span id=\"close-x\"><img\n        src=\"img/product/close-panel.png\"></span></div>\n<div id=\"ratings-container\">\n<span class=\"left-float\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.customerRatingUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/> </span><span id=\"review-links\" class=\"left-float\">&nbsp;&nbsp;109 Reviews  |  <a\n        href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n</div>\n<div id=\"product-price\">$"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.sellers)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.currentItemPrice)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n<div id=\"product-image\">\n<div id=\"left-arrow\" class=\"left-float\">\n    <div id=\"prev\"><img src=\"img/product/arrow-left-gray.png\"/></div>\n</div>\n<!--<img src=\"img/product/TV.png\"/>-->\n<div id=\"hero-image\" class=\"left-float\">\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.alternateImageData), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n</div>\n<div id=\"right-arrow\" class=\"left-float\">\n    <div class=\"next\"><img src=\"img/product/arrow-right.png\"/></div>\n</div>\n</div>\n<div id=\"pager\"></div>\n\n\n\n\n";
+  return buffer;
+  });
+templates['peopleWhoViewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{
+    'compare': (3)
+  },inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"people-viewed-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n";
+  return buffer;
+  }
+
+  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\nPeople Who Viewed This Item Also Viewed<a href=\"#\"><img id=\"see-more\" src=\"../img/product/seeMore.png\"/></a>\n</div>\n<div id=\"people-viewed-container\">\n";
+  stack1 = helpers.each.call(depth0, depth0.viewedItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n<br class=\"clear\" />\n</div>";
+  return buffer;
+  });
+templates['prodDetailTabs'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                    <ul>\n                        <li>";
+  if (stack1 = helpers.attributeName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " : ";
+  if (stack1 = helpers.attributeValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.attributeValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n                    </ul>\n                    ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/tab.js\"></script>\n<div class=\"horizborder\"><p class=\"inset\"></p></div>\n<div id=\"product-details-title\">\nProduct Details<a href=\"#\"><img id=\"more-questions\" src=\"../img/product/question.png\"/></a>\n</div>\n<div id=\"details-container\">\n<div id=\"detail-tabs\" class=\"left-float\">\n    <section class=\"product-details-container\">\n        <div class=\"wrapper\">\n            <div id=\"v-nav\">\n                <ul>\n                    <li tab=\"tab1\" class=\"first current\"><span class=\"product-detail-tab-name\">Description</span></li>\n                    <li tab=\"tab2\"><span class=\"product-detail-tab-name\">Specifications</span></li>\n                    <li tab=\"tab3\"><span class=\"product-detail-tab-name\">Warranty</span></li>\n                    <li tab=\"tab4\"><span class=\"product-detail-tab-name\">Financing</span></li>\n                    <li tab=\"tab5\" class=\"last\"><span class=\"product-detail-tab-name\">Gifting</span></li>\n                </ul>\n\n                <div class=\"tab-content details\" style=\"display:block\">\n                    ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options) : helperMissing.call(depth0, "rawText", ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.shortDescription), 1200, options)))
+    + "...\n                </div>\n\n                <div class=\"tab-content details\">\n                    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.itemAttributes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n                </div>\n\n                <div class=\"tab-content details\">\n                    "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.supplierWarranty)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "<br/>\n                    "
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.genericContent)),stack1 == null || stack1 === false ? stack1 : stack1.warrantyLength)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n                </div>\n\n                <div class=\"tab-content details\">\n\n                </div>\n                <div class=\"tab-content details\">\n\n                </div>\n\n            </div>\n        </div>\n    </section>\n</div>\n<br class=\"clear\"/>\n</div>";
+  return buffer;
+  });
+templates['ratingsReviews'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n        ";
+  options = {hash:{},inverse:self.program(5, program5, data),fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n        ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n        <div class=\"rr-boxes\">\n            <div id=\"selected-review\">\n                <div id=\"selected-review-title\">";
+  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n                <br/>\n                <div>by ";
+  if (stack1 = helpers.customer) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.customer; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " on ";
+  if (stack1 = helpers.date) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.date; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " ";
+  stack1 = helpers['if'].call(depth0, depth0.isVerified, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</div>\n                <div><span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span></div>\n                <div>";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, depth0.review, 200, options) : helperMissing.call(depth0, "rawText", depth0.review, 200, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span></div>\n                <ul>\n                    <li>Value: ";
+  if (stack2 = helpers.value) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.value; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Meets Expectations: ";
+  if (stack2 = helpers.meetsexpectations) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.meetsexpectations; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Picture Quality: ";
+  if (stack2 = helpers.picturequality) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.picturequality; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Sound Quality: ";
+  if (stack2 = helpers.soundquality) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.soundquality; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Features: ";
+  if (stack2 = helpers.features) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.features; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                </ul>\n                <ul>\n                    <li>Age: ";
+  if (stack2 = helpers.age) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.age; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Gender: ";
+  if (stack2 = helpers.gender) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.gender; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Ownership: ";
+  if (stack2 = helpers.ownership) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.ownership; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Usage: ";
+  if (stack2 = helpers.ownership) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.ownership; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>City: ";
+  if (stack2 = helpers.city) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.city; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Helpful Votes: ";
+  if (stack2 = helpers.helpfulvotes) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.helpfulvotes; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                </ul>\n            </div>\n        </div>\n        ";
+  return buffer;
+  }
+function program3(depth0,data) {
+  
+  
+  return " is Verified";
+  }
+
+function program5(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n        <div class=\"rr-boxes\" style=\"display: none;\">\n            <div id=\"selected-review\">\n                <div id=\"selected-review-title\">";
+  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n                <br/>\n                <div>by ";
+  if (stack1 = helpers.customer) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.customer; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " on ";
+  if (stack1 = helpers.date) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.date; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " ";
+  stack1 = helpers['if'].call(depth0, depth0.isVerified, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</div>\n                <div><span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span></div>\n                <div>";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, depth0.review, 500, options) : helperMissing.call(depth0, "rawText", depth0.review, 500, options)))
+    + "...<span style=\"color: #3078b9;\"> Read more</span></div>\n                <ul>\n                    <li>Value: ";
+  if (stack2 = helpers.value) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.value; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Meets Expectations: ";
+  if (stack2 = helpers.meetsexpectations) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.meetsexpectations; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Picture Quality: ";
+  if (stack2 = helpers.picturequality) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.picturequality; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Sound Quality: ";
+  if (stack2 = helpers.soundquality) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.soundquality; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Features: ";
+  if (stack2 = helpers.features) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.features; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                </ul>\n                <ul>\n                    <li>Age: ";
+  if (stack2 = helpers.age) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.age; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Gender: ";
+  if (stack2 = helpers.gender) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.gender; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Ownership: ";
+  if (stack2 = helpers.ownership) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.ownership; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Usage: ";
+  if (stack2 = helpers.ownership) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.ownership; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>City: ";
+  if (stack2 = helpers.city) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.city; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                    <li>Helpful Votes: ";
+  if (stack2 = helpers.helpfulvotes) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.helpfulvotes; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</li>\n                </ul>\n            </div>\n        </div>\n        ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/television.js\"></script>\n<div id=\"ratings-rev-title\">\n    Reviews & Ratings <span style=\"color: #3078b9;\">(";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.length),stack1 ? stack1.call(depth0, depth0.ratingsReviewsItems, options) : helperMissing.call(depth0, "length", depth0.ratingsReviewsItems, options)))
+    + " Total)</span> <img id=\"review-btn\" src=\"../img/product/reviewBtn.png\"/>\n</div>\n<div id=\"review-dropdowns-container\">\n<span class=\"ratings-dropdowns left-float\">\n                    <div class=\"left-float\">\n                        <select id=\"reveiwers\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"Men\">Men</option>\n                            <option value=\"Women\">Women</option>\n                            <option value=\"Children\">Children</option>\n                            <option value=\"Animals\">Animals</option>\n                            <option value=\"Minerals\">Minerals</option>\n                            <option value=\"Vegetables\">Vegetables</option>\n                        </select>\n                    </div>\n            </span>\n        <span class=\"ratings-dropdowns left-float\">\n                    <div class=\"left-float\">\n                        <select id=\"ages\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"25\">25 - 34</option>\n                            <option value=\"35\">35 - 44</option>\n                            <option value=\"45\">45 - 54</option>\n                            <option value=\"55\">55 - 64</option>\n                            <option value=\"65\">65+</option>\n                        </select>\n                    </div>\n        </span>\n        <span class=\"ratings-dropdowns-border left-float\">\n                    <div class=\"left-float\">\n                        <select id=\"ratings\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"All\">All Ratings</option>\n                            <option value=\"5\">5 star</option>\n                            <option value=\"4\">4 star</option>\n                            <option value=\"3\">3 star</option>\n                            <option value=\"2\">2 star</option>\n                            <option value=\"1\">1 star</option>\n                        </select>\n                    </div>\n        </span>\n        <span class=\"ratings-dropdowns\" style=\"float: right\">\n                    <div>\n                        <select id=\"helpful\">\n                            <option selected=\"selected\" value=\"select\" disabled>Select</option>\n                            <option value=\"MostHelpful\">Most Helpful</option>\n                            <option value=\"Oldest\">Oldest to Newest</option>\n                            <option value=\"Newest\">Newest to Oldest</option>\n                        </select>\n                    </div>\n        </span>\n</div>\n<div id=\"reviews-container\">\n<div id=\"left-arrow-container\" class=\"left-float\"><div id=\"prev-rr\"><img src=\"../img/product/arrow-left-gray.png\"></div></div>\n<div id=\"selected-review-container\" class=\"left-float\">\n\n        ";
+  stack2 = helpers.each.call(depth0, depth0.ratingsReviewsItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n\n</div>\n<div id=\"right-arrow-container\" class=\"left-float\"><div id=\"next-rr\"><img src=\"../img/product/arrow-right.png\"></div></div>\n<div id=\"reviews-count-container\" class=\"left-float\">1 of ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.length),stack1 ? stack1.call(depth0, depth0.ratingsReviewsItems, options) : helperMissing.call(depth0, "length", depth0.ratingsReviewsItems, options)))
+    + " reviews</div>\n</div>";
+  return buffer;
+  });
+templates['tvresults'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"result-cell left-float\">\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"/></a>\n    <a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <div class=\"result-title\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    </a>\n\n    <div class=\"description\">";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n    <span class=\"price\">$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "<span class=\"cents\"></span></span>\n    <span class=\"stars\">";
+  if (stack1 = helpers.rating) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.rating; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n</div>\n ";
+  return buffer;
+  }
+
+  buffer += "<script src=\"../js/television.js\"></script>\n";
   stack1 = helpers.each.call(depth0, depth0.item, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n";

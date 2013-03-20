@@ -1,0 +1,116 @@
+<script src="../js/television.js"></script>
+<div id="ratings-rev-title">
+    Reviews & Ratings <span style="color: #3078b9;">({{length ratingsReviewsItems}} Total)</span> <img id="review-btn" src="../img/product/reviewBtn.png"/>
+</div>
+<div id="review-dropdowns-container">
+<span class="ratings-dropdowns left-float">
+                    <div class="left-float">
+                        <select id="reveiwers">
+                            <option selected="selected" value="select" disabled>Select</option>
+                            <option value="Men">Men</option>
+                            <option value="Women">Women</option>
+                            <option value="Children">Children</option>
+                            <option value="Animals">Animals</option>
+                            <option value="Minerals">Minerals</option>
+                            <option value="Vegetables">Vegetables</option>
+                        </select>
+                    </div>
+            </span>
+        <span class="ratings-dropdowns left-float">
+                    <div class="left-float">
+                        <select id="ages">
+                            <option selected="selected" value="select" disabled>Select</option>
+                            <option value="25">25 - 34</option>
+                            <option value="35">35 - 44</option>
+                            <option value="45">45 - 54</option>
+                            <option value="55">55 - 64</option>
+                            <option value="65">65+</option>
+                        </select>
+                    </div>
+        </span>
+        <span class="ratings-dropdowns-border left-float">
+                    <div class="left-float">
+                        <select id="ratings">
+                            <option selected="selected" value="select" disabled>Select</option>
+                            <option value="All">All Ratings</option>
+                            <option value="5">5 star</option>
+                            <option value="4">4 star</option>
+                            <option value="3">3 star</option>
+                            <option value="2">2 star</option>
+                            <option value="1">1 star</option>
+                        </select>
+                    </div>
+        </span>
+        <span class="ratings-dropdowns" style="float: right">
+                    <div>
+                        <select id="helpful">
+                            <option selected="selected" value="select" disabled>Select</option>
+                            <option value="MostHelpful">Most Helpful</option>
+                            <option value="Oldest">Oldest to Newest</option>
+                            <option value="Newest">Newest to Oldest</option>
+                        </select>
+                    </div>
+        </span>
+</div>
+<div id="reviews-container">
+<div id="left-arrow-container" class="left-float"><div id="prev-rr"><img src="../img/product/arrow-left-gray.png"></div></div>
+<div id="selected-review-container" class="left-float">
+
+        {{#each ratingsReviewsItems}}
+        {{#equal @index 0 }}
+        <div class="rr-boxes">
+            <div id="selected-review">
+                <div id="selected-review-title">{{title}}</div>
+                <br/>
+                <div>by {{customer}} on {{date}} {{#if isVerified}} is Verified{{/if}}</div>
+                <div><span class="stars">{{rating}}</span></div>
+                <div>{{rawText review 200}}...<span style="color: #3078b9;"> Read more</span></div>
+                <ul>
+                    <li>Value: {{value}}</li>
+                    <li>Meets Expectations: {{meetsexpectations}}</li>
+                    <li>Picture Quality: {{picturequality}}</li>
+                    <li>Sound Quality: {{soundquality}}</li>
+                    <li>Features: {{features}}</li>
+                </ul>
+                <ul>
+                    <li>Age: {{age}}</li>
+                    <li>Gender: {{gender}}</li>
+                    <li>Ownership: {{ownership}}</li>
+                    <li>Usage: {{ownership}}</li>
+                    <li>City: {{city}}</li>
+                    <li>Helpful Votes: {{helpfulvotes}}</li>
+                </ul>
+            </div>
+        </div>
+        {{else}}
+        <div class="rr-boxes" style="display: none;">
+            <div id="selected-review">
+                <div id="selected-review-title">{{title}}</div>
+                <br/>
+                <div>by {{customer}} on {{date}} {{#if isVerified}} is Verified{{/if}}</div>
+                <div><span class="stars">{{rating}}</span></div>
+                <div>{{rawText review 500}}...<span style="color: #3078b9;"> Read more</span></div>
+                <ul>
+                    <li>Value: {{value}}</li>
+                    <li>Meets Expectations: {{meetsexpectations}}</li>
+                    <li>Picture Quality: {{picturequality}}</li>
+                    <li>Sound Quality: {{soundquality}}</li>
+                    <li>Features: {{features}}</li>
+                </ul>
+                <ul>
+                    <li>Age: {{age}}</li>
+                    <li>Gender: {{gender}}</li>
+                    <li>Ownership: {{ownership}}</li>
+                    <li>Usage: {{ownership}}</li>
+                    <li>City: {{city}}</li>
+                    <li>Helpful Votes: {{helpfulvotes}}</li>
+                </ul>
+            </div>
+        </div>
+        {{/equal}}
+        {{/each}}
+
+</div>
+<div id="right-arrow-container" class="left-float"><div id="next-rr"><img src="../img/product/arrow-right.png"></div></div>
+<div id="reviews-count-container" class="left-float">1 of {{length ratingsReviewsItems}} reviews</div>
+</div>

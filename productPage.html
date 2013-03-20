@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="lib/jquery.js"></script>
+    <!--<script src="lib/jquery.js"></script> -->
+    <script src="js/jquery-1.9.1.js"></script>
+    <!--<script src="js/productPage.js"></script>-->
+    <!--<script src="js/tab.js"></script>-->
     <script src="lib/underscore.js"></script>
     <script src="lib/handlebars.js"></script>
     <script src="js/helper.js"></script>
     <script src="lib/backbone.js"></script>
     <script src="lib/bootstrap.js"></script>
+    <script src="productBackbone.js"></script>
     <script src="templates.js"></script>
-    <script src="js/products.json"></script>
     <script src="lib/jquery.lazyload.min.js"></script>
     <script src="lib/modernizr.min.js"></script>
-    <script src="js/jquery-1.9.1.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="lib/jquery.templ.js"></script>
-    <script src="js/productPage.js"></script>
-    <script src="productBackbone.js"></script>
     <link rel="stylesheet" media="screen" href="styles/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="css/product.css">
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/televisions.css">
-    <link href='css/googlefonts.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" media="screen" href="css/tabs.css"/>
+    <link rel='stylesheet' type='text/css' href='css/googlefonts.css' >
+
 </head>
 <body>
 <div id="product-container">
@@ -28,202 +30,19 @@
     <!--insert carousel here -->
 </div>
     <div id="under-image-container">
-        <div id="about" class="left-float">
-            <span style="font-family: Arial,Helvetica,Sans-serif;font-size: 25px; color:#000000;">About</span>
-
-            <p>
-                <section>
-                    function can be used to iterate over any collection, whether it is an object or an array. In the
-                    case of an
-                    array, the callback is passed an array index and a corresponding array value each time. (The value
-                    can also be
-                    accessed through the this keyword, but Javascript will always wrap the this value as an Object even
-                    if it is a
-                    simple string or number value.) The method returns its first argument,<span style="color: #3078b9;"> the object that was iterated.</span>
-                </section>
-            </p>
-        </div>
-        <div id="add-to-cart" class="left-float">
-            <img src="img/product/qty.png"/>&nbsp;&nbsp;<img src="img/product/addToCart.png"/>
-
-            <p>
-                <section>
-                    <p><img src="img/product/find-icon.png"/>&nbsp;&nbsp;&nbsp;&nbsp;Find this product locally.</p>
-
-                    <p><img src="img/product/arrival-icon.png"/>&nbsp;&nbsp;Calculate arrival date.</p>
-
-                    <p><img src="img/product/share-icon.png"/>&nbsp;&nbsp;&nbsp;&nbsp;Share with a friend.</p>
-                </section>
-            </p>
-        </div>
-        <br class="clear" />
+        <!--Add to cart and description here-->
     </div>
-    <div class="horizBorder"><p class="inset"></p></div>
-    <div id="people-viewed-title">
-        People Who Viewed This Item Also Viewed<img id="see-more" src="img/product/seeMore.png"/>
+    <div id="people-who">
+        <!--Insert people who viewed this item module -->
     </div>
-    <div id="people-viewed-container">
-        <div class="people-viewed-cell left-float">
-            <a href="#"><img src="img/product/av-temp1.png"/></a>
-            <a href="#">
-                <div class="result-title">Soda Stream Starter Kit</div>
-            </a>
-
-            <div class="description">Make your drinks fizzy</div>
-            <span class="price">$79<span class="cents">.98</span></span>
-            <span class="stars">5</span>
-        </div>
-        <div class="people-viewed-cell left-float">
-            <a href="#"><img src="img/product/av-temp1.png"/></a>
-            <a href="#">
-                <div class="result-title">Soda Stream Starter Kit</div>
-            </a>
-
-            <div class="description">Make your drinks fizzy</div>
-            <span class="price">$79<span class="cents">.98</span></span>
-            <span class="stars">5</span>
-        </div>
-        <div class="people-viewed-cell left-float">
-            <a href="#"><img src="img/product/av-temp1.png"/></a>
-            <a href="#">
-                <div class="result-title">Soda Stream Starter Kit</div>
-            </a>
-
-            <div class="description">Make your drinks fizzy</div>
-            <span class="price">$79<span class="cents">.98</span></span>
-            <span class="stars">5</span>
-        </div>
-        <br class="clear" />
+    <div id="prod-details-tabs">
+    <!--Insert product details tabs here    -->
     </div>
+
+
     <div class="horizborder"><p class="inset"></p></div>
-    <div id="product-details-title">
-        Product Details<img id="more-questions" src="img/product/question.png"/>
-    </div>
-    <div id="product-details-container">
-        <div id="detail-tabs" class="left-float">
-            tabs
-        </div>
-        <div id="details" class="left-float">
-            function can be used to iterate over any collection, whether it is an object or an array. In the
-            case of an
-            array, the callback is passed an array index and a corresponding array value each time. (The value
-            can also be
-            accessed through the this keyword, but Javascript will always wrap the this value as an Object even
-            if it is a
-            simple string or number value.) The method returns its first argument
-
-            function can be used to iterate over any collection, whether it is an object or an array. In the
-            case of an
-            array, the callback is passed an array index and a corresponding array value each time. (The value
-            can also be
-            accessed through the this keyword, but Javascript will always wrap the this value as an Object even
-            if it is a
-            simple string or number value.) The method returns its first argument
-
-            function can be used to iterate over any collection, whether it is an object or an array. In the
-            case of an
-            array, the callback is passed an array index and a corresponding array value each time. (The value
-            can also be
-            accessed through the this keyword, but Javascript will always wrap the this value as an Object even
-            if it is a
-            simple string or number value.) The method returns its first argument
-
-            function can be used to iterate over any collection, whether it is an object or an array. In the
-            case of an
-            array, the callback is passed an array index and a corresponding array value each time. (The value
-            can also be
-            accessed through the this keyword, but Javascript will always wrap the this value as an Object even
-            if it is a
-            simple string or number value.) The method returns its first argument
-
-            function can be used to iterate over any collection, whether it is an object or an array. In the
-            case of an
-            array, the callback is passed an array index and a corresponding array value each time. (The value
-            can also be
-            accessed through the this keyword, but Javascript will always wrap the this value as an Object even
-            if it is a
-            simple string or number value.) The method returns its first argument
-            function can be used to iterate over any collection, whether it is an object or an array. In the
-            case of an
-            array, the callback is passed an array index and a corresponding array value each time. (The value
-            can also be
-            accessed through the this keyword, but Javascript will always wrap the this value as an Object even
-            if it is a
-            simple string or number value.) The method returns its first argumentfunction can be used to iterate over any collection, whether it is an object or an array. In the
-            case of an
-            array, the callback is passed an array index and a corresponding array value each time. (The value
-            can also be
-            accessed through the this keyword, but Javascript will always wrap the this value as an Object even
-            if it is a
-            simple string or number value.) The method returns its first argument
-        </div>
-        <br class="clear" />
-    </div>
-    <div class="horizBorder"><p class="inset"></p></div>
-    <div id="ratings-rev-title">
-        Reviews & Ratings <span style="color: #3078b9;">(5 Total)</span> <img id="review-btn" src="img/product/reviewBtn.png"/>
-    </div>
-    <div id="review-dropdowns-container">
-        <span class="ratings-dropdowns left-float">
-                    <div class="left-float">
-                        <select id="reveiwers">
-                            <option selected="selected" value="select" disabled>Select</option>
-                            <option value="Men">Men</option>
-                            <option value="Women">Women</option>
-                            <option value="Children">Children</option>
-                            <option value="Animals">Animals</option>
-                            <option value="Minerals">Minerals</option>
-                            <option value="Vegetables">Vegetables</option>
-                        </select>
-                    </div>
-            </span>
-        <span class="ratings-dropdowns left-float">
-                    <div class="left-float">
-                        <select id="ages">
-                            <option selected="selected" value="select" disabled>Select</option>
-                            <option value="25">25 - 34</option>
-                            <option value="35">35 - 44</option>
-                            <option value="45">45 - 54</option>
-                            <option value="55">55 - 64</option>
-                            <option value="65">65+</option>
-                        </select>
-                    </div>
-        </span>
-        <span class="ratings-dropdowns-border left-float">
-                    <div class="left-float">
-                        <select id="ratings">
-                            <option selected="selected" value="select" disabled>Select</option>
-                            <option value="All">All Ratings</option>
-                            <option value="5">5 star</option>
-                            <option value="4">4 star</option>
-                            <option value="3">3 star</option>
-                            <option value="2">2 star</option>
-                            <option value="1">1 star</option>
-                        </select>
-                    </div>
-        </span>
-        <span class="ratings-dropdowns" style="float: right">
-                    <div>
-                        <select id="helpful">
-                            <option selected="selected" value="select" disabled>Select</option>
-                            <option value="MostHelpful">Most Helpful</option>
-                            <option value="Oldest">Oldest to Newest</option>
-                            <option value="Newest">Newest to Oldest</option>
-                        </select>
-                    </div>
-        </span>
-    </div>
-    <div id="reviews-container">
-        <div id="left-arrow-container" class="left-float"><a id="prev-rr" href="#"><img src="img/product/arrow-left-gray.png"></a></div>
-        <div id="selected-review-container" class="left-float">
-            <div id="selected-review">
-                <div id="selected-review-title">It fits me real nice like It fits me real nice like It fits me real nice like</div>
-
-            </div>
-
-        </div>
-        <div id="right-arrow-container" class="left-float"><a id="next-rr" href="#"><img src="img/product/arrow-right.png"></a></div>
-        <div id="reviews-count-container" class="left-float">1 of 5 reviews</div>
+    <div id="ratings-reviews">
+        <!--Insert ratings and reviews here-->
     </div>
 
 <br class="clear" />

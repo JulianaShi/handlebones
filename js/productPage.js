@@ -10,8 +10,7 @@ $(function () {
         $('#pager').append(newElmnt);
     });
 
-    $("#next").click(function () {
-        console.log("next worked");
+    $("#right-arrow").click(function () {
         var visibleBox = $('#hero-image .boxes:visible');
         visibleBox.hide();
         var nextToShow = $(visibleBox).next('.boxes:hidden');
@@ -32,11 +31,10 @@ $(function () {
         } else {
             $('#hero-image .boxes:hidden:first').show();
         }
-        console.log("prev worked");
         return false;
     });
     $('#prev-rr').click(function () {
-        var visibleBox = $('#hero-image .boxes:visible');
+        var visibleBox = $('#selected-review-container .rr-boxes:visible');
         visibleBox.hide();
         var nextToShow = $(visibleBox).prev('.boxes:hidden');
         if (nextToShow.length > 0) {
@@ -47,7 +45,7 @@ $(function () {
         return false;
     });
     $('#next-rr').click(function () {
-        var visibleBox = $('#hero-image .boxes:visible');
+        var visibleBox = $('#selected-review-container .rr-boxes:visible');
         visibleBox.hide();
         var nextToShow = $(visibleBox).prev('.boxes:hidden');
         if (nextToShow.length > 0) {
@@ -57,31 +55,4 @@ $(function () {
         }
         return false;
     });
-});
-
-$("#next").click(function () { alert("hi");
-    var visibleBox = $('#hero-image .boxes:visible');
-    visibleBox.hide();
-    var nextToShow = $(visibleBox).next('.boxes:hidden');
-    if (nextToShow.length > 0) {
-        nextToShow.show();
-    } else {
-        $('#hero-image .boxes:hidden:first').show();
-    }
-    console.log("next worked");
-
-    return false;
-});
-
-$('#prev').click(function () {
-    var visibleBox = $('#hero-image .boxes:visible');
-    visibleBox.hide();
-    var nextToShow = $(visibleBox).prev('.boxes:hidden');
-    if (nextToShow.length > 0) {
-        nextToShow.show();
-    } else {
-        $('#hero-image .boxes:hidden:first').show();
-    }
-    console.log("prev worked");
-    return false;
 });

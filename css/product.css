@@ -63,23 +63,22 @@ a:focus {
 
 #left-arrow {
     float: left;
-    padding-left: 4%;
-    padding-top: 14%;
-    width: 20%;
+    padding: 25% 4% 0 0;
 }
 
 #right-arrow {
-    float: right;
-    padding-right: 4%;
-    padding-top: 14%;
+    padding-top: 25%;
 }
 
 #product-image {
+    height: 550px;
     padding-top: 4%;
+    text-align: center;
 }
 
 #hero-image {
-    width: 100%;
+    margin: auto;
+    width: 77%;
 }
 
 .boxes {
@@ -87,9 +86,12 @@ a:focus {
 }
 
 #pager {
-    height: 15px;
-    padding-left: 45%;
-    padding-top: 4%;
+    height: 20px;
+    padding-left: 38%;
+}
+
+#short-desc {
+    line-height: 25px;
 }
 
 #about {
@@ -101,6 +103,9 @@ a:focus {
     color: #777777;
 }
 
+#tabs {
+    color: #3078b9;
+}
 #add-to-cart {
     width: 45%;
     padding-left: 8%;
@@ -138,6 +143,7 @@ p.inset {
 }
 
 .people-viewed-cell {
+    padding-right: 2%;
     padding-top: 5%;
 }
 
@@ -157,18 +163,17 @@ p.inset {
     float: right;
 }
 
-#product-details-container {
-    height: 612px;
+#details-container {
+    height: 533px;
     padding-bottom: 5%;
 }
 
 #detail-tabs {
     width: 263px;
     height: 612px;
-    border: 1px solid #000000;
 }
 
-#details {
+.details {
     color: #777777;
     font-family: 'Sintony',sans-serif;
     font-size: 14px;
@@ -176,6 +181,7 @@ p.inset {
     overflow: hidden;
     padding-left: 4%;
     width: 450px;
+    line-height: 25px;
 }
 
 #ratings-rev-title {
