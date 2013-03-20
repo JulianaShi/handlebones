@@ -249,8 +249,10 @@ p.inset {
 #selected-review-container {
     width: 561px;
     height: 511px;
-    border: 1px solid #000000;
     background-color: #FFFFFF;
+    font-family: 'Sintony',sans-serif;
+    font-size: 15px;
+    color: #777777;
 }
 
 #right-arrow-container {
@@ -269,18 +271,30 @@ p.inset {
 
 #selected-review {
     height: 315px;
-    border: 1px solid #000000;
+    border-bottom: 1px solid #C9C9C9;
+    padding: 4%;
+    font-family: 'Sintony',sans-serif;
+    font-size: 15px;
+    color: #777777;
 }
 
 #selected-review-title {
-    display: inline-block;
     font-family: 'Sintony',sans-serif;
-    font-size: 18px;
-    height: 30px;
+    font-size: 20px;
     overflow: hidden;
-    padding: 4%;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 25em;
 }
+
+#review-attributes-left-col {
+    display: inline-block;
+    padding: 4%;
+}
+
+#review-attributes-right-col {
+    display: inline-block;
+    padding: 4%;
+}
+
 
