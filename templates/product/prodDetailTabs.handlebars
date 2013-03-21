@@ -1,7 +1,7 @@
-<script src="../js/tab.js"></script>
+<script src="/js/product/tab.js"></script>
 <div class="horizborder"><p class="inset"></p></div>
 <div id="product-details-title">
-Product Details<a href="#"><img id="more-questions" src="../img/product/question.png"/></a>
+Product Details<a href="#"><img id="more-questions" src="../../img/product/question.png"/></a>
 </div>
 <div id="details-container">
 <div id="detail-tabs" class="left-float">
@@ -17,11 +17,11 @@ Product Details<a href="#"><img id="more-questions" src="../img/product/question
                 </ul>
 
                 <div class="tab-content details" style="display:block">
-                    {{rawText item.genericContent.shortDescription 1200 }}...
+                    {{{rawText shortDesc 1200 }}}...
                 </div>
 
                 <div class="tab-content details">
-                    {{#each item.itemAttributes}}
+                    {{#each itemAttr}}
                     <ul>
                         <li>{{attributeName}} : {{attributeValue}}</li>
                     </ul>
@@ -29,8 +29,8 @@ Product Details<a href="#"><img id="more-questions" src="../img/product/question
                 </div>
 
                 <div class="tab-content details">
-                    {{item.genericContent.supplierWarranty}}<br/>
-                    {{item.genericContent.warrantyLength}}
+                    {{supplierWarranty}}<br/>
+                    {{warrantyLength}}
                 </div>
 
                 <div class="tab-content details">

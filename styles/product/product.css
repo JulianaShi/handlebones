@@ -269,7 +269,7 @@ p.inset {
     width: 100%;
 }
 
-#selected-review {
+.selected-review {
     height: 315px;
     border-bottom: 1px solid #C9C9C9;
     padding: 4%;
@@ -278,7 +278,7 @@ p.inset {
     color: #777777;
 }
 
-#selected-review-title {
+.selected-review-title {
     font-family: 'Sintony',sans-serif;
     font-size: 20px;
     overflow: hidden;
@@ -287,12 +287,12 @@ p.inset {
     width: 25em;
 }
 
-#review-attributes-left-col {
+.review-attributes-left-col {
     display: inline-block;
     padding: 4%;
 }
 
-#review-attributes-right-col {
+.review-attributes-right-col {
     display: inline-block;
     padding: 4%;
 }

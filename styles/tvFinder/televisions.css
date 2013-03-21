@@ -253,7 +253,7 @@ button.css3button {
 
 span.stars, span.stars span {
     display: block;
-    background: url(../img/stars.png) 0 -16px repeat-x;
+    background: url(../../img/tvFinder/stars.png) 0 -16px repeat-x;
     width: 80px;
     height: 16px;
     color: #FFFFFF;
@@ -269,7 +269,7 @@ span.stars span {
     text-align: left;
     padding: 0 49px 80px 37px;
     background-color: #3078b9;
-    background-image: url(../img/WMMoneyCenter.png);
+    background-image: url(../../img/tvFinder/WMMoneyCenter.png);
     background-repeat:no-repeat;
     background-position: bottom right;
     border: 0px solid #000000;

@@ -26,7 +26,7 @@ $(function() {
 //todo: move filter logic
 $(function() {
     var TvFinderModel= Backbone.Model.extend({
-        url: "js/products.json",
+        url: "/json/products.json",
         parse: function(response) {
             return response;
         }
