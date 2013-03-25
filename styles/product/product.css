@@ -289,12 +289,48 @@ p.inset {
 
 .review-attributes-left-col {
     display: inline-block;
-    padding: 4%;
+    padding-left: 4%;
 }
 
 .review-attributes-right-col {
     display: inline-block;
-    padding: 4%;
+    padding-left: 4%;
+}
+
+.review-attributes-left-col .dl-horizontal dt{
+    text-align: left;
+}
+
+.review-attributes-right-col .dl-horizontal dt{
+    text-align: left;
+}
+
+.review-attributes-left-col .dl-horizontal dd {
+    margin-left: 155px;
+}
+
+.review-attributes-right-col .dl-horizontal dd {
+    margin-left: 115px;
+    width: 100%;
+}
+
+.dl-horizontal span.stars, span.stars span {
+    display: block;
+    background: url(/img/tvFinder/stars.png) 0 -16px repeat-x;
+    height: 20px;
+    color: #FFFFFF;
+    font-size: 0;
 }
 
 
+
+#product-image .carousel-inner > .active {
+    left: 0;
+    text-align: center;
+}
+
+#product-image .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    display: block;
+    line-height: 1;
+    margin: auto;
+}

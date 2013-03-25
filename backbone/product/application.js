@@ -8,10 +8,26 @@ Product.View = Backbone.View.extend({
     }
 });
 
+$.fn.stars = function () {
+    return $(this).each(function () {
+        // Get the value
+        var val = parseFloat($(this).html());
+        val = Math.round(val * 2) / 2;
+        /* To round to nearest half */
+        // Make sure that the value is in 0 - 5 range, multiply to get width
+        var size = Math.max(0, (Math.min(5, val))) * 16;
+        // Create stars holder
+        var $span = $('<span />').width(size);
+        // Replace the numerical value with stars
+        $(this).html($span);
+    });
+};
+
+
 $(function () {
     var ProductModel = Backbone.Model.extend({
-        url:"http://aguevara-linux.corp.walmart.com/search/catalog/itemIds.ems?itemids=15739136",
-
+//        url:"http://aguevara-linux.corp.walmart.com/search/catalog/itemIds.ems?itemids=15739136",
+        url:"json/itemData.json",
         productData:{},
 
         parse:function (response) {
@@ -66,7 +82,6 @@ $(function () {
         },
 
         render:function () {
-            var data = this.model.toJSON();
             this.$el.html(this.options.template({ name:productModel.getName(), price:productModel.getPrice(), ratingUrl:productModel.getRatingUrl(), altImages:productModel.getAltImages()}));
             $('#carouselItems').html(this.el);
         }
@@ -112,7 +127,7 @@ $(function () {
     var peopleViewedListView = Backbone.View.extend({
         render:function () {
             var data = this.model.toJSON();
-            this.$el.html(this.options.template({"viewedItems":data[0]}));
+            this.$el.html(this.options.template({"viewedItems":data}));
         }
 
     });
@@ -124,6 +139,7 @@ $(function () {
 
     peopleViewedModel.fetch({success:function (data) {
         peopleViewedView.render();
+        $('span.stars').stars();
     }});
 
     $('#people-who').append(peopleViewedView.el);
@@ -157,7 +173,6 @@ $(function () {
 
     var ratingsReviewsModel = new RatingsReviewsModel();
 
-
     var RatingsReviewsView = Backbone.View.extend({
         render:function () {
             var data = this.model.toJSON();
@@ -173,6 +188,7 @@ $(function () {
 
     ratingsReviewsModel.fetch({success:function (data) {
         ratingsReviewsView.render();
+        $('span.stars').stars();
     }});
 
     $('#ratings-reviews').append(ratingsReviewsView.el);
