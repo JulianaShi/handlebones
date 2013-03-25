@@ -3,7 +3,7 @@
 People Who Viewed This Item Also Viewed<a href="#"><img id="see-more" src="../../img/product/seeMore.png"/></a>
 </div>
 <div id="people-viewed-container">
-{{#each viewedItems}}
+{{#each viewedItems.items}}{{genericContent.rating}}
 {{#if_lt @index compare=3}}
 <div class="people-viewed-cell left-float">
     <a href="{{url}}"><img src="{{image}}"/></a>

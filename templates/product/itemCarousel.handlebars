@@ -8,24 +8,33 @@
 </div>
 <div id="product-price">${{price}}</div>
 <div id="product-image">
-<div id="left-arrow" class="left-float">
-    <div id="prev"><img src="/img/product/arrow-left-gray.png"/></div>
+<!--<div id="hero-image" class="left-float">-->
+    <div id="itemCarousel" class="carousel slide" data-interval="false">
+        <div class="carousel-inner">
+            {{#each altImages}}
+            {{#equal @index 0 }}
+            <div class="active item"><img src="{{lgImageSrc}}"/></div>
+            {{else}}
+            <div class="item"><img src="{{lgImageSrc}}"/></div>
+            {{/equal}}
+            {{/each}}
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#itemCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#itemCarousel" data-slide="next">&rsaquo;</a>
+        <!--progress-->
+        <ol class="carousel-indicators">
+            {{#each altImages}}
+            {{#equal @index 0 }}
+            <li data-target="#itemCarousel" data-slide-to='{{@index}}' class="active"><img src="/img/product/current-position.png"/></li>
+            {{else}}
+            <li data-target="#itemCarousel" data-slide-to='{{@index}}'><img src="/img/product/greydot.png" /></li>
+            {{/equal}}
+            {{/each}}
+        </ol>
+    </div>
+<!--</div>-->
 </div>
-<!--<img src="img/product/TV.png"/>-->
-<div id="hero-image" class="left-float">
-    {{#each altImages}}
-    {{#equal @index 0 }}
-    <div class="boxes"><img src="{{lgImageSrc}}"/></div>
-    {{else}}
-    <div class="boxes" style="display: none;"><img src="{{lgImageSrc}}"/></div>
-    {{/equal}}
-    {{/each}}
-</div>
-<div id="right-arrow" class="left-float">
-    <div class="next"><img src="/img/product/arrow-right.png"/></div>
-</div>
-</div>
-<div id="pager"></div>
 
 
 
