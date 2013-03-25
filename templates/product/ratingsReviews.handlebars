@@ -56,7 +56,7 @@
 
 
 <div id="reviews-container">
-<div id="selected-review-container" class="left-float">
+<div id="selected-review-container">
     <div id="reviewCarousel" class="carousel slide" data-interval="false">
         <div class="carousel-inner">
             {{#each ratingsReviewsItems}}
@@ -114,17 +114,7 @@
             <!-- Carousel nav -->
             <a class="carousel-control left" href="#reviewCarousel" data-slide="prev">&lsaquo;</a>
             <a class="carousel-control right" href="#reviewCarousel" data-slide="next">&rsaquo;</a>
-            <!--progress-->
-            <ol class="carousel-indicators">
-                {{#each ratingsReviewsItems}}
-                {{#equal @index 0 }}
-                <li data-target="#reviewCarousel" data-slide-to='{{@index}}' class="active"><img
-                        src="/img/product/current-position.png"/></li>
-                {{else}}
-                <li data-target="#reviewCarousel" data-slide-to='{{@index}}'><img src="/img/product/greydot.png"/></li>
-                {{/equal}}
-                {{/each}}
-            </ol>
+
         </div>
     </div>
     <div id="reviews-count-container" class="left-float">1 of {{length ratingsReviewsItems}} reviews</div>

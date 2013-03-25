@@ -239,6 +239,7 @@ p.inset {
     background-color: #d6d6d6;
     border-bottom: 1px solid #c9c9c9;
     padding-top: 32px;
+    text-align: center;
 }
 
 #left-arrow-container {
@@ -253,6 +254,7 @@ p.inset {
     font-family: 'Sintony',sans-serif;
     font-size: 15px;
     color: #777777;
+    margin: auto;
 }
 
 #right-arrow-container {

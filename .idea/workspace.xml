@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="226a989c-7dec-4ca5-a204-1b8e0c5d7c9f" name="Default" comment="added ratings and reviews - needs formatting">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/styles/product/buttons.css" />
+    <list default="true" id="226a989c-7dec-4ca5-a204-1b8e0c5d7c9f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productPage.html" afterPath="$PROJECT_DIR$/productPage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/product/product.css" afterPath="$PROJECT_DIR$/styles/product/product.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates.js" afterPath="$PROJECT_DIR$/templates.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/product/addToCart.handlebars" afterPath="$PROJECT_DIR$/templates/product/addToCart.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/product/peopleWhoViewed.handlebars" afterPath="$PROJECT_DIR$/templates/product/peopleWhoViewed.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/product/prodDetailTabs.handlebars" afterPath="$PROJECT_DIR$/templates/product/prodDetailTabs.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/product/ratingsReviews.handlebars" afterPath="$PROJECT_DIR$/templates/product/ratingsReviews.handlebars" />
     </list>
     <ignored path="handlebones.iws" />
@@ -28,13 +24,13 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48208955">
+    <splitter split-orientation="horizontal" split-proportion="0.49626866">
       <split-first>
         <leaf>
-          <file leaf-file-name="addToCart.handlebars" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="addToCart.handlebars" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/product/addToCart.handlebars">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="22" column="0" selection-start="965" selection-end="965" vertical-scroll-proportion="0.46478873">
+                <state line="0" column="39" selection-start="39" selection-end="39" vertical-scroll-proportion="-0.0">
                   <folding />
                 </state>
               </provider>
@@ -67,10 +63,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ratingsReviews.handlebars" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="ratingsReviews.handlebars" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/product/ratingsReviews.handlebars">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="3" column="153" selection-start="233" selection-end="233" vertical-scroll-proportion="-1.875">
+                <state line="116" column="0" selection-start="5780" selection-end="5780" vertical-scroll-proportion="0.74647886">
                   <folding />
                 </state>
               </provider>
@@ -134,10 +130,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="product.css" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="product.css" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/styles/product/product.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="263" column="38" selection-start="3979" selection-end="4000" vertical-scroll-proportion="0.0">
+                <state line="241" column="22" selection-start="3625" selection-end="3625" vertical-scroll-proportion="0.13654096">
                   <folding />
                 </state>
               </provider>
@@ -152,10 +148,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="buttons.css" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="buttons.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/styles/product/buttons.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="138" column="1" selection-start="5127" selection-end="5127" vertical-scroll-proportion="0.65068495">
+                <state line="138" column="1" selection-start="5127" selection-end="5127" vertical-scroll-proportion="-70.19231">
                   <folding />
                 </state>
               </provider>
@@ -229,14 +225,14 @@
         <option value="$PROJECT_DIR$/json/ratingsReviews.json" />
         <option value="$PROJECT_DIR$/backbone/product/application.js" />
         <option value="$PROJECT_DIR$/templates/product/itemCarousel.handlebars" />
-        <option value="$PROJECT_DIR$/styles/product/product.css" />
         <option value="$PROJECT_DIR$/styles/product/tabs.css" />
         <option value="$PROJECT_DIR$/productPage.html" />
         <option value="$PROJECT_DIR$/templates/product/peopleWhoViewed.handlebars" />
         <option value="$PROJECT_DIR$/templates/product/prodDetailTabs.handlebars" />
-        <option value="$PROJECT_DIR$/templates/product/ratingsReviews.handlebars" />
         <option value="$PROJECT_DIR$/templates/product/addToCart.handlebars" />
         <option value="$PROJECT_DIR$/styles/product/buttons.css" />
+        <option value="$PROJECT_DIR$/styles/product/product.css" />
+        <option value="$PROJECT_DIR$/templates/product/ratingsReviews.handlebars" />
       </list>
     </option>
   </component>
@@ -447,7 +443,11 @@
       <created>1364234975446</created>
       <updated>1364234975446</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="added ratings and reviews - needs formatting">
+      <created>1364237546021</created>
+      <updated>1364237546021</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -478,7 +478,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896304" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1913096" sideWeight="0.94404763" order="0" side_tool="true" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1913096" sideWeight="0.94404763" order="0" side_tool="true" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -630,13 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/product/product.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="263" column="38" selection-start="3979" selection-end="4000" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/product/peopleWhoViewed.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="84" selection-start="168" selection-end="168" vertical-scroll-proportion="-1.25">
@@ -651,23 +644,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/product/ratingsReviews.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="153" selection-start="233" selection-end="233" vertical-scroll-proportion="-1.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styles/product/buttons.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="1" selection-start="5127" selection-end="5127" vertical-scroll-proportion="0.65068495">
+        <state line="138" column="1" selection-start="5127" selection-end="5127" vertical-scroll-proportion="-70.19231">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/product/addToCart.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="965" selection-end="965" vertical-scroll-proportion="0.46478873">
+        <state line="0" column="39" selection-start="39" selection-end="39" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/product/product.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="241" column="22" selection-start="3625" selection-end="3625" vertical-scroll-proportion="0.13654096">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/product/ratingsReviews.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="0" selection-start="5780" selection-end="5780" vertical-scroll-proportion="0.74647886">
           <folding />
         </state>
       </provider>
