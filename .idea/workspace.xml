@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="226a989c-7dec-4ca5-a204-1b8e0c5d7c9f" name="Default" comment="">
+    <list default="true" id="226a989c-7dec-4ca5-a204-1b8e0c5d7c9f" name="Default" comment="fixed reviews count">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/product/product.css" afterPath="$PROJECT_DIR$/styles/product/product.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates.js" afterPath="$PROJECT_DIR$/templates.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/product/ratingsReviews.handlebars" afterPath="$PROJECT_DIR$/templates/product/ratingsReviews.handlebars" />
     </list>
     <ignored path="handlebones.iws" />
@@ -24,7 +23,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49626866">
+    <splitter split-orientation="horizontal" split-proportion="0.44552228">
       <split-first>
         <leaf>
           <file leaf-file-name="addToCart.handlebars" pinned="false" current="false" current-in-tab="false">
@@ -48,7 +47,7 @@
           <file leaf-file-name="helper.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/helper.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="33" column="34" selection-start="858" selection-end="865" vertical-scroll-proportion="0.0">
+                <state line="33" column="72" selection-start="903" selection-end="903" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -66,7 +65,7 @@
           <file leaf-file-name="ratingsReviews.handlebars" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/product/ratingsReviews.handlebars">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="116" column="0" selection-start="5780" selection-end="5780" vertical-scroll-proportion="0.74647886">
+                <state line="119" column="8" selection-start="6061" selection-end="6061" vertical-scroll-proportion="0.6197183">
                   <folding />
                 </state>
               </provider>
@@ -84,7 +83,16 @@
           <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/backbone/product/application.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="29" column="33" selection-start="957" selection-end="957" vertical-scroll-proportion="0.0">
+                <state line="193" column="4" selection-start="5348" selection-end="5400" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="television.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/tvFinder/television.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="20" column="7" selection-start="508" selection-end="582" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -94,15 +102,6 @@
             <entry file="file://$PROJECT_DIR$/json/products.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="1001" column="2" selection-start="47959" selection-end="47959" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="4" selection-start="641" selection-end="690" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -133,7 +132,7 @@
           <file leaf-file-name="product.css" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/styles/product/product.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="241" column="22" selection-start="3625" selection-end="3625" vertical-scroll-proportion="0.13654096">
+                <state line="342" column="135" selection-start="5466" selection-end="5585" vertical-scroll-proportion="0.8264781">
                   <folding />
                 </state>
               </provider>
@@ -160,7 +159,7 @@
           <file leaf-file-name="televisions.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/styles/tvFinder/televisions.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="260" column="1" selection-start="4559" selection-end="4751" vertical-scroll-proportion="0.0">
+                <state line="241" column="19" selection-start="4389" selection-end="4389" vertical-scroll-proportion="-1.4545455">
                   <folding />
                 </state>
               </provider>
@@ -196,7 +195,7 @@
           <file leaf-file-name="itemCarousel.handlebars" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/product/itemCarousel.handlebars">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="34" selection-start="360" selection-end="360" vertical-scroll-proportion="-0.625">
+                <state line="41" column="0" selection-start="1547" selection-end="1547" vertical-scroll-proportion="-25.625">
                   <folding />
                 </state>
               </provider>
@@ -217,21 +216,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/json/itemData.json" />
         <option value="$PROJECT_DIR$/templates/itemCarousel.handlebars" />
         <option value="$PROJECT_DIR$/json/products.json" />
         <option value="$PROJECT_DIR$/styles/tvFinder/televisions.css" />
         <option value="$PROJECT_DIR$/js/product/productPage.js" />
         <option value="$PROJECT_DIR$/json/ratingsReviews.json" />
-        <option value="$PROJECT_DIR$/backbone/product/application.js" />
-        <option value="$PROJECT_DIR$/templates/product/itemCarousel.handlebars" />
         <option value="$PROJECT_DIR$/styles/product/tabs.css" />
         <option value="$PROJECT_DIR$/productPage.html" />
         <option value="$PROJECT_DIR$/templates/product/peopleWhoViewed.handlebars" />
         <option value="$PROJECT_DIR$/templates/product/prodDetailTabs.handlebars" />
         <option value="$PROJECT_DIR$/templates/product/addToCart.handlebars" />
         <option value="$PROJECT_DIR$/styles/product/buttons.css" />
+        <option value="$PROJECT_DIR$/templates/product/itemCarousel.handlebars" />
+        <option value="$PROJECT_DIR$/js/helper.js" />
         <option value="$PROJECT_DIR$/styles/product/product.css" />
+        <option value="$PROJECT_DIR$/backbone/product/application.js" />
         <option value="$PROJECT_DIR$/templates/product/ratingsReviews.handlebars" />
       </list>
     </option>
@@ -283,6 +282,70 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="handlebones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlebones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlebones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlebones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlebones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlebones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlebones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlebones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlebones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tvFinder" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -447,7 +510,15 @@
       <created>1364237546021</created>
       <updated>1364237546021</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="FINALLY.  Centered the ratings div.  finally.">
+      <created>1364253347276</created>
+      <updated>1364253347276</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fixed reviews count">
+      <created>1364409589527</created>
+      <updated>1364409589527</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -478,7 +549,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896304" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1913096" sideWeight="0.94404763" order="0" side_tool="true" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12552807" sideWeight="0.94404763" order="0" side_tool="true" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -528,7 +599,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added ratings and reviews - needs formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed reviews count" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -551,6 +622,8 @@
     <MESSAGE value="more tv options" />
     <MESSAGE value="added match number" />
     <MESSAGE value="added ratings and reviews - needs formatting" />
+    <MESSAGE value="FINALLY.  Centered the ratings div.  finally." />
+    <MESSAGE value="fixed reviews count" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -558,43 +631,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="0" selection-start="5203" selection-end="5203" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/json/products.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="13" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/json/products.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1001" column="2" selection-start="47959" selection-end="47959" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/json/ratingsReviews.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="34" selection-start="524" selection-end="524" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backbone/product/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="33" selection-start="957" selection-end="957" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/json/itemData.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="193" column="22" selection-start="9404" selection-end="9409" vertical-scroll-proportion="-9.615385">
@@ -609,30 +645,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/tvFinder/television.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="4" selection-start="3445" selection-end="3469" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/product/itemCarousel.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="34" selection-start="360" selection-end="360" vertical-scroll-proportion="-0.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/productPage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="44" selection-start="447" selection-end="447" vertical-scroll-proportion="-3.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/product/peopleWhoViewed.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="84" selection-start="168" selection-end="168" vertical-scroll-proportion="-1.25">
           <folding />
         </state>
       </provider>
@@ -658,16 +673,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/styles/tvFinder/televisions.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="241" column="19" selection-start="4389" selection-end="4389" vertical-scroll-proportion="-1.4545455">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="4" selection-start="641" selection-end="690" vertical-scroll-proportion="0.09836066">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/products.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1001" column="2" selection-start="47959" selection-end="47959" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/tvFinder/television.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="7" selection-start="508" selection-end="582" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/helper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="72" selection-start="903" selection-end="903" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/product/itemCarousel.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="1547" selection-end="1547" vertical-scroll-proportion="-25.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/product/peopleWhoViewed.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="84" selection-start="168" selection-end="168" vertical-scroll-proportion="-1.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backbone/product/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="193" column="4" selection-start="5348" selection-end="5400" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/styles/product/product.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="241" column="22" selection-start="3625" selection-end="3625" vertical-scroll-proportion="0.13654096">
+        <state line="342" column="135" selection-start="5466" selection-end="5585" vertical-scroll-proportion="0.8264781">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/product/ratingsReviews.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="0" selection-start="5780" selection-end="5780" vertical-scroll-proportion="0.74647886">
+        <state line="119" column="8" selection-start="6061" selection-end="6061" vertical-scroll-proportion="0.6197183">
           <folding />
         </state>
       </provider>

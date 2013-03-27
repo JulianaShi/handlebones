@@ -118,9 +118,6 @@
 </div>
 
 <script>
-//    $(".carousel-control").click(function (e) {
-//        reviewCount();
-//    });
 
     reviewCount = function (){
         var index = $(".rev-car.item.active").attr("indexid");
@@ -129,7 +126,6 @@
     };
 
     $('#reviewCarousel').bind('slid', function() {
-        console.log('inside slid');
         reviewCount();
     })
 
