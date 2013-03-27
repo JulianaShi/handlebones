@@ -21,7 +21,6 @@ body {
     width: 750px;
     margin-left:0;
     padding: 44px 39px 27px 45px;
-    border: 1px solid #000000;
     height: auto;
 }
 
@@ -164,13 +163,13 @@ p.inset {
 }
 
 #details-container {
-    height: 533px;
+    height: 435px;
     padding-bottom: 5%;
 }
 
 #detail-tabs {
+    height: 473px;
     width: 263px;
-    height: 612px;
 }
 
 .details {
@@ -240,6 +239,20 @@ p.inset {
     border-bottom: 1px solid #c9c9c9;
     padding-top: 32px;
     text-align: center;
+    background-image: linear-gradient(bottom, rgb(199,197,199) 37%, rgb(194,194,194) 69%, rgb(217,217,217) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(199,197,199) 37%, rgb(194,194,194) 69%, rgb(217,217,217) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(199,197,199) 37%, rgb(194,194,194) 69%, rgb(217,217,217) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(199,197,199) 37%, rgb(194,194,194) 69%, rgb(217,217,217) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(199,197,199) 37%, rgb(194,194,194) 69%, rgb(217,217,217) 100%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.37, rgb(199,197,199)),
+        color-stop(0.69, rgb(194,194,194)),
+        color-stop(1, rgb(217,217,217))
+    );
 }
 
 #left-arrow-container {
@@ -278,6 +291,7 @@ p.inset {
     font-family: 'Sintony',sans-serif;
     font-size: 15px;
     color: #777777;
+    text-align: left;
 }
 
 .selected-review-title {
@@ -340,7 +354,20 @@ p.inset {
 }
 
 .separator {
-    background: linear-gradient(135deg, #FAFAFA 0%, #EAEBEE 21%, #D5D6DD 49%, #EAEBEE 80%, #FAFAFA 100%) repeat scroll 0 0 transparent;
     height: 2px;
     width: 100%;
+    background-image: linear-gradient(bottom, rgb(255,255,255) 37%, rgb(204,204,204) 69%, rgb(255,255,255) 85%);
+    background-image: -o-linear-gradient(bottom, rgb(255,255,255) 37%, rgb(204,204,204) 69%, rgb(255,255,255) 85%);
+    background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 37%, rgb(204,204,204) 69%, rgb(255,255,255) 85%);
+    background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 37%, rgb(204,204,204) 69%, rgb(255,255,255) 85%);
+    background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 37%, rgb(204,204,204) 69%, rgb(255,255,255) 85%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.37, rgb(255,255,255)),
+        color-stop(0.69, rgb(204,204,204)),
+        color-stop(0.85, rgb(255,255,255))
+    );
 }

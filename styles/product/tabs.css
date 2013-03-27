@@ -109,7 +109,8 @@
 #v-nav >div.tab-content
 {
     margin-left: 210px;
-    border: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
     background-color: #FFF;
     min-height: 400px;
     position: relative;
@@ -131,4 +132,10 @@
     border-bottom: 1px dotted #EEEDED;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.product-detail-tab-name
+{
+    position: absolute;
+    top: 50%;
 }
