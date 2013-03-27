@@ -44,3 +44,12 @@ Handlebars.registerHelper('rawText', function (text, charNum, options) {
 Handlebars.registerHelper('length', function(array, options) {
         return array.length;
 });
+
+/**
+ * get array length like {{length arrayName}}
+ */
+Handlebars.registerHelper('indexCount', function(index, options) {
+    return index + 1;
+});
+
+

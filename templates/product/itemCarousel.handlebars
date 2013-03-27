@@ -26,9 +26,9 @@
         <ol class="carousel-indicators">
             {{#each altImages}}
             {{#equal @index 0 }}
-            <li data-target="#itemCarousel" data-slide-to='{{@index}}' class="active"><img src="/img/product/current-position.png"/></li>
+            <li data-target="#itemCarousel" data-slide-to='{{@index}}' class="active"></li>
             {{else}}
-            <li data-target="#itemCarousel" data-slide-to='{{@index}}'><img src="/img/product/greydot.png" /></li>
+            <li data-target="#itemCarousel" data-slide-to='{{@index}}'></li>
             {{/equal}}
             {{/each}}
         </ol>

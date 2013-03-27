@@ -305,6 +305,7 @@ p.inset {
 
 .review-attributes-right-col .dl-horizontal dt{
     text-align: left;
+    width: 115px;
 }
 
 .review-attributes-left-col .dl-horizontal dd {
@@ -314,6 +315,7 @@ p.inset {
 .review-attributes-right-col .dl-horizontal dd {
     margin-left: 115px;
     width: 100%;
+    text-align: left;
 }
 
 .dl-horizontal span.stars, span.stars span {
@@ -335,4 +337,10 @@ p.inset {
     display: block;
     line-height: 1;
     margin: auto;
+}
+
+.separator {
+    background: linear-gradient(135deg, #FAFAFA 0%, #EAEBEE 21%, #D5D6DD 49%, #EAEBEE 80%, #FAFAFA 100%) repeat scroll 0 0 transparent;
+    height: 2px;
+    width: 100%;
 }

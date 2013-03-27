@@ -1,4 +1,4 @@
-<!--<script src="/js/productPage.js"></script>-->
+
 
 <div id="ratings-rev-title">
     Reviews & Ratings <span style="color: #3078b9;">({{length ratingsReviewsItems}} Total)</span> <a href="#" class="write-review-btn">Write a Review</a>
@@ -61,12 +61,10 @@
         <div class="carousel-inner">
             {{#each ratingsReviewsItems}}
             {{#equal @index 0 }}
-                <div class="active item">
+                <div class="rev-car active item" indexid="{{indexCount @index}}">
             {{else}}
-                <div class="item">
+                <div class="rev-car item" indexid="{{indexCount @index}}">
              {{/equal}}
-
-
                     <div class="selected-review">
                         <div class="selected-review-title">{{title}}</div>
                         <br/>
@@ -74,6 +72,7 @@
                         <div><span class="stars">{{rating}}</span></div>
                         <div>{{rawText review 200}}...<span style="color: #3078b9;"> Read more</span></div>
                     </div>
+                    <div class="separator"></div>
                     <div class="review-attributes-left-col left-float">
                         <dl class="dl-horizontal">
                             <dt>Value:</dt>
@@ -104,9 +103,6 @@
                             <dd>{{helpfulvotes}}</dd>
                         </dl>
                     </div>
-
-
-
                 <!--carousel-inner closing div    -->
                 </div>
             {{/each}}
@@ -118,5 +114,23 @@
         </div>
     </div>
     <div id="reviews-count-container" class="left-float">1 of {{length ratingsReviewsItems}} reviews</div>
+    <!--1 of {{length ratingsReviewsItems}} reviews-->
 </div>
 
+<script>
+//    $(".carousel-control").click(function (e) {
+//        reviewCount();
+//    });
+
+    reviewCount = function (){
+        var index = $(".rev-car.item.active").attr("indexid");
+        var count = Number(index);
+        $('#reviews-count-container').text(count +" of {{length ratingsReviewsItems}} Reviews");
+    };
+
+    $('#reviewCarousel').bind('slid', function() {
+        console.log('inside slid');
+        reviewCount();
+    })
+
+</script>
