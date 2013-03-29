@@ -1,0 +1,74 @@
+#cart-container {
+    padding: 4%;
+}
+
+.cart-header {
+    font-family: 'Sintony',sans-serif;
+    font-size: 28px;
+    color: #777777;
+    height: 15%;
+    padding-bottom: 5%;
+}
+
+#line-item {
+    padding-bottom: 5%;
+}
+
+#saved-item {
+    padding-bottom: 5%;
+}
+
+.item-num {
+    font-family: 'Sintony',sans-serif;
+    font-size: 25px;
+    height: 40px;
+    color: #3078b9;;
+    font-weight: 600;
+    text-align: left
+}
+
+#cart-item-image img{
+    height: 86px;
+    width: 150px;
+}
+
+#cart-prod-title {
+    font-family: 'Sintony',sans-serif;
+    font-size: 18px;
+    height: 40px;
+    color: #3078b9;;
+    text-align: left;
+}
+
+#cart-qty input{
+    width:40px;
+}
+
+#cart-qty label{
+    font-family: 'Sintony',sans-serif;
+    font-size: 12px;
+    color: #777777;
+}
+
+.cart-item-price {
+    font-family: 'Sintony',sans-serif;
+    font-size: 28px;
+    color: #777777;
+    height: 15%;
+    font-weight: 600;
+}
+
+#saved-item-img img {
+    height: 86px;
+    width: 150px;
+}
+
+#price-subtotal {
+    font-family: 'Sintony',sans-serif;
+    font-size: 28px;
+    color: #777777;
+    height: 15%;
+    padding-bottom: 5%;
+    font-weight: 600;
+}
+

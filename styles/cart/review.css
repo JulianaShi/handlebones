@@ -1,0 +1,106 @@
+#review-breadcrumb {
+    font-family: 'Sintony',sans-serif;
+    font-size: 15px;
+    height: 40px;
+    color: #3078b9;;
+    font-weight: 600;
+    text-align: left
+}
+
+.confirm-order-title {
+    font-family: 'Sintony',sans-serif;
+    font-size: 23px;
+    color: #777777;
+    height: 15%;
+}
+
+#confirm-order {
+    padding-bottom: 2%;
+    padding-top: 2%;
+    border-top: 2px solid #c9c9c9;
+    border-bottom: 2px solid #c9c9c9;
+
+}
+
+#review-details {
+    padding-top: 4%;
+}
+
+.detail-labels {
+    font-family: 'Sintony',sans-serif;
+    font-size: 17px;
+    color: #777777;
+    height: 15%;
+}
+
+.detail-sub-labels {
+    font-family: 'Sintony',sans-serif;
+    font-size: 12px;
+    color: #777777;
+    height: 15%;
+}
+
+#review-details address{
+    font-family: 'Sintony',sans-serif;
+    font-size: 12px;
+    color: #3078b9;
+    height: 15%;
+}
+
+.review-line-item{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-bottom: 2px solid #f2f2f2;
+
+}
+
+.review-line-item-img img{
+    width: 98px;
+    height: 89px;
+}
+
+.review-line-item-name{
+    font-family: 'Sintony',sans-serif;
+    font-size: 20px;
+    color: #3078b9;
+    height: 15%;
+}
+
+.review-line-item-qty {
+    font-family: 'Sintony',sans-serif;
+    font-size: 20px;
+    color: #777777;
+    height: 15%;
+    font-weight: 700;
+}
+
+.review-line-item-price {
+    font-family: 'Sintony',sans-serif;
+    font-size: 23px;
+    color: #696969;
+    height: 15%;
+    font-weight: 800;
+}
+
+#col-labels {
+    padding-bottom: 2%;
+    padding-top: 2%;
+    border-top: 2px solid #c9c9c9;
+    border-bottom: 2px solid #c9c9c9;
+}
+
+.subtotal-price {
+    font-family: 'Sintony',sans-serif;
+    font-size: 20px;
+    color: #777777;
+    height: 15%;
+    font-weight: 700;
+}
+
+#review-subtotals {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-bottom: 2px solid #f2f2f2;
+    border-top: 2px solid #f2f2f2;
+}
+

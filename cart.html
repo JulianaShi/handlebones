@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="lib/jquery-1.9.1.js"></script>
+    <script src="lib/underscore.js"></script>
+    <script src="lib/handlebars.js"></script>
+    <script src="js/helper.js"></script>
+    <script src="lib/backbone.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script src="backbone/product/application.js"></script>
+    <script src="templates.js"></script>
+    <script src="lib/jquery.lazyload.min.js"></script>
+    <script src="lib/modernizr.min.js"></script>
+    <script src="lib/jquery-ui.js"></script>
+    <script src="lib/jquery.templ.js"></script>
+    <link rel="stylesheet" media="screen" href="styles/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/base.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/product/product.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/tvFinder/televisions.css"/>
+    <link rel="stylesheet" media="screen" href="styles/product/tabs.css"/>
+    <link rel='stylesheet' type='text/css' href='styles/googlefonts.css'/>
+    <link rel='stylesheet' type='text/css' href="styles/product/buttons.css"/>
+    <link rel='stylesheet' type='text/css' href="styles/cart/cart.css"/>
+</head>
+<body>
+<div class="row-fluid">
+    <div id="cart-container" class="span9">
+        <div class="row-fluid cart-header">
+            <div class="span5">
+                2 Items in cart
+            </div>
+            <div class="span3">
+                <select id="cart-sort">
+                    <option selected="selected" value="select" disabled>Sort</option>
+                    <option value="MostHelpful">Most Helpful</option>
+                    <option value="Oldest">Oldest to Newest</option>
+                </select>
+            </div>
+            <div class="span1 offset3">
+                <img src="/img/global/close-panel.png">
+            </div>
+        </div>
+        <div id="line-item" class="row-fluid">
+            <div class="item-num">
+                1 item for purchase
+            </div>
+            <div class="row-fluid">
+                <div id="cart-item-image" class="span4">
+                    <img src="/img/product/TV.png">
+                </div>
+                <div class="span4">
+                    <div id="cart-prod-title" class="row-fluid">
+                        Product title here
+                    </div>
+                    <div class="row-fluid">
+                        <img src="/img/cart/saveForLaterButton.png"/>
+                        <img src="/img/cart/removeButton.png"/>
+                    </div>
+                </div>
+                <div id="cart-qty" class="span2">
+                    <form>
+                        <fieldset>
+                            <p>
+                                <label>Quantity</label>
+                                <input type="text"
+                                       id="cart-qty-input"
+                                       value=""/>
+                            </p>
+                        </fieldset>
+                    </form>
+                </div>
+                <div  class="span2 cart-item-price">
+                    $279
+                </div>
+            </div>
+        </div>
+        <div id="saved-item" class="row-fluid">
+            <div class="item-num">
+                1 Saved Item
+            </div>
+            <div class="row-fluid">
+                <div id="saved-item-img" class="span4">
+                    <img src="/img/product/TV.png" />
+                </div>
+                <div class="span4">
+                    <img src="/img/cart/saveForLaterButton.png"/>
+                    <img src="/img/cart/removeButton.png"/>
+                </div>
+                <div class="span2">
+                    Qty: 1
+                </div>
+                <div class="span2 cart-item-price">
+                    $279
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span4 offset5">
+                <span class="cart-header">Subtotal:</span> <span id="price-subtotal">$279</span>
+            </div>
+            <div class="span3">
+                <img src="/img/cart/checkoutButton.png" />
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
