@@ -1,5 +1,7 @@
 window.Product = {};
 
+
+
 Product.View = Backbone.View.extend({
     render:function () {
         var context = this.model ? this.model.attributes : {},
@@ -25,9 +27,25 @@ $.fn.stars = function () {
 
 
 $(function () {
+    var myCart = new Cart();
+    var cartData = null;
+    var storage = null;
+
+    if (typeof(localStorage) == 'undefined' ) {
+        alert('Your browser does not support HTML5 localStorage. Try upgrading.');
+    } else {
+        storage = window['localStorage']; 
+        cartData = storage.getItem('jsonCart');
+        var parsedData = JSON.parse(cartData);
+        if(parsedData != null ){
+            myCart.setCartItems(parsedData.cartItems);
+            myCart.setSavedItems(parsedData.savedItems);
+        }
+    }
+
     var ProductModel = Backbone.Model.extend({
-//        url:"http://aguevara-linux.corp.walmart.com/search/catalog/itemIds.ems?itemids=15739136",
-        url:"json/itemData.json",
+        url:"http://aguevara-linux.corp.walmart.com/search/catalog/itemIds.ems?itemids=15739136",
+//        url:"json/itemData.json",
         productData:{},
 
         parse:function (response) {
@@ -65,12 +83,39 @@ $(function () {
 
         getWarrantyLength:function () {
             return this.productData[0].genericContent.warrantyLength;
+        },
+
+        getCartItem: function() {
+            var ret = CartItem(
+                {   qty:1,
+                    name:this.getName(),
+                    seller : 0,
+                    price : this.getPrice(),
+                    hasWarranty : false,
+                    linkedWarrantyId : 0,
+                    isPUT : false,
+                    pickupStore : 0,
+                    image: this.productData[0].productImageUrl,
+                    id: this.productData[0].id,
+                    isSavedItem: false
+                })
+            return ret;
         }
 
     });
 
     var productModel = new ProductModel();
     productModel.fetch();
+
+
+// header
+    var header = new Product.View({
+        template: Handlebars.templates['productHeader']
+    });
+
+    header.render();
+
+    $('#product-header').append(header.el);
 
 
 // Item carousel
@@ -100,15 +145,53 @@ $(function () {
             this.listenTo(productModel, 'change', this.render);
         },
 
+        events:{
+            'click .add-to-cart-btn': 'click'
+        },
+
+        click: function(){
+            cartData = storage.getItem('jsonCart');
+            console.log('clicked: ' + cartData);
+            var toStorage = new Array();
+            // do we have cart data
+            if(cartData != null){
+                toStorage = JSON.parse(cartData);
+                myCart.setCartItems(toStorage.cartItems);
+                myCart.setSavedItems(toStorage.savedItems);
+            }
+            myCart.addItem(this.model.getCartItem());
+            storage.setItem('jsonCart', JSON.stringify(myCart ) );
+
+//            var cartItemCollection = new CartItemCollection();
+//            cartItemCollection.reset(myCart.getCartItems());
+//            var mainHeaderView = new MainHeaderView({
+//                template:Handlebars.templates['main-header'],
+//                model: cartItemCollection
+//            });
+//            mainHeaderView.render();
+//
+//            var headerCartView = new HeaderCartView({
+//                template:Handlebars.templates['header-cart'],
+//                model:productModel
+//            });
+//            headerCartView.render();
+
+        },
+
         render:function () {
             this.$el.html(this.options.template({shortDesc:productModel.getShortDesc()}));
             $('#under-image-container').html(this.el);
+            return this;
+            this.delegateEvents(this.events);
         }
     });
 
     var addToCartView = new AddToCartView({
-        template:Handlebars.templates['addToCart']
+        template:Handlebars.templates['addToCart'],
+        model:productModel
     });
+
+
 
 
 // people who viewed list

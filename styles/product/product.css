@@ -232,7 +232,7 @@ p.inset {
     width: 175px;
 }
 
-#reviews-container {
+.reviews-container {
     border-top: 1px solid #c9c9c9;
     height: 596px;
     background-color: #d6d6d6;
@@ -370,4 +370,16 @@ p.inset {
         color-stop(0.69, rgb(204,204,204)),
         color-stop(0.85, rgb(255,255,255))
     );
+}
+
+/*#white #search input[type="text"] {*/
+    /*width: 150px;*/
+/*}*/
+
+#header {
+    padding-bottom: 2%;
+}
+
+#carouselItems {
+    padding-top: 2%;
 }
