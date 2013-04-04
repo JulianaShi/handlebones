@@ -9,18 +9,16 @@ TvFinder.View = Backbone.View.extend({
     }
 });
 
-$(function() {
-    var model = new Backbone.Model({
-        greeting: ''
-    });
-
-    var indexView = new TvFinder.View({
-        template: Handlebars.templates['index'],
-        model: model
-    });
-    indexView.render();
-    $('body').append(indexView.el);
-});
+//$(function() {
+//    var model = new Backbone.Model({});
+//
+//    var indexView = new TvFinder.View({
+//        template: Handlebars.templates['index'],
+//        model: model
+//    });
+//    indexView.render();
+//    $('body').append(indexView.el);
+//});
 
 // TV results passes all products json data to view
 //todo: move filter logic
@@ -38,8 +36,8 @@ $(function() {
     var TVFinderListView = Backbone.View.extend({
         render:function(){
             var data = this.model.toJSON();
-            this.$el.html(this.options.template({"item":data[0]}));
-            console.log(this);
+            console.log(data);
+            this.$el.html(this.options.template({"item":data}));
             return this;
         }
 
@@ -90,7 +88,7 @@ $(function() {
 $(function() {
 
     var clearFilters = new TvFinder.View({
-        template: Handlebars.templates['clearfilters']
+        template: Handlebars.templates['clearFilters']
     });
 
     clearFilters.render();

@@ -1,10 +1,10 @@
-{"id":12925980000,
+{   "id":12925980000,
     "email":"test@test.com",
-        "name":{
+     "name":{
             "first":"Juliana",
             "last":"Shimer",
             "middleInitial":"R"
-        },
+            },
     "addressList":[
         {
             "type":"home",

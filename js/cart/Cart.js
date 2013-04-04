@@ -144,7 +144,7 @@ Cart = function () {
             this.cartItems.forEach(function (e) {
                 var qty = e.qty;
                 var price = e.price;
-                runningTotal += (price * qty) + shipping + tax;
+                total += (price * qty) + Number(shipping) + Number(tax);
             });
             return total;
         },

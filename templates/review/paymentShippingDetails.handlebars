@@ -3,16 +3,15 @@
         <p><span class="detail-labels">Payment Details</span></p>
         <p>
             <select id="payment-details-dd">
-                <option selected="selected" value="select" disabled>Sort</option>
-                <option value="MostHelpful">Most Helpful</option>
-                <option value="Oldest">Oldest to Newest</option>
+                <option selected="selected" value="select" disabled>Last 4 digits: 2227</option>
+                <option value="4437">Last 4 digits: 4337</option>
+                <option value="2227">Last 4 digits: 2227</option>
             </select>
         </p>
         <address>
             <p><span class="detail-sub-labels">Billing Address:</span><br/>
-                Juliana Shimer<br/>
-                555 test ave<br/>
-                San Bruno, CA 94066
+                {{order.name.first}} {{order.name.last}}<br/>
+
             </p>
         </address>
     </div>
@@ -20,14 +19,14 @@
         <p><span class="detail-labels">Shipping&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:#3078b9;">(Multiple Addresses?)</span></p>
         <p>
             <select id="shipping-dd">
-                <option selected="selected" value="select" disabled>Sort</option>
-                <option value="MostHelpful">Most Helpful</option>
-                <option value="Oldest">Oldest to Newest</option>
+                <option selected="selected" value="select" disabled>7000 Marina Blvd</option>
+                <option value="MostHelpful">7000 Marina Blvd</option>
+                <option value="Oldest">850 Cherry Ave</option>
             </select>
         </p>
         <address>
             <p><span class="detail-sub-labels">Shipping Address:</span><br/>
-                Juliana Shimer<br/>
+                {{order.name.first}} {{order.name.last}}<br/>
                 555 test ave<br/>
                 San Bruno, CA 94066
             </p>

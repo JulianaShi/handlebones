@@ -25,8 +25,7 @@ $(function () {
             return data;
         },
 
-        getCartItems: function(dynamicItemData){
-//            console.log(dynamicItemData);
+        getCartItems: function(){
             var items = this.myCartData.cartItems;
             var saved = this.myCartData.savedItems;
             var forPurchaseCount = 0;

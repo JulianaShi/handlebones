@@ -9,47 +9,21 @@
         Price
     </div>
 </div>
+{{#each items}}
 <div class="row-fluid review-line-item">
 <div class="span2 review-line-item-img">
-    <img src="/img/product/tv-temp.png"/>
+    <img src="{{image}}" />
 </div>
 <div class="span4 review-line-item-name">
-    item name
+    {{{name}}}
 </div>
 <div class="span1 review-line-item-qty">
-    5
+    {{qty}}
 </div>
 <div class="span2 review-line-item-price">
-    $139.98
+    ${{price}}
 </div>
 </div>
-<div class="row-fluid review-line-item">
-<div class="span2 review-line-item-img">
-    <img src="/img/product/tv-temp.png"/>
-</div>
-<div class="span4 review-line-item-name">
-    item name
-</div>
-<div class="span1 review-line-item-qty">
-    5
-</div>
-<div class="span2 review-line-item-price">
-    $139.98
-</div>
-</div>
-<div class="row-fluid review-line-item">
-<div class="span2 review-line-item-img">
-    <img src="/img/product/tv-temp.png"/>
-</div>
-<div class="span4 review-line-item-name">
-    item name
-</div>
-<div class="span1 review-line-item-qty">
-    5
-</div>
-<div class="span2 review-line-item-price">
-    $139.98
-</div>
-</div>
+{{/each}}
 <div id="empty-div" class="row-fluid">
 </div>
