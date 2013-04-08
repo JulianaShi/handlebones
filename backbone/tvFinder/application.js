@@ -20,6 +20,8 @@ TvFinder.View = Backbone.View.extend({
 //    $('body').append(indexView.el);
 //});
 
+
+
 // TV results passes all products json data to view
 //todo: move filter logic
 $(function() {

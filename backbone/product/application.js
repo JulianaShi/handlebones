@@ -27,12 +27,32 @@ $.fn.stars = function () {
 
 
 $(function () {
+
+    var productId = null;
     var myCart = new Cart();
     var cartData = null;
     var storage = null;
 
+    var ProductRouter = Backbone.Router.extend({
+        routes: {
+            ":id": "setProductId"
+        },
+
+        setProductId: function(id){
+
+           productId = id;
+
+        }
+
+    });
+    var productRouter = new ProductRouter();
+
+    Backbone.history.start();
+
+
+
     if (typeof(localStorage) == 'undefined' ) {
-        alert('Your browser does not support HTML5 localStorage. Try upgrading.');
+        console.log('browser does not support HTML5 localStorage.');
     } else {
         storage = window['localStorage']; 
         cartData = storage.getItem('jsonCart');
@@ -44,7 +64,7 @@ $(function () {
     }
 
     var ProductModel = Backbone.Model.extend({
-        url:"http://aguevara-linux.corp.walmart.com/search/catalog/itemIds.ems?itemids=15739136",
+        url:"http://aguevara-linux.corp.walmart.com/search/catalog/itemIds.ems?itemids=" + productId,
 //        url:"json/itemData.json",
         productData:{},
 
