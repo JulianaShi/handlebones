@@ -16,13 +16,13 @@ $(function () {
     $("#amount").html('"' + $("#slider").slider("values", 0) +
         ' - "' + $("#slider").slider("values", 1));
 
-    $('#tv-brand').change(function (e) {
-        filterAndSort(items);
-    });
-
-    $('#tv-types').change(function (e) {
-        filterAndSort(items);
-    });
+//    $('#tv-brand').change(function (e) {
+//        filterAndSort(items);
+//    });
+//
+//    $('#tv-types').change(function (e) {
+//        filterAndSort(items);
+//    });
 
     $('#tv-sort').change(function (e) {
         filterAndSort(items);
@@ -87,7 +87,7 @@ filterAndSort = function (items, minSize, maxSize) {
     var type = (el1.val() == null? "" : el1.val());
     var brand = (el2.val() == null ? "" : el2.val());
     var sort = el3.val();
-    console.log("minSize " +minSize +", maxSize " +maxSize + "brand " +brand +"type " +type + "sort " +sort )
+//    console.log("minSize " +minSize +", maxSize " +maxSize + "brand " +brand +"type " +type + "sort " +sort )
     var finalArray = [];
     for (var i = 0; i < items.length; i++) {
         var item = items[i];
