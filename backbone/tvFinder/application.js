@@ -33,6 +33,8 @@ $(function() {
 
         model: productModel,
 
+//        localStorage: new Backbone.LocalStorage('products-backbone'),
+
         original: [],
 
         parse: function (response) {
@@ -49,10 +51,11 @@ $(function() {
         },
 
         filterAll: function(type, brand) {
-            filtered = this.original.items.filter(function (item) {
-                return new RegExp('\\b' + brand + '\\b').test(item.name)
-                    && new RegExp('\\b' + type + '\\b').test(item.name);
+            filtered = this.filter(function (item) {
+                return item.get("name").match(type) &&
+                    item.get("name").match(brand);
             });
+
             this.reset(filtered);
         }
     });
@@ -64,9 +67,12 @@ $(function() {
 
 
     var TVFinderListView = Backbone.View.extend({
+        initialize:function () {
+            this.listenTo(productCollection, 'reset', this.render);
+        },
+
         render:function(){
             var data = this.model.toJSON();
-            console.log(data);
             this.$el.html(this.options.template({"item":data}));
             return this;
         }
